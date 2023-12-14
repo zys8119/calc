@@ -1,7 +1,7 @@
 <template>
   <div class="dialogAlertTitle">
     <div class="dialogAlertTitleIcon">
-      <img :src="`./images/alert-icon.png`"/>
+      <img :src="`./images/alert-icon.png`" />
     </div>
     <div class="dialogAlertTitleContent">
       <n-ellipsis style="max-width: 100%">{{ title }}</n-ellipsis>
@@ -35,10 +35,12 @@ defineProps<{
     top: 0;
     width: 50%;
     height: 2px;
-    background: linear-gradient(270deg,
-    rgba(0, 179, 247, 0) 0%,
-    #2c9aff 49%,
-    rgba(0, 216, 251, 0) 94%);
+    background: linear-gradient(
+      270deg,
+      rgba(0, 179, 247, 0) 0%,
+      #2c9aff 49%,
+      rgba(0, 216, 251, 0) 94%
+    );
   }
 
   &:before {
@@ -48,10 +50,12 @@ defineProps<{
     bottom: 0;
     width: 50%;
     height: 2px;
-    background: linear-gradient(270deg,
-    rgba(0, 179, 247, 0) 0%,
-    #2c9aff 49%,
-    rgba(0, 216, 251, 0) 94%);
+    background: linear-gradient(
+      270deg,
+      rgba(0, 179, 247, 0) 0%,
+      #2c9aff 49%,
+      rgba(0, 216, 251, 0) 94%
+    );
   }
 
   &Icon {

@@ -1,6 +1,6 @@
-import {defineConfig} from "vite";
+import { defineConfig } from "vite";
 import Vue from "@vitejs/plugin-vue";
-import {resolve} from "path";
+import { resolve } from "path";
 import AutoApi from "vitejs-plugin-api-auto-import";
 import AutoRoute from "vitejs-plugin-vue-route-auto-import";
 import UnoCss from "unocss/vite";
@@ -12,7 +12,7 @@ import {
   VantResolver,
 } from "unplugin-vue-components/resolvers";
 import vueSetupExtend from "vite-plugin-vue-setup-extend-plus";
-import {viteCommonjs} from "@originjs/vite-plugin-commonjs";
+import { viteCommonjs } from "@originjs/vite-plugin-commonjs";
 import vueJsx from "@vitejs/plugin-vue-jsx";
 import legacy from "@vitejs/plugin-legacy";
 import ReactivityTransform from "@vue-macros/reactivity-transform/vite";

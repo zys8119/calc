@@ -1,3 +1,3 @@
 export const inspect = () => {
-    return "Foo [bar] {}";
+  return "Foo [bar] {}";
 };
