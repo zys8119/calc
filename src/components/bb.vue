@@ -8,7 +8,8 @@
 <script setup lang="ts">
 const canvas = $ref();
 onMounted(async () => {
-  console.log(canvas);
+  console.log(canvas.a.c);
+  console.log(sadasda);
 });
 </script>
 
