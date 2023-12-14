@@ -34,6 +34,8 @@ module.exports = {
   globals: {
     $apis: true,
     $alert: true,
+    $utils: true,
+    $datas: true,
   },
   rules: {
     "vue/multi-word-component-names": "off",

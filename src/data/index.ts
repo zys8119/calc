@@ -1,6 +1,4 @@
 /*eslint-disable*/
-// @ts-ignore
-import main_import from "@/store/main";
 
 // @ts-ignore
 export function getApi<
@@ -22,14 +20,10 @@ export function getApi<
   }
 }
 
-export const $apiData = {
-  main: main_import,
-};
-
-export const main = main_import;
+export const $apiData = {};
 
 export default $apiData;
 
 declare global {
-  const $store: typeof $apiData;
+  const $datas: typeof $apiData;
 }

@@ -6,7 +6,9 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true,
+    "baseUrl": "./",
     "paths": {
+      "@pwd/*": ["./*"],
       "@/*": ["./src/*"]
     },
     "types": [
@@ -15,7 +17,26 @@
       "@vue-macros/reactivity-transform/macros-global",
       "./src/type/*"
     ],
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "useDefineForClassFields": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "noEmit": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": [
+    "*.ts",
+    "*.vue",
+    "*.d.ts",
+    "*.tsx",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "auto-imports.d.ts",
+    "components.d.ts",
+    "auto-api.ts"
+  ]
 }

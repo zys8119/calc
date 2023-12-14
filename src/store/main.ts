@@ -1,6 +1,8 @@
 const useStore = defineStore("main", {
   state: () => {
-    return {};
+    return {
+      a: 2332,
+    };
   },
   getters: {},
   actions: {},

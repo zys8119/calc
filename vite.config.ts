@@ -18,6 +18,7 @@ import legacy from "@vitejs/plugin-legacy";
 import ReactivityTransform from "@vue-macros/reactivity-transform/vite";
 import TransformIndexHtml from "./vite/plugins/transformIndexHtml";
 import VineBrowser from "./vite/plugins/vine/VineBrowser";
+
 export default defineConfig({
   base: "",
   plugins: [
@@ -47,6 +48,26 @@ export default defineConfig({
     AutoApi({
       resolveAliasName: "@/api",
       dir: "src/api",
+    }),
+    AutoApi({
+      name: "$alert",
+      resolveAliasName: "@/alert",
+      dir: "src/alert",
+    }),
+    AutoApi({
+      name: "$utils",
+      resolveAliasName: "@/utils",
+      dir: "src/utils",
+    }),
+    AutoApi({
+      name: "$datas",
+      resolveAliasName: "@/data",
+      dir: "src/data",
+    }),
+    AutoApi({
+      name: "$store",
+      resolveAliasName: "@/store",
+      dir: "src/store",
     }),
     UnoCss(),
     Components({

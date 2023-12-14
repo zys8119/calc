@@ -1,6 +1,6 @@
 import { createDiscreteApi, DialogReactive } from "naive-ui";
 import dialogAlertTitle from "./dialogAlertTitle.vue";
-import App from "@/app.vue";
+import App from "@pwd/App.vue";
 
 const { dialog, app } = createDiscreteApi(["dialog"]);
 let isUseInitGlobalProperties = false;

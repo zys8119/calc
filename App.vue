@@ -1,6 +1,7 @@
 <template>
   <div class="App">
-    <router-view />
+    <slot v-if="$slots.default"></slot>
+    <router-view v-else />
   </div>
 </template>
 
