@@ -5,10 +5,33 @@ import AutoApi from "vitejs-plugin-api-auto-import"
 import AutoRoute from "vitejs-plugin-vue-route-auto-import"
 import TransformIndexHtml from "./vite/plugins/transformIndexHtml"
 import UnoCss from 'unocss/vite'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite';
+import {
+    NaiveUiResolver,
+    VantResolver,
+} from 'unplugin-vue-components/resolvers';
+import vueSetupExtend from 'vite-plugin-vue-setup-extend-plus';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
+import vueJsx from '@vitejs/plugin-vue-jsx';
+import legacy from '@vitejs/plugin-legacy';
+import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
 export default defineConfig({
     base:"",
     plugins:[
         Vue(),
+        vueJsx(),
+        viteCommonjs(),
+        vueSetupExtend(),
+        ReactivityTransform(),
+        legacy({
+            targets: ['defaults', 'not IE 11'],
+            /**
+             * For chrome >= 61
+             * global-this is vaild from chrome 70
+             */
+            modernPolyfills: ['es.global-this', 'es.array.flat'],
+        }),
         TransformIndexHtml(),
         AutoRoute({
             views:'src/views',
@@ -19,6 +42,26 @@ export default defineConfig({
             dir: 'src/api',
         }),
         UnoCss(),
+        Components({
+            dts:'components.d.ts',
+            resolvers:[
+                NaiveUiResolver(),
+                VantResolver()
+            ]
+        }),
+        AutoImport({
+            include:[
+                /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+                /\.vue$/, /\.vue\?vue/, // .vue
+                /\.md$/, // .md
+            ],
+            imports:[
+                "vue",
+                "vue-router",
+                "@vueuse/core"
+            ],
+            dts:'auto-import.d.ts'
+        }),
     ],
     resolve:{
         alias:{
