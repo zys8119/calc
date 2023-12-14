@@ -1,6 +1,14 @@
 import { App, Plugin } from "vue";
 // eslint-disable-next-line vue/prefer-import-from-vue
 import "@vue/runtime-core";
+import { createDiscreteApi } from "naive-ui";
+
+const { message, notification, dialog, loadingBar } = createDiscreteApi([
+  "message",
+  "notification",
+  "dialog",
+  "loadingBar",
+]);
 
 function getStores(): Store {
   return Object.fromEntries(
@@ -22,6 +30,14 @@ export default {
     const store = getStores();
     app.config.globalProperties.$store = store;
     window.$store = store;
+    app.config.globalProperties.$message = message;
+    window.$message = message;
+    app.config.globalProperties.$notification = notification;
+    window.$notification = notification;
+    app.config.globalProperties.$dialog = dialog;
+    window.$dialog = dialog;
+    app.config.globalProperties.$loadingBar = loadingBar;
+    window.$loadingBar = loadingBar;
   },
 } as Plugin;
 type Store = {
@@ -34,10 +50,19 @@ interface GlobalType {
   $datas: typeof $datas;
   $apis: typeof $apis;
   $store: Store;
+  $message: typeof message;
+  $notification: typeof notification;
+  $dialog: typeof dialog;
+  $loadingBar: typeof loadingBar;
 }
 
 declare global {
   interface Window extends GlobalType {}
+
+  const $message: typeof message;
+  const $notification: typeof notification;
+  const $dialog: typeof dialog;
+  const $loadingBar: typeof loadingBar;
 }
 
 declare module "@vue/runtime-core" {

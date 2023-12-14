@@ -36,6 +36,11 @@ module.exports = {
     $alert: true,
     $utils: true,
     $datas: true,
+    $store: true,
+    $message: true,
+    $notification: true,
+    $dialog: true,
+    $loadingBar: true,
   },
   rules: {
     "vue/multi-word-component-names": "off",
