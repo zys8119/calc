@@ -10,6 +10,10 @@
 <script setup lang="ts">
 const aa = $ref(0)
 console.log($apis)
+const {width} =  useWindowSize()
+watchEffect(()=>{
+  console.log(width.value)
+})
 </script>
 
 <style scoped lang="scss">
