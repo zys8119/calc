@@ -2,9 +2,10 @@
 import {
   createRouter,
   createWebHashHistory,
-  RouterView,
   RouteRecordRaw,
+  RouterView,
 } from "vue-router";
+
 const files = import.meta.glob("./VIEWSDIR/**/*.{vue,jsx,tsx}", {});
 const pages = import.meta.glob("./VIEWSDIR/**/page.json", {
   eager: true,
