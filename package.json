@@ -36,6 +36,8 @@
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^18.4.3",
+    "@commitlint/config-conventional": "^18.4.3",
     "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.4",
