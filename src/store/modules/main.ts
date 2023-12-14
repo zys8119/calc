@@ -1,13 +1,9 @@
-const useStore = defineStore('main', {
+const useStore = defineStore("main", {
     state: () => {
-        return {
-        };
+        return {};
     },
-    getters: {
-    },
-    actions: {
-
-    },
+    getters: {},
+    actions: {},
 });
 
 export default useStore;

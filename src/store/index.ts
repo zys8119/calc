@@ -1,8 +1,8 @@
 /**
  * 挂载 store
  */
-import useMainStore from './modules/main';
-import { App } from 'vue';
+import useMainStore from "./modules/main";
+import {App} from "vue";
 
 interface Store {
     main: ReturnType<typeof useMainStore>;
@@ -30,7 +30,7 @@ export default {
 };
 
 // eslint-disable-next-line vue/prefer-import-from-vue
-import '@vue/runtime-core';
+import "@vue/runtime-core";
 
 declare module "@vue/runtime-core" {
     export interface ComponentCustomProperties {

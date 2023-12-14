@@ -1,15 +1,10 @@
 <template>
-  <div class="404 font-bold">
-      404 Page Not Found
-  </div>
+  <div class="404 font-bold">404 Page Not Found</div>
 </template>
 
-<script setup lang="ts">
-
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="less">
-.page404{
-
+.page404 {
 }
 </style>

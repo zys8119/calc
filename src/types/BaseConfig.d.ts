@@ -1,6 +1,6 @@
 export interface BaseConfigHtml {
-    title:string
+    title: string;
 }
 export interface BaseConfig {
-    html:BaseConfigHtml
+    html: BaseConfigHtml;
 }

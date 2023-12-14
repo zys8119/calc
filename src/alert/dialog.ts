@@ -1,23 +1,26 @@
-import { createDiscreteApi, DialogReactive } from 'naive-ui';
-import dialogAlertTitle from './dialogAlertTitle.vue';
-import App from '@/app.vue';
-const { dialog, app } = createDiscreteApi(['dialog']);
-let isUseInitGlobalProperties = false
-const useInitGlobalProperties = ()=>{
+import {createDiscreteApi, DialogReactive} from "naive-ui";
+import dialogAlertTitle from "./dialogAlertTitle.vue";
+import App from "@/app.vue";
+
+const {dialog, app} = createDiscreteApi(["dialog"]);
+let isUseInitGlobalProperties = false;
+const useInitGlobalProperties = () => {
     try {
-        if(!isUseInitGlobalProperties){
-            const appRoot:any = document.getElementById('app')
-            const globalProperties:Record<any, any> = appRoot.__vue_app__.config.globalProperties
-            const globalPropertiesEntries:Array<[string, any]> = Object.entries(globalProperties)
-            for (const [k, v] of globalPropertiesEntries){
-                app.config.globalProperties[k] = v
+        if (!isUseInitGlobalProperties) {
+            const appRoot: any = document.getElementById("app");
+            const globalProperties: Record<any, any> =
+                appRoot.__vue_app__.config.globalProperties;
+            const globalPropertiesEntries: Array<[string, any]> =
+                Object.entries(globalProperties);
+            for (const [k, v] of globalPropertiesEntries) {
+                app.config.globalProperties[k] = v;
             }
-            isUseInitGlobalProperties = true
+            isUseInitGlobalProperties = true;
         }
-    }catch (e) {
+    } catch (e) {
         // err
     }
-}
+};
 type DialogConfigType = {
     content: any;
     title: any;
@@ -27,13 +30,15 @@ type DialogConfigType = {
 const dialogCaches: Array<DialogReactive> = [];
 interface DialogDefault {
     (config: DialogConfigType): DialogReactive;
+
     close(): void;
+
     closeAll(): void;
 }
 const dialogDefault: DialogDefault = (
-    config: DialogConfigType = {} as DialogConfigType
+    config: DialogConfigType = {} as DialogConfigType,
 ) => {
-    useInitGlobalProperties()
+    useInitGlobalProperties();
     const dialogApp = dialog.create({
         title: config.title
             ? () =>
@@ -41,17 +46,17 @@ const dialogDefault: DialogDefault = (
                     title: config.title,
                 })
             : undefined,
-        class: 'alert-dialog-custom-theme',
-        style: `width:${config.width || 'auto'}`,
+        class: "alert-dialog-custom-theme",
+        style: `width:${config.width || "auto"}`,
         showIcon: false,
         content: () =>
-            typeof config.content === 'object'
+            typeof config.content === "object"
                 ? h(App, [
                     h(
                         defineAsyncComponent({
                             loader: () => config.content,
                         }),
-                        config.props
+                        config.props,
                     ),
                 ])
                 : config.content,

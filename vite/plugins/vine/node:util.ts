@@ -1,3 +1,3 @@
-export const inspect = ()=>{
-    return  'Foo [bar] {}'
-}
+export const inspect = () => {
+    return "Foo [bar] {}";
+};
