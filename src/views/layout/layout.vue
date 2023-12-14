@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script setup lang="ts" path="/">
+<script setup lang="ts">
 
 </script>
 
