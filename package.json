@@ -20,6 +20,7 @@
   "homepage": "https://github.com/zys8119/smart-marketing#readme",
   "dependencies": {
     "@unocss/preset-wind": "^0.58.0",
+    "@vinejs/vine": "^1.7.0",
     "@vueuse/core": "^10.7.0",
     "less": "^4.2.0",
     "lodash": "^4.17.21",

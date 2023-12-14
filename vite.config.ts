@@ -3,7 +3,6 @@ import Vue from "@vitejs/plugin-vue"
 import {resolve} from "path"
 import AutoApi from "vitejs-plugin-api-auto-import"
 import AutoRoute from "vitejs-plugin-vue-route-auto-import"
-import TransformIndexHtml from "./vite/plugins/transformIndexHtml"
 import UnoCss from 'unocss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite';
@@ -16,6 +15,8 @@ import { viteCommonjs } from '@originjs/vite-plugin-commonjs';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import legacy from '@vitejs/plugin-legacy';
 import ReactivityTransform from '@vue-macros/reactivity-transform/vite'
+import TransformIndexHtml from "./vite/plugins/transformIndexHtml"
+import VineBrowser from "./vite/plugins/vine/VineBrowser"
 export default defineConfig({
     base:"",
     plugins:[
@@ -33,6 +34,7 @@ export default defineConfig({
             modernPolyfills: ['es.global-this', 'es.array.flat'],
         }),
         TransformIndexHtml(),
+        VineBrowser(),
         AutoRoute({
             views:'src/views',
             routes_extend:"./src/route.ts"
@@ -65,7 +67,8 @@ export default defineConfig({
     ],
     resolve:{
         alias:{
-            "@":resolve(__dirname,"./src")
+            "@":resolve(__dirname,"./src"),
+            "@pwd":resolve(__dirname,"./")
         }
     },
 })
