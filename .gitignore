@@ -4,3 +4,6 @@
 node_modules
 pnpm-lock.yaml
 dist
+.eslintrc-auto-import.json
+auto-import.d.ts
+components.d.ts

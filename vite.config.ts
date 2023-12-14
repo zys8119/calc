@@ -4,6 +4,7 @@ import {resolve} from "path"
 import AutoApi from "vitejs-plugin-api-auto-import"
 import AutoRoute from "vitejs-plugin-vue-route-auto-import"
 import UnoCss from 'unocss/vite'
+import VueMacros from 'unplugin-vue-macros/vite';
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite';
 import {
@@ -20,8 +21,12 @@ import VineBrowser from "./vite/plugins/vine/VineBrowser"
 export default defineConfig({
     base:"",
     plugins:[
-        Vue(),
-        vueJsx(),
+        VueMacros({
+            plugins: {
+                "vue":Vue(),
+                "vueJsx":vueJsx(),
+            }
+        }),
         viteCommonjs(),
         vueSetupExtend(),
         ReactivityTransform(),
@@ -60,9 +65,14 @@ export default defineConfig({
             imports:[
                 "vue",
                 "vue-router",
-                "@vueuse/core"
+                "@vueuse/core",
+                "pinia",
+                "vue/macros",
             ],
-            dts:'auto-import.d.ts'
+            dts:'auto-import.d.ts',
+            eslintrc: {
+                enabled: true,
+            },
         }),
     ],
     resolve:{
