@@ -9,7 +9,6 @@
 const canvas = $ref();
 onMounted(async () => {
   console.log(canvas.a.c);
-  console.log(sadasda.asdas());
 });
 </script>
 
