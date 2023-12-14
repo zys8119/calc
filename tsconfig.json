@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "module": "esNext",
+    "target": "esNext",
+    "sourceMap": true,
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": [
+      "vite/client",
+      "vitejs-plugin-vue-route-auto-import/type",
+      "@vue-macros/reactivity-transform/macros-global",
+      "./src/type/*"
+    ],
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "node_modules",
+  ]
+}

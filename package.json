@@ -1,0 +1,29 @@
+{
+  "name": "smart-marketing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zys8119/smart-marketing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zys8119/smart-marketing/issues"
+  },
+  "homepage": "https://github.com/zys8119/smart-marketing#readme",
+  "dependencies": {
+    "lodash": "^4.17.21",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^20.10.4",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "vite": "^5.0.8"
+  }
+}
