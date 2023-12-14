@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 const aa = $ref(0)
-
+console.log($apis)
 </script>
 
 <style scoped lang="scss">
