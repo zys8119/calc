@@ -10,7 +10,6 @@ const app = createApp(App)
 
 import route from "./route"
 
-console.log(route.options.routes)
 app.use(route)
 
 app.mount('#app')
