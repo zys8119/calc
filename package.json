@@ -17,13 +17,20 @@
   },
   "homepage": "https://github.com/zys8119/smart-marketing#readme",
   "dependencies": {
+    "@unocss/preset-wind": "^0.58.0",
+    "less": "^4.2.0",
     "lodash": "^4.17.21",
-    "vue": "^3.3.11"
+    "sass": "^1.69.5",
+    "unocss": "^0.58.0",
+    "vue": "^3.3.11",
+    "vue-router": "^4.2.5"
   },
   "devDependencies": {
     "@types/lodash": "^4.14.202",
     "@types/node": "^20.10.4",
     "@vitejs/plugin-vue": "^4.5.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vitejs-plugin-api-auto-import": "^0.0.24",
+    "vitejs-plugin-vue-route-auto-import": "^0.0.18"
   }
 }
