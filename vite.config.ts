@@ -18,6 +18,7 @@ import legacy from "@vitejs/plugin-legacy";
 import ReactivityTransform from "@vue-macros/reactivity-transform/vite";
 import TransformIndexHtml from "./vite/plugins/transformIndexHtml";
 import VineBrowser from "./vite/plugins/vine/VineBrowser";
+import Resolvers from "./vite/resolvers";
 
 export default defineConfig({
   base: "",
@@ -86,6 +87,7 @@ export default defineConfig({
       eslintrc: {
         enabled: true,
       },
+      resolvers: [Resolvers()],
     }),
   ],
   resolve: {

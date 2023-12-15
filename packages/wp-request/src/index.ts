@@ -236,7 +236,10 @@ service.interceptors.response.use(
  * ```
  *
  */
-export const request = <T = any, Config extends AxiosRequestConfig = {}>(
+export const request = <
+  T = any,
+  Config extends AxiosRequestConfig = Record<any, any>,
+>(
   configOrUrl: Config | string,
   setLoading = true,
 ) => {
@@ -280,11 +283,10 @@ export const request = <T = any, Config extends AxiosRequestConfig = {}>(
 };
 
 const requestGenerate = <M extends Method>(method: M) => {
-  return function <T = any, Config extends AxiosRequestConfig = {}>(
-    url: string,
-    config?: Config,
-    setLoading = true,
-  ) {
+  return function <
+    T = any,
+    Config extends AxiosRequestConfig = Record<any, any>,
+  >(url: string, config?: Config, setLoading = true) {
     return request<T, { method: M } & { url: string } & Config>(
       {
         ...config,
@@ -373,31 +375,25 @@ request.install = function (
   if (optionsOverride) Object.assign(options, optionsOverride);
 };
 
+interface CommonType {
+  axios: typeof request;
+  requestAll: typeof requestAll;
+  download: typeof download;
+  $http: typeof $http;
+  dataURIToBlob: typeof dataURIToBlob;
+  cancelAll: typeof cancelAll;
+}
 /**
  * 附加到 vue 原型上和 window 对象上
  */
 declare global {
   interface Window {
-    common: {
-      readonly axios: typeof request;
-      readonly requestAll: typeof requestAll;
-      readonly download: typeof download;
-      readonly $http: typeof $http;
-      readonly dataURIToBlob: typeof dataURIToBlob;
-      readonly cancelAll: typeof cancelAll;
-    };
+    common: Readonly<CommonType>;
   }
 }
 
 declare module "@vue/runtime-core" {
-  export interface ComponentCustomProperties {
-    readonly axios: typeof request;
-    readonly download: typeof download;
-    readonly requestAll: typeof requestAll;
-    readonly $http: typeof $http;
-    readonly dataURIToBlob: typeof dataURIToBlob;
-    readonly cancelAll: typeof cancelAll;
-  }
+  export interface ComponentCustomProperties extends CommonType {}
 }
 
 export * from "./utils";

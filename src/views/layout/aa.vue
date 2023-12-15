@@ -3,7 +3,9 @@
 </template>
 
 <script lang="ts" setup>
-console.log(111);
+request({
+  baseURL: "asda",
+});
 </script>
 
 <style scoped lang="scss">

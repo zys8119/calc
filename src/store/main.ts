@@ -1,10 +1,17 @@
 const useStore = defineStore("main", {
   state: () => {
     return {
-      a: 2332,
+      userInfo: {
+        token: "asda",
+      },
+      requests: new Set() as Set<Promise<any>>,
     };
   },
-  getters: {},
+  getters: {
+    token({ userInfo }) {
+      return userInfo.token;
+    },
+  },
   actions: {},
 });
 

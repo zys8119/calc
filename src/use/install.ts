@@ -3,6 +3,8 @@ import { App, Plugin } from "vue";
 import "@vue/runtime-core";
 import { createDiscreteApi } from "naive-ui";
 
+const router = useRouter();
+
 const { message, notification, dialog, loadingBar } = createDiscreteApi([
   "message",
   "notification",
@@ -38,6 +40,7 @@ export default {
     window.$dialog = dialog;
     app.config.globalProperties.$loadingBar = loadingBar;
     window.$loadingBar = loadingBar;
+    window.$router = router;
   },
 } as Plugin;
 type Store = {
@@ -54,6 +57,7 @@ interface GlobalType {
   $notification: typeof notification;
   $dialog: typeof dialog;
   $loadingBar: typeof loadingBar;
+  $router: typeof router;
 }
 
 declare global {
@@ -63,6 +67,7 @@ declare global {
   const $notification: typeof notification;
   const $dialog: typeof dialog;
   const $loadingBar: typeof loadingBar;
+  const $router: typeof router;
 }
 
 declare module "@vue/runtime-core" {
