@@ -1,11 +1,11 @@
 {
   "name": "smart-marketing",
   "version": "1.0.0",
-  "description": "",
+  "description": "vue3+vite基础框架代码",
   "main": "index.js",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "npm run lint && vite build",
     "build:test": "npm run lint && vite build --mode test",
     "lint": "eslint src --ext .ts,.tsx,.vue",
@@ -23,6 +23,9 @@
     "url": "https://github.com/zys8119/smart-marketing/issues"
   },
   "homepage": "https://github.com/zys8119/smart-marketing#readme",
+  "workspaces": [
+    "packages/*"
+  ],
   "dependencies": {
     "@unocss/preset-wind": "^0.58.0",
     "@vinejs/vine": "^1.7.0",
@@ -35,7 +38,8 @@
     "typescript": "^5.3.3",
     "unocss": "^0.58.0",
     "vue": "^3.3.11",
-    "vue-router": "^4.2.5"
+    "vue-router": "^4.2.5",
+    "wp-request": "workspace:^"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",

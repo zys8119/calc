@@ -1,12 +1,9 @@
 <template>
-  <div class="aa"></div>
+  <div class="aa">asdas</div>
 </template>
 
 <script lang="ts" setup>
-console.log(window.$message);
-console.log($message.error("sdas"));
-console.log($store);
-$loadingBar.error;
+console.log(111);
 </script>
 
 <style scoped lang="scss">
