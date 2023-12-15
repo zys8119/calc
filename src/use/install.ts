@@ -2,6 +2,7 @@ import { App, Plugin } from "vue";
 // eslint-disable-next-line vue/prefer-import-from-vue
 import "@vue/runtime-core";
 import { createDiscreteApi } from "naive-ui";
+import piniaStore from "@/store";
 
 const router = useRouter();
 
@@ -14,7 +15,7 @@ const { message, notification, dialog, loadingBar } = createDiscreteApi([
 
 function getStores(): Store {
   return Object.fromEntries(
-    Object.entries($store).map(([k, v]) => [k, v()]),
+    Object.entries(piniaStore).map(([k, v]) => [k, v()]),
   ) as Store;
 }
 
@@ -44,7 +45,7 @@ export default {
   },
 } as Plugin;
 type Store = {
-  [k in keyof typeof $store]: ReturnType<(typeof $store)[k]>;
+  [k in keyof typeof piniaStore]: ReturnType<(typeof piniaStore)[k]>;
 };
 
 interface GlobalType {
@@ -68,6 +69,7 @@ declare global {
   const $dialog: typeof dialog;
   const $loadingBar: typeof loadingBar;
   const $router: typeof router;
+  const $store: Store;
 }
 
 declare module "@vue/runtime-core" {

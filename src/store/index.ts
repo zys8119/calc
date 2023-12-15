@@ -31,5 +31,5 @@ export const main = main_import;
 export default $apiData;
 
 declare global {
-  const $store: typeof $apiData;
+  const $storeAuto: typeof $apiData;
 }

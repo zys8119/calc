@@ -44,7 +44,7 @@ export default defineConfig({
     VineBrowser(),
     AutoRoute({
       views: "src/views",
-      routes_extend: "./src/route.ts",
+      routes_extend: "./src/router/route.ts",
     }),
     AutoApi({
       resolveAliasName: "@/api",
@@ -66,7 +66,7 @@ export default defineConfig({
       dir: "src/data",
     }),
     AutoApi({
-      name: "$store",
+      name: "$storeAuto",
       resolveAliasName: "@/store",
       dir: "src/store",
     }),
