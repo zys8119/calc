@@ -9,11 +9,11 @@ import request from "wp-request";
 import config from "@/config/config";
 import route from "./route";
 import useInstall from "@/use/install";
+import "@/router/permission";
 
 const app = createApp(App);
 
 app.use(request, config.request);
-
 app.use(route);
 
 app.use(useInstall);

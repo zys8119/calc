@@ -19,14 +19,6 @@ const useStore = defineStore("main", {
     },
   },
   actions: {
-    setToken(token = "") {
-      const storage = config.router.session ? sessionStorage : localStorage;
-      return new Promise<void>((resolve) => {
-        this.userInfo.token = token;
-        storage.setItem(baseConfig.unique + "token", token);
-        resolve();
-      });
-    },
     setUserinfo(userInfo: Partial<LoginUserInfo>) {
       const storage = config.router.session ? sessionStorage : localStorage;
       if (!userInfo) {
@@ -38,6 +30,11 @@ const useStore = defineStore("main", {
           baseConfig.unique + "userInfo",
           JSON.stringify(userInfo),
         );
+        if (this.userInfo.token) {
+          storage.setItem(baseConfig.unique + "token", this.userInfo.token);
+        } else {
+          storage.removeItem(baseConfig.unique + "token");
+        }
       }
     },
   },
