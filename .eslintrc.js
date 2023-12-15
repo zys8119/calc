@@ -41,6 +41,7 @@ module.exports = {
     $notification: true,
     $dialog: true,
     $loadingBar: true,
+    $router: true,
   },
   rules: {
     "vue/multi-word-component-names": "off",

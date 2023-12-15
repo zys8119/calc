@@ -19,6 +19,16 @@ export const requestResolvers: Resolver = function (name: string) {
     };
   }
 };
+export const lodashResolvers: Resolver = function (name: string) {
+  if (/^l_.+/.test(name)) {
+    console.log(name);
+    return {
+      name: name.replace(/^l_/, ""),
+      as: name,
+      from: "lodash",
+    };
+  }
+};
 export default function () {
-  return [requestResolvers];
+  return [requestResolvers, lodashResolvers];
 }

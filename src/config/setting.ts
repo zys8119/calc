@@ -8,8 +8,8 @@ import {
   ThemeMode,
 } from "@/types/BaseConfig.d";
 
-const primaryColor = "#1f57ce";
-const primaryHoverColor = "#3b6bd0";
+const primaryColor = "#7585f9";
+const primaryHoverColor = "#919bff";
 
 document.documentElement.style.setProperty("--van-primary-color", primaryColor);
 
