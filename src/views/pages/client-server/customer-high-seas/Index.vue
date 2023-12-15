@@ -3,25 +3,24 @@
     <search-table title="搜索客户">
       <template #filter>
         <n-space>
-          <n-space align="center" justify="center">
-            <span class="text-#666666 text-14px">客户名称：</span>
+          <filter-item title="客户名称">
             <n-input></n-input>
-          </n-space>
-          <n-space align="center" justify="center">
-            <span class="text-#666666 text-14px">跟进人：</span>
+          </filter-item>
+          <filter-item title="跟进人">
             <n-input></n-input>
-          </n-space>
-          <n-space align="center" justify="center">
-            <span class="text-#666666 text-14px">跟进阶段：</span>
+          </filter-item>
+          <filter-item title="跟进阶段">
             <n-input></n-input>
-          </n-space>
+          </filter-item>
         </n-space>
       </template>
     </search-table>
   </div>
 </template>
 
-<script lang="ts" setup title="客户公海"></script>
+<script lang="ts" setup title="客户公海">
+import FilterItem from "@/components/filter-item.vue";
+</script>
 
 <style lang="scss" scoped>
 .Index {
