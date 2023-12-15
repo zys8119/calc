@@ -1,7 +1,7 @@
 const useStore = defineStore("nav", {
   state: () => {
     return {
-      menusActive: 1,
+      menusActive: 0,
       menusActiveInfo: {},
       munes: [
         {

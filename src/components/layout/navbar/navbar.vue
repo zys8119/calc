@@ -10,7 +10,7 @@
             active: $store.nav.menusActive === key,
           }"
           class="navbarItem w-$navbar-width h-42px text-$white p-y-10px flex flex-col justify-center items-center"
-          @click="$store.nav.setMenusActive(key)"
+          @click="setMenusActive(key)"
         >
           <img :src="item.icon" alt="" class="w-22px h-22px m-b-4px" />
           <div>{{ item.title }}</div>
@@ -25,6 +25,8 @@
           :render-label="renderLabel"
           class="w-100% n-tree"
           label-field="title"
+          :default-selected-keys="defaultSelectedKeys"
+          key-field="url"
         />
       </div>
     </div>
@@ -33,6 +35,8 @@
 
 <script lang="ts" setup>
 const router = useRouter();
+const route = useRoute();
+const defaultSelectedKeys = ref([]);
 const routes = computed(() =>
   $utils.flat.objectDeep<any>(
     router.options.routes as any,
@@ -67,11 +71,17 @@ const childMenus = computed(() => {
 watchEffect(() => {
   $store.nav.setMenusActiveInfo(menusActiveInfo.value);
 });
-watchEffect(() => {
-  if (childMenus.value.length === 0) {
-    router.push(menusActiveInfo.value.redirect || menusActiveInfo.value.url);
-  }
-});
+const setMenusActive = (key: number) => {
+  $store.nav.setMenusActive(key);
+  nextTick(() => {
+    if (
+      childMenus.value.length === 0 &&
+      (menusActiveInfo.value.redirect || menusActiveInfo.value.url)
+    ) {
+      router.push(menusActiveInfo.value.redirect || menusActiveInfo.value.url);
+    }
+  });
+};
 const renderLabel = ({ option }: any) => {
   return h(
     "div",
@@ -91,6 +101,20 @@ const renderLabel = ({ option }: any) => {
     ],
   );
 };
+onMounted(async () => {
+  // 选中状态回显
+  // 一级菜单
+  const path = route.path.match(/^\/*pages\/[^/]+/)?.[0];
+  setMenusActive(menus.value.findIndex((e) => e.url?.indexOf?.(path) > -1));
+  // 二级菜单
+  const childPath = route.path.match(/^\/*pages\/[^/]+\/[^/]+/)?.[0];
+  const selectChild = childMenus.value.find(
+    (e: any) => e.url?.indexOf?.(childPath) > -1,
+  );
+  if (selectChild && selectChild.url) {
+    defaultSelectedKeys.value = [selectChild.url] as any;
+  }
+});
 </script>
 
 <style lang="less" scoped>
