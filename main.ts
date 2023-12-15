@@ -15,6 +15,5 @@ const app = createApp(App);
 
 app.use(request, config.request);
 app.use(route);
-console.log(route.options.routes);
 app.use(useInstall);
 app.mount("#app");
