@@ -1,9 +1,6 @@
 <template>
   <div class="Index">
-    撒打算大阿四56464646
-    <n-button @click="$router.push('/pages/client-server/contract-customer/aa')"
-      >go</n-button
-    >
+    <search-table></search-table>
   </div>
 </template>
 
