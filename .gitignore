@@ -8,3 +8,9 @@ dist
 auto-import.d.ts
 components.d.ts
 !packages/**/dist
+src/alert/index.ts
+src/api/index.ts
+src/data/index.ts
+src/store/index.ts
+src/utils/index.ts
+route.ts

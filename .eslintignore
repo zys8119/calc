@@ -1,2 +1,9 @@
 .eslintrc-auto-import.json
 components.d.ts
+auto-import.d.ts
+src/alert/index.ts
+src/api/index.ts
+src/data/index.ts
+src/store/index.ts
+src/utils/index.ts
+route.ts
