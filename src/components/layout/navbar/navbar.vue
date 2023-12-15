@@ -18,7 +18,7 @@
       </div>
       <div
         v-if="childMenus && childMenus.length > 0"
-        class="flex-1 h-100% of-x-hidden hide-scrollbar"
+        class="flex-1 h-100% of-x-hidden hide-scrollbar p-x-15px"
       >
         <n-tree
           :data="childMenus"
