@@ -42,6 +42,7 @@ module.exports = {
     $dialog: true,
     $loadingBar: true,
     $router: true,
+    defineModels: true,
   },
   rules: {
     "vue/multi-word-component-names": "off",

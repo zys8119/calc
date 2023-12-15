@@ -42,7 +42,6 @@
           </n-space>
         </n-space>
         <div class="flex-1">
-          {{ params }}
           <n-data-table v-bind="dataTableProps"> </n-data-table>
         </div>
       </div>
@@ -58,7 +57,7 @@ import { DataTableColumns, DataTableProps } from "naive-ui";
 const props = defineProps<{
   title?: string;
   columns: DataTableColumns;
-  api: (data: any) => Promise<{
+  api?: (data: any) => Promise<{
     code: number;
     data: {
       list: any[];
@@ -67,14 +66,17 @@ const props = defineProps<{
     messages: string;
   }>;
   isPagination?: boolean;
-  params?: Record<any, any>;
+  getData?: (data: any) => any;
+  getDataTotal?: (data: any) => any;
+  resetParams?: (params: Record<any, any>) => any;
 }>();
-const { params } = defineModels<{
+const { params, data, tableProps } = defineModels<{
   params: Record<any, any>;
+  data: any[];
+  tableProps?: Partial<DataTableProps>;
 }>();
 
 const checkedRowKeys = ref([]);
-const data = ref([]);
 const pagination = ref(
   props.isPagination
     ? {
@@ -82,8 +84,8 @@ const pagination = ref(
         pageSize: 15,
         pageCount: 1,
         itemCount: 0,
-        prefix({ itemCount, startIndex, endIndex }) {
-          return `第${startIndex}${endIndex}条/总共 ${itemCount} 条`;
+        prefix({ itemCount, startIndex, endIndex }: any) {
+          return `第${startIndex}-${endIndex}条/总共 ${itemCount} 条`;
         },
         showQuickJumper: true,
         showSizePicker: true,
@@ -101,21 +103,37 @@ const dataTableProps = computed<DataTableProps>(() => ({
   data: data.value,
   pagination: pagination.value,
   "onUpdate:page"(d) {
-    console.log(d);
+    pagination.value.page = d;
+    search();
   },
+  ...tableProps.value,
 }));
 const search = async () => {
-  const res = await props.api?.(params);
+  const res =
+    (await props.api?.({
+      ...params.value,
+      ...l_pick(
+        pagination.value,
+        props.isPagination ? ["page", "pageSize"] : [],
+      ),
+    })) || data.value;
   if (props.isPagination) {
-    data.value = l_get(res, "data.list", []);
-    pagination.value.itemCount = l_get(res, "data.total", 0);
+    data.value =
+      (await props.getData?.(res)) || l_get(res, "data.list", data.value || []);
+    const total = await props.getDataTotal?.(res);
+    pagination.value.itemCount =
+      typeof total === "number"
+        ? total
+        : l_get(res, "data.total", data.value?.length || 0);
   } else {
-    data.value = l_get(res, "data", []);
+    data.value =
+      (await props.getData?.(res)) || l_get(res, "data", data.value || []);
   }
 };
 const reset = async () => {
   pagination.value.page = 1;
   params.value = {};
+  await props.resetParams?.(params.value);
   await search();
 };
 onMounted(async () => {
@@ -124,6 +142,9 @@ onMounted(async () => {
 defineExpose({
   search,
   reset,
+  pagination: pagination.value,
+  checkedRowKeys: checkedRowKeys.value,
+  dataTableProps: dataTableProps.value,
 });
 </script>
 

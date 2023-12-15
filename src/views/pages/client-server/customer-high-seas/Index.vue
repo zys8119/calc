@@ -1,10 +1,12 @@
 <template>
   <div class="Index w-100% h-100%">
-    {{ params }}
     <search-table
+      ref="table"
+      v-model:data="data"
       v-model:params="params"
       :api="$apis.test.aa"
       :columns="columns"
+      :reset-params="resetParams"
       is-pagination
       title="搜索客户"
     >
@@ -26,16 +28,29 @@
 </template>
 
 <script lang="ts" setup title="客户公海">
+import { DataTableColumns } from "naive-ui";
+
+const table = $ref();
 const params = ref({});
-const columns = ref([
+const data = ref([{ name: "虎虎虎", id: 0 }]);
+const columns = ref<DataTableColumns>([
   {
     type: "selection",
   },
   {
     key: "name",
     title: "asdas",
+    render({ name }) {
+      return h("div", name + "----asda");
+    },
   },
 ]);
+const resetParams = () => {
+  params.value = {};
+};
+onMounted(async () => {
+  console.log(await table);
+});
 </script>
 
 <style lang="scss" scoped>
