@@ -17,7 +17,7 @@ const useStore = defineStore("nav", {
             {
               filename:
                 "./src/views/pages/client-server/contract-customer/Index.vue",
-              icon: "./images/nav-icon2.png",
+              icon: "./images/nav-icon3.png",
               title: "签约客户",
             },
             {

@@ -73,6 +73,7 @@ watchEffect(() => {
 });
 const setMenusActive = (key: number) => {
   $store.nav.setMenusActive(key);
+  defaultSelectedKeys.value = [];
   nextTick(() => {
     if (
       childMenus.value.length === 0 &&
@@ -92,11 +93,7 @@ const renderLabel = ({ option }: any) => {
       },
     },
     [
-      h(
-        "img",
-        { class: "navbarTreeItemIcon", src: "./images/nav-icon2.png" },
-        option.title,
-      ),
+      h("img", { class: "navbarTreeItemIcon", src: option.icon }, option.title),
       h("span", { class: "navbarTreeItemLabel" }, option.title),
     ],
   );
