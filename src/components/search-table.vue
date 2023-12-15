@@ -1,8 +1,14 @@
 <template>
   <div class="search-table w-100% h-100% flex flex-col">
     <div
+      v-if="$slots.header"
+      class="search-table-filter bg-$white m-b-15px b-rd-15px p-15px"
+    >
+      <slot name="header"></slot>
+    </div>
+    <div
       v-if="
-        $slots.filter ||
+        (!hideFilter && $slots.filter) ||
         $slots['filter-btn'] ||
         $slots['filter-btn-left'] ||
         $slots['filter-btn-right'] ||
@@ -35,6 +41,12 @@
           </slot>
         </div>
       </div>
+    </div>
+    <div
+      v-if="$slots.middle"
+      class="search-table-filter bg-$white m-b-15px b-rd-15px p-15px"
+    >
+      <slot name="middle"></slot>
     </div>
     <div
       class="search-table-content bg-$white flex-1 flex flex-col b-rd-15px p-15px"
@@ -89,6 +101,7 @@ const props = defineProps<{
   title?: string;
   hideReset?: boolean;
   hideSearch?: boolean;
+  hideFilter?: boolean;
   api?: (data: any) => Promise<{
     code: number;
     data: {
