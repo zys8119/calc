@@ -1,10 +1,17 @@
 <template>
   <div class="Index w-100% h-100%">
-    <search-table title="搜索客户">
+    {{ params }}
+    <search-table
+      v-model:params="params"
+      :api="$apis.test.aa"
+      :columns="columns"
+      is-pagination
+      title="搜索客户"
+    >
       <template #filter>
         <n-space>
           <filter-item title="客户名称">
-            <n-input></n-input>
+            <n-input v-model:value="params.name"></n-input>
           </filter-item>
           <filter-item title="跟进人">
             <n-input></n-input>
@@ -19,7 +26,16 @@
 </template>
 
 <script lang="ts" setup title="客户公海">
-import FilterItem from "@/components/filter-item.vue";
+const params = ref({});
+const columns = ref([
+  {
+    type: "selection",
+  },
+  {
+    key: "name",
+    title: "asdas",
+  },
+]);
 </script>
 
 <style lang="scss" scoped>

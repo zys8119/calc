@@ -14,8 +14,8 @@
         <div>
           <slot name="filter-btn">
             <n-space>
-              <n-button>重置</n-button>
-              <n-button type="primary">
+              <n-button @click="reset">重置</n-button>
+              <n-button type="primary" @click="search">
                 <template #icon>
                   <n-icon>
                     <Search />
@@ -31,18 +31,100 @@
     <div
       class="search-table-content bg-$white flex-1 flex flex-col b-rd-15px p-15px"
     >
-      <div class="search-table-table flex-1">asdas</div>
-      <div class="search-table-footer">asda</div>
+      <div class="search-table-table flex-1 flex flex-col">
+        <n-space align="center" class="m-b-15px" justify="space-between">
+          <n-space align="center" justify="center">
+            <n-button type="primary">导出</n-button>
+          </n-space>
+          <n-space align="center" justify="center">
+            <n-button ghost type="primary">批量倒入客户</n-button>
+            <n-button type="primary">新建客户</n-button>
+          </n-space>
+        </n-space>
+        <div class="flex-1">
+          {{ params }}
+          <n-data-table v-bind="dataTableProps"> </n-data-table>
+        </div>
+      </div>
+      <div class="search-table-footer"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { Search } from "@vicons/ionicons5";
+import { DataTableColumns, DataTableProps } from "naive-ui";
 
-defineProps<{
+const props = defineProps<{
   title?: string;
+  columns: DataTableColumns;
+  api: (data: any) => Promise<{
+    code: number;
+    data: {
+      list: any[];
+      total: number;
+    };
+    messages: string;
+  }>;
+  isPagination?: boolean;
+  params?: Record<any, any>;
 }>();
+const { params } = defineModels<{
+  params: Record<any, any>;
+}>();
+
+const checkedRowKeys = ref([]);
+const data = ref([]);
+const pagination = ref(
+  props.isPagination
+    ? {
+        page: 1,
+        pageSize: 15,
+        pageCount: 1,
+        itemCount: 0,
+        prefix({ itemCount, startIndex, endIndex }) {
+          return `第${startIndex}${endIndex}条/总共 ${itemCount} 条`;
+        },
+        showQuickJumper: true,
+        showSizePicker: true,
+      }
+    : {},
+);
+const dataTableProps = computed<DataTableProps>(() => ({
+  columns: props.columns,
+  checkedRowKeys: checkedRowKeys.value,
+  "onUpdate:checkedRowKeys"(data) {
+    checkedRowKeys.value = data as any;
+  },
+  rowKey: (row) => row.id,
+  remote: true,
+  data: data.value,
+  pagination: pagination.value,
+  "onUpdate:page"(d) {
+    console.log(d);
+  },
+}));
+const search = async () => {
+  const res = await props.api?.(params);
+  if (props.isPagination) {
+    data.value = l_get(res, "data.list", []);
+    pagination.value.itemCount = l_get(res, "data.total", 0);
+  } else {
+    data.value = l_get(res, "data", []);
+  }
+};
+const reset = async () => {
+  pagination.value.page = 1;
+  params.value = {};
+  await search();
+};
+onMounted(async () => {
+  await reset();
+});
+defineExpose({
+  search,
+  reset,
+});
 </script>
 
 <style lang="scss" scoped>
