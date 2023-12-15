@@ -174,10 +174,10 @@ onMounted(async () => {
 defineExpose({
   search,
   reset,
-  pagination: pagination.value,
-  checkedRowKeys: checkedRowKeys.value,
-  dataTableProps: dataTableProps.value,
-  table: tableRef.value,
+  pagination: pagination,
+  checkedRowKeys: checkedRowKeys,
+  dataTableProps: dataTableProps,
+  table: tableRef,
 });
 </script>
 
