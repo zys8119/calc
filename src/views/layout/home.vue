@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script lang="ts" path="/" setup></script>
+<script lang="ts" path="/" setup title="首页"></script>
 
 <style scoped lang="scss">
 .home {

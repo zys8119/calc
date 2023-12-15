@@ -4,7 +4,7 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup title="登录"></script>
 
 <style lang="scss" scoped>
 .login {
