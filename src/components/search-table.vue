@@ -1,21 +1,28 @@
 <template>
   <div class="search-table w-100% h-100% flex flex-col">
     <div
-      v-if="$slots.filter || $slots.filterBtn || title"
+      v-if="
+        $slots.filter ||
+        $slots['filter-btn'] ||
+        $slots['filter-btn-left'] ||
+        $slots['filter-btn-right'] ||
+        title
+      "
       class="search-table-filter bg-$white m-b-15px b-rd-15px p-15px"
     >
       <div v-if="title" class="text-16px text-#333 m-b-18px font-bold">
         {{ title }}
       </div>
       <div class="flex">
-        <div class="flex-1">
+        <div class="flex-1 gap-15px">
           <slot name="filter"></slot>
         </div>
         <div>
           <slot name="filter-btn">
             <n-space>
-              <n-button @click="reset">重置</n-button>
-              <n-button type="primary" @click="search">
+              <slot name="filter-btn-left"></slot>
+              <n-button v-if="!hideReset" @click="reset">重置</n-button>
+              <n-button v-if="!hideSearch" type="primary" @click="search">
                 <template #icon>
                   <n-icon>
                     <Search />
@@ -23,6 +30,7 @@
                 </template>
                 搜索
               </n-button>
+              <slot name="filter-btn-right"></slot>
             </n-space>
           </slot>
         </div>
@@ -32,20 +40,41 @@
       class="search-table-content bg-$white flex-1 flex flex-col b-rd-15px p-15px"
     >
       <div class="search-table-table flex-1 flex flex-col">
-        <n-space align="center" class="m-b-15px" justify="space-between">
-          <n-space align="center" justify="center">
-            <n-button type="primary">导出</n-button>
+        <n-space
+          v-if="$slots['table-filter-left'] || $slots['table-filter-right']"
+          align="center"
+          class="m-b-15px"
+          justify="space-between"
+        >
+          <n-space
+            v-if="$slots['table-filter-left']"
+            align="center"
+            justify="center"
+          >
+            <slot name="table-filter-left"></slot>
           </n-space>
-          <n-space align="center" justify="center">
-            <n-button ghost type="primary">批量倒入客户</n-button>
-            <n-button type="primary">新建客户</n-button>
+          <n-space
+            v-if="$slots['table-filter-right']"
+            align="center"
+            justify="center"
+          >
+            <slot name="table-filter-right"></slot>
           </n-space>
         </n-space>
         <div class="flex-1">
-          <n-data-table v-bind="dataTableProps"> </n-data-table>
+          <n-data-table ref="tableRef" v-bind="dataTableProps">
+            <template #empty>
+              <slot name="empty"></slot>
+            </template>
+            <template #loading>
+              <slot name="loading"></slot>
+            </template>
+          </n-data-table>
         </div>
       </div>
-      <div class="search-table-footer"></div>
+      <div v-if="$slots.footer" class="search-table-footer">
+        <slot name="footer"></slot>
+      </div>
     </div>
   </div>
 </template>
@@ -54,9 +83,12 @@
 import { Search } from "@vicons/ionicons5";
 import { DataTableColumns, DataTableProps } from "naive-ui";
 
+const tableRef = ref();
 const props = defineProps<{
-  title?: string;
   columns: DataTableColumns;
+  title?: string;
+  hideReset?: boolean;
+  hideSearch?: boolean;
   api?: (data: any) => Promise<{
     code: number;
     data: {
@@ -145,6 +177,7 @@ defineExpose({
   pagination: pagination.value,
   checkedRowKeys: checkedRowKeys.value,
   dataTableProps: dataTableProps.value,
+  table: tableRef.value,
 });
 </script>
 

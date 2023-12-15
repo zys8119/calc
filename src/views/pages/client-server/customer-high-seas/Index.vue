@@ -23,6 +23,13 @@
           </filter-item>
         </n-space>
       </template>
+      <template #table-filter-left>
+        <n-button type="primary">导出</n-button>
+      </template>
+      <template #table-filter-right>
+        <n-button ghost type="primary">批量倒入客户</n-button>
+        <n-button type="primary">新建客户</n-button>
+      </template>
     </search-table>
   </div>
 </template>
