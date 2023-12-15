@@ -8,7 +8,7 @@ const routerConfig: RouterConfig = {
   /**
    * 系统是否需要登录
    */
-  needLogin: true,
+  needLogin: false,
   /**
    * 是否使用 SessionStorage 记录登录状态
    * 如果为 false 则使用 LocalStorage

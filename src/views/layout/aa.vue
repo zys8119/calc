@@ -3,9 +3,9 @@
 </template>
 
 <script lang="ts" setup>
-request({
-  baseURL: "asda",
-});
+// request({
+//   baseURL: "asda",
+// });
 </script>
 
 <style scoped lang="scss">
