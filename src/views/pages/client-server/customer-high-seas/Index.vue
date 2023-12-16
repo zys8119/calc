@@ -41,15 +41,25 @@
         </n-button>
       </template>
       <template #table-filter-right>
-        <n-button ghost type="primary">批量倒入客户</n-button>
-        <n-button type="primary">新建客户</n-button>
+        <n-button ghost type="primary">
+          <template #icon>
+            <svg-icon name="add"></svg-icon>
+          </template>
+          批量导入客户
+        </n-button>
+        <n-button type="primary">
+          <template #icon>
+            <svg-icon name="add"></svg-icon>
+          </template>
+          新建客户
+        </n-button>
       </template>
     </search-table>
   </div>
 </template>
 
 <script lang="ts" setup title="客户公海">
-import { DataTableColumns } from "naive-ui";
+import { DataTableColumns, NButton, NDropdown } from "naive-ui";
 
 const table = $ref();
 const params = ref({});
@@ -59,16 +69,83 @@ const columns = ref<DataTableColumns>([
     type: "selection",
   },
   {
+    title: "客户名称",
     key: "name",
-    title: "asdas",
+  },
+  {
+    title: "联系人",
+    key: "name",
+  },
+  {
+    title: "联系电话",
+    key: "name",
+  },
+  {
+    title: "微信群号",
+    key: "name",
+  },
+  {
+    title: "跟进阶段",
+    key: "name",
+    render(row: any, index) {
+      const color = ["#f0a168", "#ed7b71", "#b8dc81", "#e8e7e8"][index];
+      return h(
+        NButton,
+        {
+          type: "primary",
+          round: true,
+          size: "small",
+          textColor: color === "#e8e7e8" ? "#b9b7b8" : undefined,
+          color: color || "#f00",
+        },
+        () => row.name,
+      );
+    },
+  },
+  {
+    title: "跟进人",
+    key: "name",
+  },
+  {
+    title: "操作",
+    key: "name",
+    render(row: any): any {
+      return h(
+        NDropdown,
+        {
+          menuProps: () => ({
+            class: "b b-solid b-1px b-#e1e0e0",
+          }),
+          options: [
+            {
+              label: "设置跟进人",
+              key: "1",
+            },
+            {
+              label: "详情",
+              key: "2",
+            },
+            {
+              label: "编辑基本信息",
+              key: "3",
+            },
+            {
+              label: "删除",
+              key: "4",
+            },
+          ],
+          onSelect(key) {
+            console.log(key, row);
+          },
+        },
+        () => "操作",
+      );
+    },
   },
 ]);
 const resetParams = () => {
   params.value = {};
 };
-onMounted(async () => {
-  console.log(await table);
-});
 </script>
 
 <style lang="scss" scoped>
