@@ -18,7 +18,7 @@
             :name="item.icon"
             class="w-28px h-28px m-b--4px"
           ></svg-icon>
-          <img :src="item.icon" alt="" class="w-22px h-22px m-b-4px" />
+          <img v-else :src="item.icon" alt="" class="w-22px h-22px m-b-4px" />
           <div>{{ item.title }}</div>
         </div>
       </div>
