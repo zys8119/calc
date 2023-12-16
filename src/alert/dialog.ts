@@ -15,6 +15,15 @@ const useInitGlobalProperties = () => {
       for (const [k, v] of globalPropertiesEntries) {
         app.config.globalProperties[k] = v;
       }
+      try {
+        for (const [k, v] of Object.entries(
+          appRoot.__vue_app__._context.components,
+        )) {
+          app.component(k, v as any);
+        }
+      } catch (e) {
+        // err
+      }
       isUseInitGlobalProperties = true;
     }
   } catch (e) {
@@ -47,11 +56,11 @@ const dialogDefault: DialogDefault = (
           })
       : undefined,
     class: "alert-dialog-custom-theme",
-    style: `width:${config.width || "auto"}`,
+    style: `width:${config.width || "70%"}`,
     showIcon: false,
     content: () =>
       typeof config.content === "object"
-        ? h(App, [
+        ? h(App, () => [
             h(
               defineAsyncComponent({
                 loader: () => config.content,

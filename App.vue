@@ -49,6 +49,13 @@ const themeVars = reactive({
   buttonPrimaryBackground: appConfig.themeColor,
   buttonPrimaryBorderColor: appConfig.themeColor,
 });
+const { height } = useWindowSize();
+watchEffect(() => {
+  document.body.style.setProperty(
+    "--n-dialog-max-height",
+    `${height.value - 117}px`,
+  );
+});
 </script>
 
 <style scoped lang="scss">

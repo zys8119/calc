@@ -47,7 +47,7 @@
           </template>
           批量导入客户
         </n-button>
-        <n-button type="primary">
+        <n-button type="primary" @click="add">
           <template #icon>
             <svg-icon name="add"></svg-icon>
           </template>
@@ -145,6 +145,13 @@ const columns = ref<DataTableColumns>([
 ]);
 const resetParams = () => {
   params.value = {};
+};
+const add = async () => {
+  $alert.dialog({
+    title: "新建客户",
+    content: import("./alert/add.vue"),
+    width: "800px",
+  });
 };
 </script>
 
