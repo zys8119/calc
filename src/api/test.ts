@@ -1,6 +1,5 @@
 export default {
-  test(data: any) {
-    console.log(data);
+  test() {
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve({
