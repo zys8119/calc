@@ -72,6 +72,7 @@ export default defineConfig({
     }),
     UnoCss(),
     Components({
+      extensions: ["vue", "tsx"],
       dts: "components.d.ts",
       resolvers: [NaiveUiResolver(), VantResolver()],
     }),

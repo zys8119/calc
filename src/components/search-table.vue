@@ -30,9 +30,7 @@
               <n-button v-if="!hideReset" @click="reset">重置</n-button>
               <n-button v-if="!hideSearch" type="primary" @click="search">
                 <template #icon>
-                  <n-icon>
-                    <Search />
-                  </n-icon>
+                  <svg-icon name="search"></svg-icon>
                 </template>
                 搜索
               </n-button>
@@ -92,7 +90,6 @@
 </template>
 
 <script lang="ts" setup>
-import { Search } from "@vicons/ionicons5";
 import { DataTableColumns, DataTableProps } from "naive-ui";
 
 const tableRef = ref();

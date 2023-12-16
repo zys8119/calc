@@ -9,9 +9,15 @@
           :class="{
             active: $store.nav.menusActive === key,
           }"
-          class="navbarItem w-$navbar-width h-42px text-$white p-y-10px flex flex-col justify-center items-center"
+          class="navbarItem w-$navbar-width h-42px text-$white p-y-15px flex flex-col justify-center items-center"
           @click="setMenusActive(key)"
         >
+          <svg-icon
+            v-if="isSvgIcon(item.icon)"
+            :icon-props="{ size: 28 }"
+            :name="item.icon"
+            class="w-28px h-28px m-b--4px"
+          ></svg-icon>
           <img :src="item.icon" alt="" class="w-22px h-22px m-b-4px" />
           <div>{{ item.title }}</div>
         </div>
@@ -34,6 +40,8 @@
 </template>
 
 <script lang="ts" setup>
+import SvgIcon from "@/components/svg-icon";
+
 const router = useRouter();
 const route = useRoute();
 const defaultSelectedKeys = ref([]);
@@ -83,6 +91,9 @@ const setMenusActive = (key: number) => {
     }
   });
 };
+const isSvgIcon = (src: string) => {
+  return !/^(http|\/{2})|\.(png|jpg|jpeg|gif|bmp)$/.test(src);
+};
 const renderLabel = ({ option }: any) => {
   return h(
     "div",
@@ -93,7 +104,19 @@ const renderLabel = ({ option }: any) => {
       },
     },
     [
-      h("img", { class: "navbarTreeItemIcon", src: option.icon }, option.title),
+      isSvgIcon(option.icon)
+        ? h(SvgIcon, {
+            name: option.icon,
+            class: "navbarTreeItemIcon",
+            iconProps: {
+              size: 18,
+            },
+          })
+        : h(
+            "img",
+            { class: "navbarTreeItemIcon", src: option.icon },
+            option.title,
+          ),
       h("span", { class: "navbarTreeItemLabel" }, option.title),
     ],
   );
@@ -150,6 +173,9 @@ onMounted(async () => {
         margin-right: 15px;
         width: 18px;
         filter: invert(0.1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .navbarTreeItemLabel {

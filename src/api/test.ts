@@ -1,5 +1,5 @@
 export default {
-  aa(data: any) {
+  test(data: any) {
     console.log(data);
     return new Promise((resolve) => {
       setTimeout(() => {
@@ -13,7 +13,7 @@ export default {
                 name: "asdas",
                 title: "asdas",
               })),
-            total: 1000,
+            total: 100,
           },
           messages: "success",
         });
