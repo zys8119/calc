@@ -77,7 +77,7 @@ dialogDefault.close = () => {
   const dialogPop = dialogCaches.pop();
   setTimeout(() => {
     dialogPop?.destroy();
-  }, 500);
+  }, 100);
 };
 dialogDefault.closeAll = () => {
   while (dialogCaches.length > 0) {
