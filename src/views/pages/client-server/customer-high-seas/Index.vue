@@ -129,6 +129,9 @@ const columns = ref<DataTableColumns>([
         {
           label: "详情",
           key: "2",
+          click() {
+            $router.push("./details");
+          },
         },
         {
           label: "编辑基本信息",

@@ -3,8 +3,7 @@ import { App, Plugin } from "vue";
 import "@vue/runtime-core";
 import { createDiscreteApi } from "naive-ui";
 import piniaStore from "@/store";
-
-const router = useRouter();
+import router from "@pwd/route";
 
 const { message, notification, dialog, loadingBar } = createDiscreteApi([
   "message",

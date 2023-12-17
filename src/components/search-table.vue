@@ -72,14 +72,16 @@
           </n-space>
         </n-space>
         <div class="flex-1">
-          <n-data-table ref="tableRef" v-bind="dataTableProps">
-            <template #empty>
-              <slot name="empty"></slot>
-            </template>
-            <template #loading>
-              <slot name="loading"></slot>
-            </template>
-          </n-data-table>
+          <slot name="table">
+            <n-data-table ref="tableRef" v-bind="dataTableProps">
+              <template #empty>
+                <slot name="empty"></slot>
+              </template>
+              <template #loading>
+                <slot name="loading"></slot>
+              </template>
+            </n-data-table>
+          </slot>
         </div>
       </div>
       <div v-if="$slots.footer" class="search-table-footer">
@@ -94,7 +96,7 @@ import { DataTableColumns, DataTableProps } from "naive-ui";
 
 const tableRef = ref();
 const props = defineProps<{
-  columns: DataTableColumns;
+  columns?: DataTableColumns;
   title?: string;
   hideReset?: boolean;
   hideSearch?: boolean;
@@ -113,8 +115,8 @@ const props = defineProps<{
   resetParams?: (params: Record<any, any>) => any;
 }>();
 const { params, data, tableProps } = defineModels<{
-  params: Record<any, any>;
-  data: any[];
+  params?: Record<any, any>;
+  data?: any[];
   tableProps?: Partial<DataTableProps>;
 }>();
 
