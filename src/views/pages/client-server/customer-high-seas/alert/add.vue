@@ -41,7 +41,7 @@ const save = async () => {
   try {
     await vine.validate({
       schema: vine.object({
-        address: vine.string().maxLength(1),
+        address: vine.string().minLength(1),
       }),
       data: formData.value,
     });
