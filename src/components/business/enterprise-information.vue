@@ -16,13 +16,13 @@
       </n-grid>
       <n-grid :cols="6" x-gap="15">
         <n-grid-item :span="2" class="flex items-center">
-          <n-space class="m-l-50px" justify="center" vertical>
+          <n-space class="m-l-42px" justify="center" vertical>
             <filter-item :size="0" justify="start" title="客户地址"
-              >鄞州区深蓝大厦1233栋3726号</filter-item
-            >
+              >鄞州区深蓝大厦1233栋3726号
+            </filter-item>
             <filter-item :size="0" justify="start" title="跟进阶段"
-              >鄞州区深蓝大厦1233栋3726号</filter-item
-            >
+              >鄞州区深蓝大厦1233栋3726号
+            </filter-item>
           </n-space>
         </n-grid-item>
         <n-grid-item :span="2" class="flex items-center">

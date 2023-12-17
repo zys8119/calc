@@ -7,7 +7,9 @@
       <template #middle>
         <enterprise-information></enterprise-information>
       </template>
-      <template #table> asda4234242342</template>
+      <template #table>
+        <user-information></user-information>
+      </template>
     </search-table>
   </div>
 </template>
