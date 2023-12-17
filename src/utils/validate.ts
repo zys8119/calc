@@ -4,30 +4,17 @@ import {
   SchemaTypes,
   ValidationFields,
 } from "@vinejs/vine/build/src/types";
+import { RuleTemplate, ruleTemplate } from "@/config/ruleTemplate";
 
-type MessagesType = (
-  defaultMessage: string,
-  rule: string,
-  field: FieldContext,
-  args?: Record<string, any>,
-) => string;
-
-function createMessages(): Record<any, string | MessagesType> {
-  return {
-    required: "【{{field}}】必填选项",
-    string: "【{{field}}】必须是字符串",
-    email: "【{{field}}】必须是有效邮箱",
-    date: "【{{field}}】必须是有效时间",
-    minLength: "【{{field}}】 长度至少为{{min}}",
-    maxLength: "【{{field}}】 长度最大为{{max}}",
-  };
+function createMessages(): Record<any, RuleTemplate> {
+  return ruleTemplate;
 }
 
 type Fields = Record<
   any,
   | {
       title: string;
-      message?: string | MessagesType;
+      message?: RuleTemplate;
       rule?: SchemaTypes;
     }
   | string
