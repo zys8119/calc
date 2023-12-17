@@ -59,9 +59,10 @@
 </template>
 
 <script lang="ts" setup title="客户公海">
-import { DataTableColumns, NButton, NDropdown } from "naive-ui";
+import { DataTableColumns, NButton, NDropdown, NSpace } from "naive-ui";
+import svgIcon from "@/components/svg-icon";
 
-const table = $ref();
+const table = $ref<any>();
 const params = ref({});
 const data = ref([{ name: "虎虎虎", id: 0 }]);
 const columns = ref<DataTableColumns>([
@@ -110,35 +111,60 @@ const columns = ref<DataTableColumns>([
     title: "操作",
     key: "name",
     render(row: any): any {
+      const options = [
+        {
+          label: "设置跟进人",
+          key: "1",
+          click() {
+            $alert.dialog({
+              title: this.label,
+              content: import("./alert/setupgjr.vue"),
+              props: {
+                row,
+              },
+              width: "500px",
+            });
+          },
+        },
+        {
+          label: "详情",
+          key: "2",
+        },
+        {
+          label: "编辑基本信息",
+          key: "3",
+        },
+        {
+          label: "删除",
+          key: "4",
+          async click() {
+            await $utils.confirm({
+              content: "确定删除该数据吗？",
+            });
+          },
+        },
+      ];
       return h(
         NDropdown,
         {
           menuProps: () => ({
             class: "b b-solid b-1px b-#e1e0e0",
           }),
-          options: [
-            {
-              label: "设置跟进人",
-              key: "1",
-            },
-            {
-              label: "详情",
-              key: "2",
-            },
-            {
-              label: "编辑基本信息",
-              key: "3",
-            },
-            {
-              label: "删除",
-              key: "4",
-            },
-          ],
+          options,
           onSelect(key) {
-            console.log(key, row);
+            (options.find((e) => e.key === key) as any)?.click?.();
           },
         },
-        () => "操作",
+        () =>
+          h(
+            NSpace,
+            {
+              justify: "center",
+              align: "center",
+              size: 0,
+            },
+            () => ["操作", h(svgIcon, { name: "xiala" })],
+          ),
       );
     },
   },
@@ -151,6 +177,9 @@ const add = async () => {
     title: "新建客户",
     content: import("./alert/add.vue"),
     width: "800px",
+    props: {
+      onSave: table.search,
+    },
   });
 };
 </script>

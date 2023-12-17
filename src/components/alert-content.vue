@@ -3,12 +3,17 @@
     <div class="alert-content-box flex-1 of-x-hidden hide-scrollbar">
       <slot></slot>
     </div>
-    <div class="m-t-15px flex justify-center items-center gap-15px">
+    <div
+      v-if="!hideCancel || !hideConfirm || $slots.button"
+      class="m-t-30px flex justify-center items-center gap-15px"
+    >
       <slot name="button">
-        <n-button @click="cancel">{{ textCancel || "取消" }}</n-button>
-        <n-button type="primary" @click="$emit('confirm')">{{
-          textConfirm || "确定"
+        <n-button v-if="!hideCancel" @click="cancel">{{
+          textCancel || "取消"
         }}</n-button>
+        <n-button v-if="!hideConfirm" type="primary" @click="$emit('save')"
+          >{{ textConfirm || "确定" }}
+        </n-button>
       </slot>
     </div>
   </div>
@@ -22,7 +27,7 @@ defineProps<{
   textConfirm?: string;
 }>();
 defineEmits<{
-  (e: "confirm"): void;
+  (e: "save"): void;
 }>();
 const cancel = () => {
   $alert.dialog.close();
@@ -32,7 +37,7 @@ const cancel = () => {
 <style lang="less" scoped>
 .alert-content {
   .alert-content-box {
-    max-height: calc(var(--n-dialog-max-height) - 50px);
+    max-height: calc(var(--n-dialog-max-height) - 80px);
   }
 }
 </style>

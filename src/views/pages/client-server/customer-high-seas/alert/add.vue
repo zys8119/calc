@@ -1,6 +1,6 @@
 <template>
   <div class="add">
-    <alert-content text-confirm="保存" @confirm="save">
+    <alert-content text-confirm="保存" @save="save">
       <div class="flex gap-30px justify-between">
         <n-form label-align="left" label-placement="left" label-width="120px">
           <n-form-item label="客户logo">
@@ -103,7 +103,6 @@ const save = async () => {
   await $utils.validate(formData.value, {
     name: "客户名称",
   });
-  console.log("保存");
   emit("save");
   $alert.dialog.close();
 };

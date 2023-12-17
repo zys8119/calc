@@ -1,7 +1,7 @@
 <template>
   <div class="dialogAlertTitle p-b-23px w-100%">
     <div class="dialogAlertTitleLine" />
-    <div class="dialogAlertTitleContent">
+    <div class="dialogAlertTitleContent w-100%">
       <n-ellipsis style="max-width: 100%">{{ title }}</n-ellipsis>
     </div>
   </div>
@@ -16,8 +16,6 @@ defineProps<{
 <style scoped lang="less">
 .dialogAlertTitle {
   &Content {
-    width: 76px;
-    height: 25px;
     font-size: 18px;
     font-weight: 500;
     color: #333333;
