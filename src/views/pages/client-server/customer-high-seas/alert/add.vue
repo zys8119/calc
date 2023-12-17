@@ -22,7 +22,10 @@
         </n-form>
         <n-form label-align="left" label-placement="left" label-width="120px">
           <n-form-item label="客户名称" required>
-            <n-input placeholder="请输入客户名称" />
+            <n-input
+              v-model:value="formData.name"
+              placeholder="请输入客户名称"
+            />
           </n-form-item>
           <n-form-item label="微信群号">
             <n-input placeholder="请输入微信群号" />
@@ -34,21 +37,12 @@
 </template>
 
 <script lang="ts" setup>
-import vine from "@vinejs/vine";
-
 const formData = ref({});
 const save = async () => {
-  try {
-    await vine.validate({
-      schema: vine.object({
-        address: vine.string().minLength(1),
-      }),
-      data: formData.value,
-    });
-    console.log("保存");
-  } catch (e: any) {
-    $message.error(e.messages?.[0].message || e.message);
-  }
+  await $utils.validate(formData.value, {
+    name: "客户地址",
+  });
+  console.log("保存");
 };
 </script>
 
