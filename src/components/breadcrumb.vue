@@ -8,7 +8,7 @@
   </div>
 </template>
 
-<script lang="ts" name="详情" setup>
+<script lang="ts" setup>
 const route = useRoute();
 const menusFlat = computed(() => {
   return $utils.flat.objectDeep<any>(
@@ -39,6 +39,7 @@ const munes = computed(() =>
     };
   }),
 );
+console.log($router.options.routes);
 </script>
 
 <style lang="less" scoped></style>

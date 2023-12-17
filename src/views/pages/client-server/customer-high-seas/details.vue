@@ -10,6 +10,6 @@
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup title="详情"></script>
 
 <style lang="less" scoped></style>
