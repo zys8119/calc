@@ -1,7 +1,7 @@
 <template>
   <div class="confirm">
     <alert-content @save="save">
-      <div class="text-#000">{{ content }}</div>
+      <div class="text-#666">{{ content }}</div>
     </alert-content>
   </div>
 </template>
@@ -10,7 +10,9 @@
 defineProps<{
   content: string;
 }>();
-const emit = defineEmits(["save111"]);
+const emit = defineEmits<{
+  (e: "save"): void;
+}>();
 const save = async () => {
   emit("save");
   $alert.dialog.close();

@@ -35,6 +35,7 @@ type DialogConfigType = {
   title: any;
   props?: Record<string, any>;
   width?: string | undefined;
+  onClose?(): void;
 };
 const dialogCaches: Array<DialogReactive> = [];
 interface DialogDefault {
@@ -69,6 +70,7 @@ const dialogDefault: DialogDefault = (
             ),
           ])
         : config.content,
+    onClose: () => config.onClose?.(),
   } as any);
   dialogCaches.push(dialogApp);
   return dialogApp;
