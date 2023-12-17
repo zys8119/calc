@@ -182,6 +182,10 @@ const add = async () => {
     },
   });
 };
+
+await $utils.confirm({
+  content: "确定删除该数据吗？",
+});
 </script>
 
 <style lang="scss" scoped>
