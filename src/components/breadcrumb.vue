@@ -1,6 +1,6 @@
 <template>
   <div class="breadcrumb">
-    <n-breadcrumb>
+    <n-breadcrumb separator=">">
       <n-breadcrumb-item
         v-for="(item, key) in munes"
         :key="key"
@@ -43,7 +43,18 @@ const munes = computed(() =>
     };
   }),
 );
-console.log($router.options.routes);
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+.breadcrumb {
+  :deep(.n-breadcrumb) {
+    .n-breadcrumb-item {
+      &:last-child {
+        .n-breadcrumb-item__link {
+          color: var(--primaryColor);
+        }
+      }
+    }
+  }
+}
+</style>
