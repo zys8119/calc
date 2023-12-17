@@ -1,0 +1,8 @@
+{
+  "layout.vue": {
+    "redirect": "/"
+  },
+  "pages": {
+    "redirect": "/"
+  }
+}

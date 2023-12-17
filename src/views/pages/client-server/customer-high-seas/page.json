@@ -1,5 +1,5 @@
 {
   "customer-high-seas": {
-    "redirect": "page-client-server-customer-high-seas-Index"
+    "redirect": "/pages/client-server/customer-high-seas/Index"
   }
 }
