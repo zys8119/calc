@@ -1,7 +1,11 @@
 <template>
   <div class="breadcrumb">
     <n-breadcrumb>
-      <n-breadcrumb-item v-for="(item, key) in munes" :key="key">
+      <n-breadcrumb-item
+        v-for="(item, key) in munes"
+        :key="key"
+        :href="item.path"
+      >
         {{ item.title }}
       </n-breadcrumb-item>
     </n-breadcrumb>
@@ -34,7 +38,7 @@ const munes = computed(() =>
           .join("/")
       ]?.title || route.meta?.title;
     return {
-      path: e.path,
+      path: typeof e.path === "string" ? `/#${e.path}` : null,
       title,
     };
   }),
