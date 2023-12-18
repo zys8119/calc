@@ -26,12 +26,14 @@
   "workspaces": [
     "packages/*"
   ],
+  "type": "module",
   "dependencies": {
     "@unocss/preset-wind": "^0.58.0",
     "@vinejs/vine": "^1.7.0",
     "@vueuse/core": "^10.7.0",
     "less": "^4.2.0",
     "lodash": "^4.17.21",
+    "lodash-es": "^4.17.21",
     "naive-ui": "^2.35.0",
     "pinia": "^2.1.7",
     "sass": "^1.69.5",

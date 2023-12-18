@@ -24,7 +24,7 @@ export const lodashResolvers: Resolver = function (name: string) {
     return {
       name: name.replace(/^l_/, ""),
       as: name,
-      from: "lodash",
+      from: "lodash_es",
     };
   }
 };

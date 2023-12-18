@@ -66,7 +66,7 @@
           </n-form-item>
         </n-form>
         <n-form label-align="left" label-placement="left" label-width="120px">
-          <n-form-item label="联系方式" required>
+          <n-form-item label="联系方式">
             <n-input v-model:value="item.name" placeholder="请输入联系人" />
           </n-form-item>
           <n-form-item label="邮箱">
