@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import configBase from "@/config/base";
 
-const title = ref(configBase.html.title);
+const title = ref(import.meta.env.VITE_TITLE || configBase.html.title);
 </script>
 
 <style lang="scss" scoped>
