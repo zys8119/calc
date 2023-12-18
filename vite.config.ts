@@ -45,6 +45,7 @@ export default defineConfig({
     AutoRoute({
       views: "src/views",
       routes_extend: "./src/router/route.ts",
+      routesFilter: /\/(alert|component)\//,
     }),
     AutoApi({
       resolveAliasName: "@/api",
