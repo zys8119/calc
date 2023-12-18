@@ -52,10 +52,10 @@ const routes = computed(() =>
   ),
 );
 const getUrl = (e: any) => {
-  const routeInfo = routes.value[e.filename] || routes.value[e.filePath];
+  const routeInfo = routes.value[e.filename] || routes.value[e.filePath] || {};
   return {
     ...e,
-    url: e.url || "/" + routeInfo?.key.replace(/\.[^.]+$/g, ""),
+    url: e.url || "/" + routeInfo?.key?.replace?.(/\.[^.]+$/g, ""),
     redirect: e.redirect || routeInfo?.redirect,
   };
 };
