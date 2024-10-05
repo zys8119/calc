@@ -1,0 +1,53 @@
+.navbar .navbarItem[data-v-c44ff8c8] {
+  cursor: pointer;
+  user-select: none;
+}
+.navbar .navbarItem.active[data-v-c44ff8c8] {
+  background-color: var(--navbar-color-active);
+}
+.navbar .navbarItem[data-v-c44ff8c8]:hover {
+  background-color: var(--navbar-color-hover);
+}
+.navbar[data-v-c44ff8c8] .n-tree .n-tree-node-content {
+  flex: 1;
+}
+.navbar[data-v-c44ff8c8] .n-tree .n-tree-node-switcher--hide {
+  display: none;
+}
+.navbar[data-v-c44ff8c8] .n-tree .navbarTreeItem {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  padding: 0 23px;
+  border-radius: 8px;
+  color: #666;
+}
+.navbar[data-v-c44ff8c8] .n-tree .navbarTreeItem .navbarTreeItemIcon {
+  margin-right: 15px;
+  width: 18px;
+  filter: invert(0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar[data-v-c44ff8c8] .n-tree .navbarTreeItem .navbarTreeItemLabel {
+  flex: 1;
+}
+.navbar[data-v-c44ff8c8] .n-tree .n-tree-node--selected .n-tree-node-content {
+  background-color: transparent !important;
+}
+.navbar[data-v-c44ff8c8] .n-tree .n-tree-node--selected .navbarTreeItem {
+  background-color: var(--primaryColor);
+  color: #fff;
+}
+.navbar[data-v-c44ff8c8]
+  .n-tree
+  .n-tree-node--selected
+  .navbarTreeItem
+  .navbarTreeItemIcon {
+  filter: invert(0);
+}
+.layout .n-layout-sider[data-v-16b3f60e] {
+  width: var(--aside-width) !important;
+  max-width: var(--aside-width) !important;
+}
