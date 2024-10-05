@@ -98,4 +98,7 @@ export default defineConfig({
       "@pwd": resolve(__dirname, "./"),
     },
   },
+  build: {
+    outDir: "docs",
+  },
 });
