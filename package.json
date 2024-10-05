@@ -40,7 +40,7 @@
     "unocss": "^0.58.0",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5",
-    "wp-request": "workspace:^"
+    "wp-request": "^1.2.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
