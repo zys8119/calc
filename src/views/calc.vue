@@ -107,7 +107,7 @@ const question = computed<QuestionType>(() => {
 const { query } = useRoute();
 const operators = ref(String(query.op).match(/\+|-|\*|\//g) || ["+", "-"]);
 const range = ref({
-  min: Number(query.minr) || 0,
+  min: Number(query.minr) || 1,
   max: Number(query.maxr) || 10,
 });
 const numOfQuestions = ref(10); // 生成的题目数量
