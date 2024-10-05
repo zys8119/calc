@@ -13,7 +13,7 @@
           }"
         >
           {{ item.icon }}
-          <span class="abs-end-bottom text-12px">{{ item.index }}</span>
+          <!-- <span class="abs-end-bottom text-12px">{{ item.index }}</span> -->
         </div>
       </div>
       <div class="question">{{ question.question }} = ?</div>
