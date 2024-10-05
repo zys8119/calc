@@ -2,7 +2,7 @@
   <div class="calc abs-content">
     <div class="container abs-r" v-if="question.question">
       <h1>可爱的数学题</h1>
-      <div class="flex text-40px flex-wrap gap-5px">
+      <div class="flex-center text-40px flex-wrap gap-5px">
         <div
           class="abs-r flex-center of-hidden"
           v-for="(item, i) in question.expressionLengthArr || 0"
@@ -104,13 +104,22 @@ const question = computed<QuestionType>(() => {
   return item;
 });
 // 示例使用：生成 3 个算式，确保所有结果是整数
-const operators = ref(["+", "-"]);
-const range = ref({ min: 1, max: 10 });
+const { query } = useRoute();
+const operators = ref(String(query.op).match(/\+|-|\*|\//g) || ["+", "-"]);
+const range = ref({
+  min: Number(query.minr) || 0,
+  max: Number(query.maxr) || 10,
+});
 const numOfQuestions = ref(10); // 生成的题目数量
-const minLength = ref(2); // 最短长度
-const maxLength = ref(3); // 最长长度
+const minLength = ref(Number(query.min) || 2); // 最短长度
+const maxLength = ref(Number(query.max) || 3); // 最长长度
 const ensureIntegers = ref(true); // 确保所有结果都是整数
-const icons = ref(["💣", "🧨", "🪓", "🧲", "🔧", "🔫", "🩸", "🎈", "❤️", "⚙️"]); // 确保所有结果都是整数
+const iconStr = "💣🧨🪓🧲🔧🔫🩸🎈❤️⚙️🚀🚁🎠🎱🏀⚽️🏈🥎🥄🍷🥃🍸🍺🍭🥑🍓🫐🍈🍑";
+const icons = ref(
+  Array.from(
+    new Intl.Segmenter("en", { granularity: "grapheme" }).segment(iconStr),
+  ).map((e) => e.segment),
+); // 确保所有结果都是整数
 const answer = ref<number>();
 const speak = (text: string) => {
   speechSynthesis.cancel();
@@ -269,7 +278,7 @@ onMounted(() => {
   border: 2px solid #ffcc00;
   border-radius: 20px;
   padding: 20px;
-  width: 350px;
+  width: calc(100% - 40px);
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   margin: auto;
 }
