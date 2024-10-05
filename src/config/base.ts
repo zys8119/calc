@@ -2,7 +2,7 @@ import { BaseConfig } from "@/types/BaseConfig";
 
 const BaseConfig: BaseConfig = {
   html: {
-    title: "慧营销",
+    title: "工具集",
   },
   unique: "",
 };
