@@ -1,36 +1,43 @@
 <template>
   <div class="calc abs-content">
     <div class="container abs-r" v-if="question.question">
-      <h1>可爱的数学题</h1>
-      <div class="flex-center text-40px flex-wrap gap-5px">
-        <div
-          class="abs-r flex-center of-hidden"
-          v-for="(item, i) in question.expressionLengthArr || 0"
-          :key="i"
-          :class="{
-            'diagonal-stripe': item.type === 'delete',
-            'op-30': item.type === 'delete',
-          }"
-        >
-          {{ item.icon }}
-          <!-- <span class="abs-end-bottom text-12px">{{ item.index }}</span> -->
+      <div v-if="isComplete">
+        <h1>恭喜你，完成所有题目！</h1>
+        <div class="text-100px bold">🏆🥇</div>
+        <button @click="reset">重新开始</button>
+      </div>
+      <template v-else>
+        <h1>可爱的数学题</h1>
+        <div class="flex-center text-40px flex-wrap gap-5px">
+          <div
+            class="abs-r flex-center of-hidden"
+            v-for="(item, i) in question.expressionLengthArr || 0"
+            :key="i"
+            :class="{
+              'diagonal-stripe': item.type === 'delete',
+              'op-30': item.type === 'delete',
+            }"
+          >
+            {{ item.icon }}
+            <!-- <span class="abs-end-bottom text-12px">{{ item.index }}</span> -->
+          </div>
         </div>
-      </div>
-      <div class="question">{{ question.question }} = ?</div>
+        <div class="question">{{ question.question }} = ?</div>
 
-      <div class="input-container">
-        <input
-          @keyup.enter="checkAnswer"
-          v-model="answer"
-          type="number"
-          placeholder="你的答案"
-        />
-      </div>
-      <button @click="checkAnswer">提交</button>
-      <div class="feedback" id="feedback"></div>
-      <div class="abs-end top-15px right-15px text-#999">
-        {{ active + 1 }}/{{ list.length }}
-      </div>
+        <div class="input-container">
+          <input
+            @keyup.enter="checkAnswer"
+            v-model="answer"
+            type="number"
+            placeholder="你的答案"
+          />
+        </div>
+        <button @click="checkAnswer">提交</button>
+        <div class="feedback" id="feedback"></div>
+        <div class="abs-end top-15px right-15px text-#999">
+          {{ active + 1 }}/{{ list.length }}
+        </div>
+      </template>
     </div>
   </div>
 </template>
@@ -110,7 +117,7 @@ const range = ref({
   min: Number(query.minr) || 1,
   max: Number(query.maxr) || 10,
 });
-const numOfQuestions = ref(10); // 生成的题目数量
+const numOfQuestions = ref(Number(query.num) || 10); // 生成的题目数量
 const minLength = ref(Number(query.min) || 2); // 最短长度
 const maxLength = ref(Number(query.max) || 3); // 最长长度
 const ensureIntegers = ref(true); // 确保所有结果都是整数
@@ -121,6 +128,7 @@ const icons = ref(
   ).map((e) => e.segment),
 ); // 确保所有结果都是整数
 const answer = ref<number>();
+const isComplete = ref<boolean>(false);
 const speak = (text: string) => {
   speechSynthesis.cancel();
   setTimeout(() => {
@@ -137,6 +145,7 @@ function checkAnswer() {
     if (active.value == list.value.length - 1) {
       feedback.innerHTML =
         '<span class="happy-face">😊</span> 恭喜你，完成所有题目！';
+      isComplete.value = true;
       return speak("恭喜你，完成所有题目！");
     }
     speak("太棒了！答对啦！");
@@ -235,7 +244,9 @@ function generateRandomQuestionsWithAnswers(
 
   return questionsWithAnswers;
 }
-
+const reset = () => {
+  location.reload();
+};
 onMounted(() => {
   list.value = generateRandomQuestionsWithAnswers(
     numOfQuestions.value,
@@ -253,6 +264,7 @@ onMounted(() => {
   justify-content: center;
   align-items: center;
 }
+
 .diagonal-stripe {
   &::before {
     content: "";
@@ -282,10 +294,14 @@ onMounted(() => {
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
   margin: auto;
 }
+
 .text-ellipsis {
-  white-space: nowrap; /* 不换行 */
-  overflow: hidden; /* 超出部分隐藏 */
-  text-overflow: ellipsis; /* 使用省略符号 */
+  white-space: nowrap;
+  /* 不换行 */
+  overflow: hidden;
+  /* 超出部分隐藏 */
+  text-overflow: ellipsis;
+  /* 使用省略符号 */
 }
 
 h1 {
