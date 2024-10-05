@@ -8,9 +8,9 @@
       </div>
       <template v-else>
         <h1>可爱的数学题</h1>
-        <div class="flex-center text-40px flex-wrap gap-5px">
+        <div class="flex-center text-40px flex-wrap gap-5px questionIconBox">
           <div
-            class="abs-r flex-center of-hidden"
+            class="abs-r flex-center of-hidden questionIcon cursor-pointer"
             v-for="(item, i) in question.expressionLengthArr || 0"
             :key="i"
             :class="{
@@ -19,7 +19,9 @@
             }"
           >
             {{ item.icon }}
-            <!-- <span class="abs-end-bottom text-12px">{{ item.index }}</span> -->
+            <span class="abs-end-bottom text-12px hidden questionIndex">{{
+              item.index
+            }}</span>
           </div>
         </div>
         <div class="question">{{ question.question }} = ?</div>
@@ -90,7 +92,7 @@ const question = computed<QuestionType>(() => {
         }
       });
     } else {
-      icons = icons.concat(arr.map((e: any) => ({ icon: e, type: "init66" })));
+      icons = icons.concat(arr.map((e: any) => ({ icon: e, type: "init" })));
     }
   }
   icons = icons.reverse();
@@ -105,7 +107,7 @@ const question = computed<QuestionType>(() => {
     arr[e.type] += 1;
     return {
       ...e,
-      index: arr[e.type],
+      index: (e.type == "negative" ? "-" : "") + arr[e.type],
     };
   });
   return item;
@@ -355,5 +357,12 @@ button:hover {
 .sad-face {
   font-size: 50px;
   color: #ff4500;
+}
+.questionIconBox {
+  &:has(.questionIcon:hover) {
+    .questionIndex {
+      display: block;
+    }
+  }
 }
 </style>
