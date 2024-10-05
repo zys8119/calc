@@ -2,13 +2,18 @@
   <div class="calc abs-content">
     <div class="container abs-r" v-if="question.question">
       <h1>可爱的数学题</h1>
-      <div class="flex text-50px flex-wrap">
+      <div class="flex text-40px flex-wrap gap-5px">
         <div
-          class="b-1px b-dashed b-#999 b-rd-4px"
+          class="abs-r flex-center of-hidden"
           v-for="(item, i) in question.expressionLengthArr || 0"
           :key="i"
+          :class="{
+            'diagonal-stripe': item.type === 'delete',
+            'op-30': item.type === 'delete',
+          }"
         >
-          {{ item.icon }}-{{ item.type }}
+          {{ item.icon }}
+          <span class="abs-end-bottom text-12px">{{ item.index }}</span>
         </div>
       </div>
       <div class="question">{{ question.question }} = ?</div>
@@ -41,39 +46,61 @@ type QuestionType = {
 };
 const list = ref<Array<QuestionType>>([]);
 const question = computed<QuestionType>(() => {
-  const item = (list.value[active.value] || {
-    answer: 0,
-    expressionLengthArr: [],
-    question: null,
-  }) as any;
+  const item = JSON.parse(
+    JSON.stringify(
+      (list.value[active.value] || {
+        answer: 0,
+        expressionLengthArr: [],
+        question: null,
+      }) as any,
+    ),
+  );
   let icons: any = [];
-  let index = 0;
+  let indexs: any = [];
   for (let i = 0; i < item.expressionLengthArr.length; i++) {
     const element = item.expressionLengthArr[i];
-    const arr: any = Array.from(element.icon);
+    const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
+    const arr: any = Array.from(segmenter.segment(element.icon)).map(
+      (e) => e.segment,
+    );
     if (element.type === "+") {
-      icons = arr.map((e) => ({ icon: e, type: "init" })).concat(icons);
-      new Array(index).fill(0).forEach(() => {
+      icons = arr.map((e: any) => ({ icon: e, type: "init" })).concat(icons);
+      indexs.forEach((newIcon: any, k: number) => {
         const obj = icons.findLast((e: any) => e.type !== "delete");
         if (obj) {
           obj.type = "delete";
-          index -= 1;
+          obj.icon = newIcon;
+          indexs.splice(k, 1);
         }
       });
     } else if (element.type === "-") {
-      arr.forEach(() => {
+      arr.forEach((newIcon: any) => {
         const obj = icons.findLast((e: any) => e.type !== "delete");
         if (obj) {
           obj.type = "delete";
         } else {
-          index += 1;
+          indexs.push(newIcon);
         }
       });
     } else {
-      icons = icons.concat(arr.map((e) => ({ icon: e, type: "init66" })));
+      icons = icons.concat(arr.map((e: any) => ({ icon: e, type: "init66" })));
     }
   }
-  item.expressionLengthArr = icons;
+  icons = icons.reverse();
+  indexs.forEach(() => {
+    icons.push({
+      icon: "🚗",
+      type: "negative",
+    });
+  });
+  item.expressionLengthArr = icons.map((e: any, k: any, arr: any) => {
+    arr[e.type] = arr[e.type] || 0;
+    arr[e.type] += 1;
+    return {
+      ...e,
+      index: arr[e.type],
+    };
+  });
   return item;
 });
 // 示例使用：生成 3 个算式，确保所有结果是整数
@@ -81,7 +108,7 @@ const operators = ref(["+", "-"]);
 const range = ref({ min: 1, max: 10 });
 const numOfQuestions = ref(10); // 生成的题目数量
 const minLength = ref(2); // 最短长度
-const maxLength = ref(2); // 最长长度
+const maxLength = ref(3); // 最长长度
 const ensureIntegers = ref(true); // 确保所有结果都是整数
 const icons = ref(["💣", "🧨", "🪓", "🧲", "🔧", "🔫", "🩸", "🎈", "❤️", "⚙️"]); // 确保所有结果都是整数
 const answer = ref<number>();
@@ -105,7 +132,7 @@ function checkAnswer() {
     }
     speak("太棒了！答对啦！");
     active.value++;
-    answer.value = null;
+    answer.value = null as any;
   } else {
     feedback.innerHTML = '<span class="sad-face">😢</span> 再试试哦，加油！';
     speak("再试试哦，加油！");
@@ -216,6 +243,24 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.diagonal-stripe {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @gpp: 3%;
+    background: linear-gradient(
+      -45deg,
+      transparent 50% - @gpp,
+      #f00 50%,
+      transparent 50% + @gpp
+    );
+    transform-origin: 0 0;
+  }
 }
 
 .container {
