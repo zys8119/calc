@@ -7,6 +7,6 @@ export default [
   },
     {
         path: "/",
-        redirect: "/pages/home/home",
+        redirect: "/calc",
     },
 ] as RouteRecordRaw[];
