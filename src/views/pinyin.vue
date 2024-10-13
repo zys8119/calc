@@ -91,6 +91,13 @@ const data = computed<any>(() => {
             "tu3 si1 zi4 ji3 zi4 si1 zi3 nu3",
           ],
         },
+        {
+          title: "都准句子。",
+          pinyin: [
+            "zu3 fu4 he2 zu3 mu3 ca1 bo1 li",
+            "li4 li he2 na4 na du2 zi4 mu3",
+          ],
+        },
       ],
     },
   };
