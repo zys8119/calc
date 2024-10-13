@@ -1,5 +1,5 @@
 System.register(
-  ["./index-legacy-D2JH51JW.js", "./svg-icon-legacy-BD3OsVi1.js"],
+  ["./index-legacy-Q8n2PSZu.js", "./svg-icon-legacy-COxKwbqo.js"],
   function (e, n) {
     "use strict";
     var t,

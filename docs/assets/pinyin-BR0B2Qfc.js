@@ -1,20 +1,20 @@
-import { _ as K } from "./svg-icon-C90vq4_4.js";
+import { _ as L } from "./svg-icon-DgSBpzdX.js";
 import {
-  aF as L,
-  d as V,
-  r as m,
-  f as k,
+  aF as V,
+  d as G,
+  r as p,
+  f as r,
   h as D,
   e as C,
   t as o,
-  i as p,
+  i as w,
   F as c,
   j as s,
-  p as G,
+  p as H,
   o as B,
-  a as H,
+  a as e,
   _ as J,
-} from "./index-B2BSPBrj.js";
+} from "./index-D1df6D06.js";
 const Q = {
     3400: "qiū",
     3401: "tiàn",
@@ -41238,14 +41238,14 @@ function x(F, l) {
     y;
   return (
     (F = F.replace(/[\u4E00-\uFA29]|[\uE7C7-\uE7F3]|\w+/gi, function (j) {
-      return (y = U[r(j)]), y && u.push(y), y;
+      return (y = U[a(j)]), y && u.push(y), y;
     })),
     u
   );
 }
 x.STYLE_INITIAL = 0;
 x.STYLE_TONE = 1;
-function r(F) {
+function a(F) {
   return (escape(F).match(/^%u(\w+)$/) || [])[1];
 }
 function W(F) {
@@ -41257,10 +41257,10 @@ function W(F) {
     F
   );
 }
-x.unicode = r;
+x.unicode = a;
 x.normalize = W;
 var X = x;
-const Z = L(X),
+const Z = V(X),
   n2 = { class: "pingyin" },
   A2 = { class: "flex-center flex-col" },
   i2 = { class: "m-y-15px" },
@@ -41270,13 +41270,13 @@ const Z = L(X),
   E2 = { class: "flex flex-col gap-5px flex-wrap text-50px" },
   D2 = ["onClick"],
   B2 = ["src"],
-  F2 = V({
+  F2 = G({
     __name: "pinyin",
     setup(F) {
-      const l = G(),
-        u = m(Number(l.query.active) || 7),
-        y = k(() => {
-          const A = {
+      const l = H(),
+        u = p(Number(l.query.active) || 7),
+        y = r(() => {
+          const n = {
             7: {
               title: "拼音练习7（声母）",
               data: [
@@ -41307,7 +41307,7 @@ const Z = L(X),
               ],
             },
           };
-          return A[u.value] || A[7];
+          return n[u.value] || n[7];
         }),
         j = {
           a: ["ā", "á", "ǎ", "à"],
@@ -41317,58 +41317,61 @@ const Z = L(X),
           u: ["ū", "ú", "ǔ", "ù"],
           ü: ["ǖ", "ǘ", "ǚ", "ǜ"],
         },
-        e = Object.keys(j),
-        a = new RegExp(e.join("|")),
+        _ = Object.keys(j),
+        v = new RegExp(_.join("|")),
         q = Object.entries(j).reduce(
-          (A, [n, i]) => (
+          (n, [A, i]) => (
             i.forEach((h, g) => {
-              A[h] = { name: n, index: g + 1 };
+              n[h] = { name: A, index: g + 1 };
             }),
-            A
+            n
           ),
           {},
         ),
-        _ = Object.keys(q),
-        v = new RegExp(_.join("|")),
-        Y = (A) => {
-          let n = A.length,
+        Y = Object.keys(q),
+        $ = new RegExp(Y.join("|")),
+        T = (n) => {
+          let A = n.length,
             i = {};
-          for (; n--; )
-            if (q[A[n]]) {
-              i = q[A[n]];
+          for (; A--; )
+            if (q[n[A]]) {
+              i = q[n[A]];
               break;
             }
           return i;
         };
-      function $(A, n, i) {
-        return n < 0 || n >= A.length
-          ? A
-          : A.substring(0, n) + i + A.substring(n + 1);
+      function N(n, A, i) {
+        return A < 0 || A >= n.length
+          ? n
+          : n.substring(0, A) + i + n.substring(A + 1);
       }
-      const T = (A) =>
-          A.split(/\s+/)
-            .filter((n) => n)
-            .map((n) => {
-              const i = Number(n.match(/[0-9]$/i) || 1);
-              let h = n.replace(i, ""),
+      const P = (n) =>
+          n
+            .split(/\s+/)
+            .filter((A) => A)
+            .map((A) => {
+              const i = Number(A.match(/[0-9]$/i) || 1);
+              let h = A.replace(i, ""),
                 g = h.length;
               for (; g--; )
-                if (a.test(h[g])) {
-                  h = $(h, g, j[h[g]][i - 1]);
+                if (v.test(h[g])) {
+                  h = N(h, g, j[h[g]][i - 1]);
                   break;
                 }
               return h;
             })
             .join(" "),
-        N = (A) =>
-          ((n) =>
-            A.split("").map((i) => ({
-              text: i,
-              pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? n.pop() : null,
-            })))(Z(A).reverse()),
-        P = (A) => A.map((n) => n.map((i) => T(i)));
-      function R(A) {
-        let n = A.toString(),
+        R = (n) =>
+          ((A) =>
+            n
+              .split("")
+              .map((i) => ({
+                text: i,
+                pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? A.pop() : null,
+              })))(Z(n).reverse()),
+        M = (n) => n.map((A) => A.map((i) => P(i)));
+      function S(n) {
+        let A = n.toString(),
           i = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"],
           h = [
             "",
@@ -41390,51 +41393,51 @@ const Z = L(X),
             "亿",
           ],
           g = "";
-        for (let E = 0; E < n.length; E++) g += i[n[E]] + h[n.length - E - 1];
+        for (let E = 0; E < A.length; E++) g += i[A[E]] + h[A.length - E - 1];
         return g;
       }
-      const w = m(""),
-        t = m(),
-        d = (A) => {
-          if (A) {
+      const f = p(""),
+        t = p(),
+        d = (n) => {
+          if (n) {
             t.value.pause();
-            const { index: n, name: i } = Y(A),
-              g = A.replace(new RegExp(v, "img"), i) + n;
-            (w.value = "https://data.hanyuguoxue.com/voice/".concat(g, ".mp3")),
+            const { index: A, name: i } = T(n),
+              g = n.replace(new RegExp($, "img"), i) + A;
+            (f.value = "https://data.hanyuguoxue.com/voice/".concat(g, ".mp3")),
               t.value.play();
           }
         },
-        M = async (A) => {
-          let n = 0;
-          for (; n < A.length; ) {
-            const { pinyin: i } = A[n] || {};
-            i &&
-              (d(i),
-              await new Promise((h) => {
-                (function g() {
-                  t.value.ended ? h(!0) : setTimeout(g);
+        k = async (n, A = !1) => {
+          let i = 0;
+          for (; i < n.length; ) {
+            const { pinyin: h } = A ? { pinyin: n[i] } : n[i] || {};
+            h &&
+              (d(h),
+              await new Promise((g) => {
+                (function E() {
+                  t.value.ended ? g(!0) : setTimeout(E);
                 })();
               })),
-              (n += 1);
+              (i += 1);
           }
         },
-        S = k(() =>
-          y.value.data.map((A) => ({
-            ...A,
-            title: N(A.title),
-            pinyin: P(
-              A.pinyin.map((n) => (typeof n == "string" ? n.split(" ") : n)),
+        I = r(() =>
+          y.value.data.map((n) => ({
+            ...n,
+            title: R(n.title),
+            pinyin: M(
+              n.pinyin.map((A) => (typeof A == "string" ? A.split(" ") : A)),
             ),
           })),
         );
-      return (A, n) => {
-        const i = K;
+      return (n, A) => {
+        const i = L;
         return (
           B(),
           D("div", n2, [
             C("div", A2, [
-              n[0] ||
-                (n[0] = C(
+              A[0] ||
+                (A[0] = C(
                   "div",
                   {
                     class:
@@ -41443,9 +41446,9 @@ const Z = L(X),
                   " 部编版一年级语文一天一过关拼音练习题 ",
                   -1,
                 )),
-              C("h1", i2, o(p(y).title), 1),
-              n[1] ||
-                (n[1] = C(
+              C("h1", i2, o(w(y).title), 1),
+              A[1] ||
+                (A[1] = C(
                   "div",
                   { class: "text-14px text-#333 flex-center" },
                   [
@@ -41477,12 +41480,12 @@ const Z = L(X),
                 c,
                 null,
                 s(
-                  p(S),
+                  w(I),
                   (h, g) => (
                     B(),
                     D("div", { key: g, class: "m-t-15px" }, [
                       C("h2", g2, [
-                        C("span", null, o(R(g + 1)) + "、", 1),
+                        C("span", null, o(S(g + 1)) + "、", 1),
                         (B(!0),
                         D(
                           c,
@@ -41497,7 +41500,7 @@ const Z = L(X),
                                   class:
                                     "text-14px text-#333 flex-center flex-col cursor-pointer underline-blue hover:underline",
                                   key: b,
-                                  onClick: (f) => d(E.pinyin),
+                                  onClick: (m) => d(E.pinyin),
                                 },
                                 [
                                   C("span", null, o(E.pinyin), 1),
@@ -41510,12 +41513,12 @@ const Z = L(X),
                           ),
                           128,
                         )),
-                        H(
+                        e(
                           i,
                           {
                             name: "pinyin1",
                             class: "cursor-pointer",
-                            onClick: (E) => M(h.title),
+                            onClick: (E) => k(h.title),
                           },
                           null,
                           8,
@@ -41544,14 +41547,14 @@ const Z = L(X),
                                     null,
                                     s(
                                       E,
-                                      (f, I) => (
+                                      (m, O) => (
                                         B(),
                                         D(
                                           "div",
                                           {
                                             class:
                                               "flex-center-start gap-5px flex-wrap",
-                                            key: I,
+                                            key: O,
                                           },
                                           [
                                             (B(!0),
@@ -41559,18 +41562,18 @@ const Z = L(X),
                                               c,
                                               null,
                                               s(
-                                                f
+                                                m
                                                   .split(" ")
                                                   .map((z) => z.trim())
                                                   .filter((z) => z),
-                                                (z, O) => (
+                                                (z, K) => (
                                                   B(),
                                                   D(
                                                     "div",
                                                     {
                                                       class:
                                                         "flex-center flex-col cursor-pointer underline-blue hover:underline",
-                                                      key: O,
+                                                      key: K,
                                                       onClick: (u2) => d(z),
                                                     },
                                                     [C("div", null, o(z), 1)],
@@ -41587,6 +41590,17 @@ const Z = L(X),
                                     ),
                                     128,
                                   )),
+                                  e(
+                                    i,
+                                    {
+                                      name: "pinyin1",
+                                      class: "cursor-pointer",
+                                      onClick: (m) => k(E, !0),
+                                    },
+                                    null,
+                                    8,
+                                    ["onClick"],
+                                  ),
                                 ],
                               )
                             ),
@@ -41602,7 +41616,7 @@ const Z = L(X),
             ]),
             C(
               "audio",
-              { src: p(w), ref_key: "audio", ref: t, autoplay: "" },
+              { src: w(f), ref_key: "audio", ref: t, autoplay: "" },
               null,
               8,
               B2,
@@ -41612,5 +41626,5 @@ const Z = L(X),
       };
     },
   }),
-  l2 = J(F2, [["__scopeId", "data-v-108e44bf"]]);
+  l2 = J(F2, [["__scopeId", "data-v-bf6af0d7"]]);
 export { l2 as default };

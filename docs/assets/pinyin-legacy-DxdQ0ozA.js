@@ -1,5 +1,5 @@
 System.register(
-  ["./svg-icon-legacy-BD3OsVi1.js", "./index-legacy-D2JH51JW.js"],
+  ["./svg-icon-legacy-COxKwbqo.js", "./index-legacy-Q8n2PSZu.js"],
   function (n, A) {
     "use strict";
     var i, h, g, C, E, D, B, F, u, y, z, l, j, o, c;
@@ -41429,7 +41429,21 @@ System.register(
                       I.value.play();
                   }
                 },
-                R = E(() =>
+                R = async (n, A = !1) => {
+                  let i = 0;
+                  for (; i < n.length; ) {
+                    const { pinyin: h } = A ? { pinyin: n[i] } : n[i] || {};
+                    h &&
+                      (N(h),
+                      await new Promise((n) => {
+                        !(function A() {
+                          I.value.ended ? n(!0) : setTimeout(A);
+                        })();
+                      })),
+                      (i += 1);
+                  }
+                },
+                S = E(() =>
                   g.value.data.map((n) => {
                     return {
                       ...n,
@@ -41499,7 +41513,7 @@ System.register(
                         y,
                         null,
                         z(
-                          u(R),
+                          u(S),
                           (n, A) => (
                             j(),
                             D("div", { key: A, class: "m-t-15px" }, [
@@ -41537,23 +41551,7 @@ System.register(
                                   {
                                     name: "pinyin1",
                                     class: "cursor-pointer",
-                                    onClick: (A) =>
-                                      (async (n) => {
-                                        let A = 0;
-                                        for (; A < n.length; ) {
-                                          const { pinyin: i } = n[A] || {};
-                                          i &&
-                                            (N(i),
-                                            await new Promise((n) => {
-                                              !(function A() {
-                                                I.value.ended
-                                                  ? n(!0)
-                                                  : setTimeout(A);
-                                              })();
-                                            })),
-                                            (A += 1);
-                                        }
-                                      })(n.title),
+                                    onClick: (A) => R(n.title),
                                   },
                                   null,
                                   8,
@@ -41634,6 +41632,17 @@ System.register(
                                             ),
                                             128,
                                           )),
+                                          o(
+                                            h,
+                                            {
+                                              name: "pinyin1",
+                                              class: "cursor-pointer",
+                                              onClick: (A) => R(n, !0),
+                                            },
+                                            null,
+                                            8,
+                                            ["onClick"],
+                                          ),
                                         ],
                                       )
                                     ),
@@ -41659,7 +41668,7 @@ System.register(
               };
             },
           });
-        n("default", c(e, [["__scopeId", "data-v-108e44bf"]]));
+        n("default", c(e, [["__scopeId", "data-v-bf6af0d7"]]));
       },
     };
   },

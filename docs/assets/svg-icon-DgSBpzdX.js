@@ -14,7 +14,7 @@ import {
   U as I,
   aI as s,
   aJ as O,
-} from "./index-B2BSPBrj.js";
+} from "./index-D1df6D06.js";
 const T = f(
     "icon",
     "\n height: 1em;\n width: 1em;\n line-height: 1em;\n text-align: center;\n display: inline-block;\n position: relative;\n fill: currentColor;\n transform: translateZ(0);\n",

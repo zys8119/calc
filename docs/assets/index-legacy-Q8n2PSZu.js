@@ -25675,7 +25675,7 @@ System.register([], function (e, t) {
             path: "/:pathMatch(.*)*",
             component: () =>
               LA(
-                () => t.import("./404-legacy-BL0xKblw.js"),
+                () => t.import("./404-legacy-CG-XNDes.js"),
                 void 0,
                 t.meta.url,
               ),
@@ -26797,32 +26797,32 @@ System.register([], function (e, t) {
       const CT = yT,
         wT = Object.assign({
           "./src/views/404.vue": () =>
-            LA(() => t.import("./404-legacy-BL0xKblw.js"), void 0, t.meta.url),
+            LA(() => t.import("./404-legacy-CG-XNDes.js"), void 0, t.meta.url),
           "./src/views/calc.vue": () =>
-            LA(() => t.import("./calc-legacy-CnJRuzuX.js"), void 0, t.meta.url),
+            LA(() => t.import("./calc-legacy-DsDuifr1.js"), void 0, t.meta.url),
           "./src/views/error.vue": () =>
             LA(
-              () => t.import("./error-legacy-BxGJwMGq.js"),
+              () => t.import("./error-legacy-Cc79uJc4.js"),
               void 0,
               t.meta.url,
             ),
           "./src/views/login.vue": () =>
             LA(
-              () => t.import("./login-legacy-gfUa6z_K.js"),
+              () => t.import("./login-legacy-D6xZRnbd.js"),
               void 0,
               t.meta.url,
             ),
           "./src/views/pages/home/home.vue": () =>
-            LA(() => t.import("./home-legacy-CMtPWcdI.js"), void 0, t.meta.url),
+            LA(() => t.import("./home-legacy-CoHPBEr_.js"), void 0, t.meta.url),
           "./src/views/pages/layout.vue": () =>
             LA(
-              () => t.import("./layout-legacy-SX_V8iEf.js"),
+              () => t.import("./layout-legacy-CN7lChdp.js"),
               void 0,
               t.meta.url,
             ),
           "./src/views/pinyin.vue": () =>
             LA(
-              () => t.import("./pinyin-legacy-CxIusYSf.js"),
+              () => t.import("./pinyin-legacy-DxdQ0ozA.js"),
               void 0,
               t.meta.url,
             ),
@@ -37930,7 +37930,7 @@ System.register([], function (e, t) {
               FT.dialog({
                 title: e.title || "温馨提示",
                 content: LA(
-                  () => t.import("./confirm-legacy-DfSMa33e.js"),
+                  () => t.import("./confirm-legacy-CBHXU9vR.js"),
                   void 0,
                   t.meta.url,
                 ),
@@ -37989,11 +37989,13 @@ System.register([], function (e, t) {
                 e({
                   code: 200,
                   data: {
-                    list: new Array(8).fill(0).map((e, t) => ({
-                      id: t,
-                      name: "asdas",
-                      title: "asdas",
-                    })),
+                    list: new Array(8)
+                      .fill(0)
+                      .map((e, t) => ({
+                        id: t,
+                        name: "asdas",
+                        title: "asdas",
+                      })),
                     total: 100,
                   },
                   messages: "success",
