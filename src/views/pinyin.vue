@@ -4,7 +4,7 @@
       <div class="text-12px text-#999 b-b-solid b-#eee b-1x w-full text-center">
         部编版一年级语文一天一过关拼音练习题
       </div>
-      <h1 class="m-y-15px">拼音练习6（声母）</h1>
+      <h1 class="m-y-15px">{{ data.title }}</h1>
       <div class="text-14px text-#333 flex-center">
         <span>班级</span>
         <span class="b-1px b-#000 b-b-solid flex-center p-x-15px bold"
@@ -35,7 +35,7 @@
             @click="playTextPinyin(item.title)"
           />
         </h2>
-        <div class="flex flex-col gap-5px flex-wrap">
+        <div class="flex flex-col gap-5px flex-wrap text-50px">
           <div
             class="flex-center-start gap-30px flex-wrap"
             v-for="(it, k) in item.pinyin"
@@ -67,6 +67,35 @@
 </template>
 <script setup lang="ts">
 import bioazhu from "pinyin.js";
+const route = useRoute();
+const active = ref<any>(Number(route.query.active) || 7);
+const data = computed<any>(() => {
+  const map: any = {
+    7: {
+      title: "拼音练习7（声母）",
+      data: [
+        {
+          title: "熟读下列, 带调音节。(尽量直呼，不行就拼读)",
+          pinyin: [
+            "zu2 ci4 ca1 su2 zi3 za2",
+            "se4 si3 ze2 ji1 ci3 sa4",
+            "ce4 za1 si4 su4 zi4 cu4",
+            "qi3 zu3 zu1 ci1 su1 ze1",
+          ],
+        },
+        {
+          title: "熟读下列, 带调音节。",
+          pinyin: [
+            "zu2 ji4 fu4 ze2 zi3 se4 zi4 mu3",
+            "zu3 fu4 la1 sa4 su4 du4 ci2 qi4",
+            "tu3 si1 zi4 ji3 zi4 si1 zi3 nu3",
+          ],
+        },
+      ],
+    },
+  };
+  return map[active.value] || map[7];
+});
 const toneMap: any = {
   a: ["ā", "á", "ǎ", "à"],
   e: ["ē", "é", "ě", "è"],
@@ -137,16 +166,6 @@ const getPinyin = (title: string) =>
     })))(bioazhu(title as any).reverse() as any);
 const getPinyinYindaio = (data: Array<any[]>) =>
   data.map((e) => e.map((s) => getYidiao(s)));
-const list = ref([
-  {
-    title: getPinyin("熟读下列, 带调音节。"),
-    pinyin: getPinyinYindaio([
-      ["qi2", "ji3", "xi1", "qu3", "xu2", "ju4", "ji2"],
-      ["qi2", "ji3", "xi1", "qu3", "xu2", "ju4", "ji2"],
-      ["zhang1    yun2 shan1 ni3 si4 shui2 , sds ai4"],
-    ]),
-  },
-]);
 
 function numToChinese(num: number) {
   let str = num.toString();
@@ -210,6 +229,18 @@ const playTextPinyin = async (data: any) => {
     k += 1;
   }
 };
+
+const list = computed(() =>
+  data.value.data.map((e: any) => {
+    return {
+      ...e,
+      title: getPinyin(e.title),
+      pinyin: getPinyinYindaio(
+        e.pinyin.map((e: any) => (typeof e === "string" ? e.split(" ") : e)),
+      ),
+    };
+  }),
+);
 </script>
 <style scoped lang="less">
 .pingyin {
