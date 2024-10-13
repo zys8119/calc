@@ -1,4 +1,4 @@
-import { _ as o, h as s, e as n, o as t } from "./index-CZqhz6yy.js";
+import { _ as o, h as s, e as n, o as t } from "./index-B2BSPBrj.js";
 const a = {},
   c = { class: "login" };
 function r(_, e) {

@@ -14,7 +14,7 @@ import {
   E as R,
   D as E,
   G as d,
-} from "./index-CZqhz6yy.js";
+} from "./index-B2BSPBrj.js";
 const I = e(
     "svg",
     { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 36 36" },

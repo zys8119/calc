@@ -132,6 +132,11 @@
   align-items: center;
   justify-content: center;
 }
+.flex-center-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
 .bold {
   font-weight: 700;
 }
@@ -172,11 +177,21 @@
 .top-15px {
   top: 15px;
 }
+.m-y-15px {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 .m-b--4px {
   margin-bottom: -4px;
 }
+.m-b-15px {
+  margin-bottom: 15px;
+}
 .m-b-4px {
   margin-bottom: 4px;
+}
+.m-t-15px {
+  margin-top: 15px;
 }
 .m-t-30px {
   margin-top: 30px;
@@ -202,10 +217,14 @@
 .h1 {
   height: 0.25rem;
 }
+.h2 {
+  height: 0.5rem;
+}
 .w-\$navbar-width {
   width: var(--navbar-width);
 }
-.w-100\% {
+.w-100\%,
+.w-full {
   width: 100%;
 }
 .w-22px {
@@ -232,6 +251,9 @@
 .cursor-pointer {
   cursor: pointer;
 }
+.items-end {
+  align-items: flex-end;
+}
 .items-center {
   align-items: center;
 }
@@ -240,6 +262,9 @@
 }
 .gap-15px {
   gap: 15px;
+}
+.gap-30px {
+  gap: 30px;
 }
 .gap-5px {
   gap: 5px;
@@ -250,11 +275,26 @@
 .of-x-hidden {
   overflow-x: hidden;
 }
+.b-1px,
 .border {
   border-width: 1px;
 }
+.b-\#000 {
+  --un-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--un-border-opacity));
+}
+.b-\#eee {
+  --un-border-opacity: 1;
+  border-color: rgb(238 238 238 / var(--un-border-opacity));
+}
+.b-b-solid {
+  border-bottom-style: solid;
+}
 .bg-\$navbar-color {
   background-color: var(--navbar-color);
+}
+.p-15px {
+  padding: 15px;
 }
 .p-x-15px {
   padding-left: 15px;
@@ -281,17 +321,30 @@
 .p-t-10px {
   padding-top: 10px;
 }
+.text-center {
+  text-align: center;
+}
 .text-100px {
   font-size: 100px;
 }
 .text-12px {
   font-size: 12px;
 }
+.text-14px {
+  font-size: 14px;
+}
 .text-20px {
   font-size: 20px;
 }
 .text-40px {
   font-size: 40px;
+}
+.text-50px {
+  font-size: 50px;
+}
+.text-\#333 {
+  --un-text-opacity: 1;
+  color: rgb(51 51 51 / var(--un-text-opacity));
 }
 .text-\#666 {
   --un-text-opacity: 1;
@@ -306,6 +359,14 @@
 }
 .font-bold {
   font-weight: 700;
+}
+.hover\:underline:hover {
+  text-decoration-line: underline;
+}
+.underline-blue {
+  -webkit-text-decoration-color: rgb(96 165 250 / var(--un-line-opacity));
+  --un-line-opacity: 1;
+  text-decoration-color: rgb(96 165 250 / var(--un-line-opacity));
 }
 .op-30 {
   opacity: 0.3;
