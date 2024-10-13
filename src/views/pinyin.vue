@@ -61,7 +61,7 @@
 </template>
 <script setup lang="ts">
 import bioazhu from "pinyin.js";
-import pinyin3 from "pinyin";
+// import pinyin3 from "pinyin";
 
 const getPinyin = (title: string) =>
   ((pys: any[]) =>
