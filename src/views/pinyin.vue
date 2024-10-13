@@ -58,6 +58,11 @@
                 <div>{{ it2 }}</div>
               </div>
             </div>
+            <SvgIcon
+              name="pinyin1"
+              class="cursor-pointer"
+              @click="playTextPinyin(it, true)"
+            />
           </div>
         </div>
       </div>
@@ -217,10 +222,10 @@ const playPinyin = (pinyin: string) => {
     audio.play();
   }
 };
-const playTextPinyin = async (data: any) => {
+const playTextPinyin = async (data: any, isPy: boolean = false) => {
   let k = 0;
   while (k < data.length) {
-    const { pinyin } = data[k] || {};
+    const { pinyin } = isPy ? { pinyin: data[k] } : data[k] || {};
     if (pinyin) {
       playPinyin(pinyin);
       await new Promise((resolve) => {
