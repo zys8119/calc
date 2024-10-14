@@ -287,8 +287,8 @@ function numToChinese(num: number) {
 }
 const audioSrc = ref("");
 const audio = $ref() as HTMLAudioElement;
-let speechsynthesisutterance = $ref() as SpeechSynthesisUtterance;
-let speechsynthesisutteranceEnded = $ref(true) as boolean;
+// let speechsynthesisutterance = $ref() as SpeechSynthesisUtterance;
+// let speechsynthesisutteranceEnded = $ref(true) as boolean;
 const isPlayTextPinyin = ref(false);
 const playPinyin = async (pinyin: string, bool: boolean = false) => {
   isPlayTextPinyin.value = bool;
@@ -318,38 +318,38 @@ const playPinyin = async (pinyin: string, bool: boolean = false) => {
     audio.play();
   }
 };
-const playTextPinyin = async (data: any, isPy: boolean = false) => {
-  isPlayTextPinyin.value = false;
-  let k = 0;
-  while (k < data.length) {
-    const { pinyin } = isPy ? { pinyin: data[k] } : data[k] || {};
-    if (pinyin) {
-      playPinyin(pinyin, true);
-      // await new Promise((resolve) => {
-      //   (function isAudioEnded() {
-      //     if (!isPlayTextPinyin.value) {
-      //       throw new Error("取消播放");
-      //     }
-      //     if (speechsynthesisutteranceEnded) {
-      //       resolve(true);
-      //     } else {
-      //       setTimeout(isAudioEnded);
-      //     }
-      //   })();
-      // });
-      await new Promise((resolve) => {
-        (function isAudioEnded() {
-          if (audio.ended) {
-            setTimeout(() => resolve(true));
-          } else {
-            setTimeout(isAudioEnded);
-          }
-        })();
-      });
-    }
-    k += 1;
-  }
-};
+// const playTextPinyin = async (data: any, isPy: boolean = false) => {
+//   isPlayTextPinyin.value = false;
+//   let k = 0;
+//   while (k < data.length) {
+//     const { pinyin } = isPy ? { pinyin: data[k] } : data[k] || {};
+//     if (pinyin) {
+//       playPinyin(pinyin, true);
+//       // await new Promise((resolve) => {
+//       //   (function isAudioEnded() {
+//       //     if (!isPlayTextPinyin.value) {
+//       //       throw new Error("取消播放");
+//       //     }
+//       //     if (speechsynthesisutteranceEnded) {
+//       //       resolve(true);
+//       //     } else {
+//       //       setTimeout(isAudioEnded);
+//       //     }
+//       //   })();
+//       // });
+//       await new Promise((resolve) => {
+//         (function isAudioEnded() {
+//           if (audio.ended) {
+//             setTimeout(() => resolve(true));
+//           } else {
+//             setTimeout(isAudioEnded);
+//           }
+//         })();
+//       });
+//     }
+//     k += 1;
+//   }
+// };
 
 const list = computed(() =>
   data.value.data.map((e: any) => {
