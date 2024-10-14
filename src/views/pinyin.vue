@@ -152,7 +152,7 @@ const data = computed<any>(() => {
       title: "拼音练习10（复习1）",
       data: [
         {
-          title: "熟练背诵单韵母、声母和整体认读音节。",
+          title: "熟练背诵单韵母,声母和整体认读音节。",
           pinyin: [
             "单韵母： a o e i u ü",
             "声  母： b p m f d t n l g k h j q x zh ch sh r z c s y w",
