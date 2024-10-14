@@ -260,6 +260,9 @@
 .justify-center {
   justify-content: center;
 }
+.gap-10px {
+  gap: 10px;
+}
 .gap-15px {
   gap: 15px;
 }
@@ -275,6 +278,7 @@
 .of-x-hidden {
   overflow-x: hidden;
 }
+.b,
 .b-1px,
 .border {
   border-width: 1px;
@@ -332,6 +336,9 @@
 }
 .text-14px {
   font-size: 14px;
+}
+.text-18px {
+  font-size: 18px;
 }
 .text-20px {
   font-size: 20px;

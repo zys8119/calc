@@ -1,68 +1,58 @@
 System.register(
-  ["./index-legacy-Q8n2PSZu.js", "./Result-legacy-CpisfDmK.js"],
+  ["./index-legacy-CzynbWA3.js", "./Result-legacy-CfrZEZeW.js"],
   function (e, t) {
     "use strict";
-    var r, n, a, s, u, c, d, o, l, i, f;
+    var r, n, a, o, s, u, c, l, d, i;
     return {
       setters: [
         (e) => {
           (r = e.d),
             (n = e.c),
             (a = e.w),
-            (s = e.u),
-            (u = e.o),
-            (c = e.a),
-            (d = e.b),
-            (o = e.e),
+            (o = e.u),
+            (s = e.o),
+            (u = e.a),
+            (c = e.b),
             (l = e.B),
-            (i = e._);
+            (d = e._);
         },
         (e) => {
-          f = e._;
+          i = e._;
         },
       ],
       execute: function () {
         var t = document.createElement("style");
-        (t.textContent = ".n-result[data-v-d545d41c]{margin-top:20vh}\n"),
+        (t.textContent = ".n-result[data-v-95581f90]{margin-top:20vh}\n"),
           document.head.appendChild(t),
           e(
             "default",
-            i(
+            d(
               r({
-                __name: "404",
+                __name: "error",
                 props: { error: null },
                 setup(e) {
-                  const t = s(),
+                  const t = o(),
                     r = () => t.replace("/");
-                  return (t, s) => {
-                    const i = l,
-                      p = f;
+                  return (t, o) => {
+                    const d = l,
+                      p = i;
                     return (
-                      u(),
+                      s(),
                       n(
                         p,
                         { title: e.error ?? "页面加载错误", status: "error" },
                         {
                           footer: a(() => [
-                            c(
-                              i,
+                            u(
+                              d,
                               { onClick: r },
                               {
                                 default: a(
-                                  () => s[0] || (s[0] = [d("返回首页")]),
+                                  () => o[0] || (o[0] = [c("返回首页")]),
                                 ),
                                 _: 1,
                               },
                             ),
-                          ]),
-                          default: a(() => [
-                            s[1] ||
-                              (s[1] = o(
-                                "div",
-                                { class: "flex justify-center text-#999" },
-                                "404 Page Not Found",
-                                -1,
-                              )),
                           ]),
                           _: 1,
                         },
@@ -73,7 +63,7 @@ System.register(
                   };
                 },
               }),
-              [["__scopeId", "data-v-d545d41c"]],
+              [["__scopeId", "data-v-95581f90"]],
             ),
           );
       },

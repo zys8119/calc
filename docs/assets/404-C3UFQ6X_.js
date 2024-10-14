@@ -9,8 +9,8 @@ import {
   e as i,
   B as m,
   _ as x,
-} from "./index-D1df6D06.js";
-import { _ as B } from "./Result-BnW_HUS7.js";
+} from "./index-BqxKyRSO.js";
+import { _ as B } from "./Result-C8P_GMQp.js";
 const N = c({
     __name: "404",
     props: { error: null },

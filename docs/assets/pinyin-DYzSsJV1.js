@@ -1,21 +1,20 @@
-import { _ as L } from "./svg-icon-DgSBpzdX.js";
 import {
-  aF as V,
-  d as G,
-  r as p,
+  aJ as I,
+  d as K,
+  r as q,
   f as r,
-  h as D,
-  e as C,
-  t as o,
-  i as w,
-  F as c,
-  j as s,
-  p as H,
-  o as B,
-  a as e,
+  h as E,
+  e as h,
+  t as l,
+  i as p,
+  F as s,
+  j as x,
+  p as L,
+  o as D,
+  n as V,
   _ as J,
-} from "./index-D1df6D06.js";
-const Q = {
+} from "./index-BqxKyRSO.js";
+const G = {
     3400: "qiū",
     3401: "tiàn",
     3404: "kuà",
@@ -41232,51 +41231,53 @@ const Q = {
     "2B6F6": "chì",
     "2B6F8": "tí",
   },
-  U = Q;
-function x(F, l) {
-  var u = [],
-    y;
+  H = G;
+function t(F, j) {
+  var y = [],
+    z;
   return (
-    (F = F.replace(/[\u4E00-\uFA29]|[\uE7C7-\uE7F3]|\w+/gi, function (j) {
-      return (y = U[a(j)]), y && u.push(y), y;
+    (F = F.replace(/[\u4E00-\uFA29]|[\uE7C7-\uE7F3]|\w+/gi, function (o) {
+      return (z = H[e(o)]), z && y.push(z), z;
     })),
-    u
+    y
   );
 }
-x.STYLE_INITIAL = 0;
-x.STYLE_TONE = 1;
-function a(F) {
+t.STYLE_INITIAL = 0;
+t.STYLE_TONE = 1;
+function e(F) {
   return (escape(F).match(/^%u(\w+)$/) || [])[1];
 }
-function W(F) {
-  var l = { a: "āáǎà", e: "ēéěè", i: "īíǐì", o: "ōóǒò", u: "ūúǔù" };
+function Q(F) {
+  var j = { a: "āáǎà", e: "ēéěè", i: "īíǐì", o: "ōóǒò", u: "ūúǔù" };
   return (
-    Object.keys(l).forEach(function (u) {
-      F = F.replace(new RegExp("[" + l[u] + "]"), u);
+    Object.keys(j).forEach(function (y) {
+      F = F.replace(new RegExp("[" + j[y] + "]"), y);
     }),
     F
   );
 }
-x.unicode = a;
-x.normalize = W;
-var X = x;
-const Z = V(X),
-  n2 = { class: "pingyin" },
-  A2 = { class: "flex-center flex-col" },
-  i2 = { class: "m-y-15px" },
-  h2 = { class: "p-15px" },
-  g2 = { class: "m-b-15px flex items-end gap-5px" },
-  C2 = ["onClick"],
-  E2 = { class: "flex flex-col gap-5px flex-wrap text-50px" },
-  D2 = ["onClick"],
+t.unicode = e;
+t.normalize = Q;
+var U = t;
+const W = I(U),
+  X = { class: "pingyin" },
+  Z = { class: "flex-center flex-col" },
+  n2 = { class: "m-y-15px" },
+  A2 = { class: "flex-center" },
+  i2 = { class: "p-15px" },
+  h2 = { class: "m-b-15px flex items-end gap-5px" },
+  g2 = ["onClick"],
+  C2 = { class: "flex flex-col gap-5px flex-wrap text-50px" },
+  E2 = ["onClick"],
+  D2 = { key: 0, class: "text-18px flex-center-start gap-10px" },
   B2 = ["src"],
-  F2 = G({
+  F2 = K({
     __name: "pinyin",
     setup(F) {
-      const l = H(),
-        u = p(Number(l.query.active) || 7),
-        y = r(() => {
-          const n = {
+      const j = L(),
+        y = q(Number(j.query.active) || 7),
+        z = r(() => {
+          const A = {
             7: {
               title: "拼音练习7（声母）",
               data: [
@@ -41294,11 +41295,11 @@ const Z = V(X),
                   pinyin: [
                     "zu2 ji4 fu4 ze2 zi3 se4 zi4 mu3",
                     "zu3 fu4 la1 sa4 su4 du4 ci2 qi4",
-                    "tu3 si1 zi4 ji3 zi4 si1 zi3 nu3",
+                    "tu3 si1 zi4 ji3 zi4 si1 zi3 nü3",
                   ],
                 },
                 {
-                  title: "都准句子。",
+                  title: "读准句子。",
                   pinyin: [
                     "zu3 fu4 he2 zu3 mu3 ca1 bo1 li",
                     "li4 li he2 na4 na du2 zi4 mu3",
@@ -41306,10 +41307,91 @@ const Z = V(X),
                 },
               ],
             },
+            8: {
+              title: "拼音练习8（声母）",
+              data: [
+                {
+                  title: "熟读下列音节,（尽量直呼，不行就拼读）",
+                  pinyin: [
+                    "cè   zā   sì   sù   zì   cù",
+                    "qǐ   zǔ   zū   cī   sū   zē",
+                    "zhǎ  shú  chè  shǎ  zhù  zhě  chà",
+                    "chī  zhì  shǐ  zhí  shī  chǐ  shí",
+                  ],
+                },
+                {
+                  title: "熟读下列音节词",
+                  pinyin: [
+                    "tǔ sī    zì jǐ     zì sī     zǐ nǚ  ",
+                    "rè chá   zhí shù   shā chē   zhī shi",
+                    "rì chū   zhí rì    zhé zhǐ   zhú zi",
+                    "chū zū chē    shě bù dé    ná pí chǐ",
+                  ],
+                },
+              ],
+            },
+            9: {
+              title: "拼音练习9（三拼音）",
+              data: [
+                {
+                  title: "熟读下列三拼音节",
+                  pinyin: [
+                    "duǒ  guó  nuó  luò  tuō  guǎ",
+                    "kuò  huā  luó  kuā  nuò  jiǎ ",
+                    "tuó  duō  luō  kuà  huó  huà",
+                    "qiā  jià  huǒ  huá  guō  guā",
+                  ],
+                },
+                {
+                  title: "熟读下列音节词",
+                  pinyin: [
+                    "zǔ guó   luó bo   luò tuo   xī guā",
+                    "kǔ guā   jú huā   xǔ duō    tuō lā",
+                    "guó jiā  bō luó   guò qù    guā pí",
+                    "fā huǒ   nuò mǐ   luò xià   rú guǒ",
+                    "shū jià    zhuā zhù   shuō huà",
+                    "kè zhuō    chuō pò    cā zhuō zi",
+                  ],
+                },
+              ],
+            },
+            10: {
+              title: "拼音练习10（复习1）",
+              data: [
+                {
+                  title: "熟练背诵单韵母,声母和整体认读音节。",
+                  pinyin: [
+                    "单韵母： a o e i u ü",
+                    "声  母： b p m f d t n l g k h j q x zh ch sh r z c s y w",
+                    "整体认读音节： zhi chi shi ri zi ci si yi wu yu",
+                  ],
+                },
+                {
+                  title:
+                    "熟读下列音节,前两行是整体认读音节，最后一行是三拼音。",
+                  pinyin: [
+                    "zǐ   zhì   sí   shí  cì  chí  rì",
+                    "yí   yù    wǔ   yǔ   yì  yú   wù",
+                    "jiǎ  guó  zhuā  xiá  shuō  kuā  nuò",
+                  ],
+                },
+                {
+                  title: "熟读下列音节词",
+                  pinyin: [
+                    "jú huā   shuā yá    wū yā   hé huā",
+                    "dà huǒ   shuō huà   wà zi   xià yǔ",
+                    "sī guā   huā duǒ    yā zi   zhú zi",
+                    "ná pí chǐ           cā zhuō zi  ",
+                    "zhuō dà xiā         dǎ huǒ jī",
+                    "zuò huǒ chē         chī xī guā  ",
+                  ],
+                },
+              ],
+            },
           };
-          return n[u.value] || n[7];
+          return A[y.value] || A[7];
         }),
-        j = {
+        o = {
           a: ["ā", "á", "ǎ", "à"],
           e: ["ē", "é", "ě", "è"],
           i: ["ī", "í", "ǐ", "ì"],
@@ -41317,61 +41399,61 @@ const Z = V(X),
           u: ["ū", "ú", "ǔ", "ù"],
           ü: ["ǖ", "ǘ", "ǚ", "ǜ"],
         },
-        _ = Object.keys(j),
-        v = new RegExp(_.join("|")),
-        q = Object.entries(j).reduce(
-          (n, [A, i]) => (
-            i.forEach((h, g) => {
-              n[h] = { name: A, index: g + 1 };
+        a = Object.keys(o),
+        _ = new RegExp(a.join("|")),
+        d = Object.entries(o).reduce(
+          (A, [n, i]) => (
+            i.forEach((C, g) => {
+              A[C] = { name: n, index: g + 1 };
             }),
-            n
+            A
           ),
           {},
         ),
-        Y = Object.keys(q),
-        $ = new RegExp(Y.join("|")),
-        T = (n) => {
-          let A = n.length,
+        v = Object.keys(d),
+        w = new RegExp(v.join("|")),
+        Y = (A) => {
+          let n = A.length,
             i = {};
-          for (; A--; )
-            if (q[n[A]]) {
-              i = q[n[A]];
+          for (; n--; )
+            if (d[A[n]]) {
+              i = d[A[n]];
               break;
             }
           return i;
         };
-      function N(n, A, i) {
-        return A < 0 || A >= n.length
-          ? n
-          : n.substring(0, A) + i + n.substring(A + 1);
+      function $(A, n, i) {
+        return n < 0 || n >= A.length
+          ? A
+          : A.substring(0, n) + i + A.substring(n + 1);
       }
-      const P = (n) =>
-          n
-            .split(/\s+/)
-            .filter((A) => A)
-            .map((A) => {
-              const i = Number(A.match(/[0-9]$/i) || 1);
-              let h = A.replace(i, ""),
-                g = h.length;
+      const N = (A) =>
+          A.split(/\s+/)
+            .filter((n) => n)
+            .map((n) => {
+              if (w.test(n)) return n;
+              const i = Number(n.match(/[0-9]$/i) || 1);
+              let C = n.replace(i, ""),
+                g = C.length;
               for (; g--; )
-                if (v.test(h[g])) {
-                  h = N(h, g, j[h[g]][i - 1]);
+                if (_.test(C[g])) {
+                  C = $(C, g, o[C[g]][i - 1]);
                   break;
                 }
-              return h;
+              return C;
             })
             .join(" "),
-        R = (n) =>
-          ((A) =>
-            n.split("").map((i) => ({
+        P = (A) =>
+          ((n) =>
+            A.split("").map((i) => ({
               text: i,
-              pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? A.pop() : null,
-            })))(Z(n).reverse()),
-        M = (n) => n.map((A) => A.map((i) => P(i)));
-      function S(n) {
-        let A = n.toString(),
+              pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? n.pop() : null,
+            })))(W(A).reverse()),
+        R = (A) => A.map((n) => n.map((i) => N(i)));
+      function T(A) {
+        let n = A.toString(),
           i = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九"],
-          h = [
+          C = [
             "",
             "十",
             "百",
@@ -41391,192 +41473,173 @@ const Z = V(X),
             "亿",
           ],
           g = "";
-        for (let E = 0; E < A.length; E++) g += i[A[E]] + h[A.length - E - 1];
+        for (let B = 0; B < n.length; B++) g += i[n[B]] + C[n.length - B - 1];
         return g;
       }
-      const f = p(""),
-        t = p(),
-        d = (n) => {
-          if (n) {
-            t.value.pause();
-            const { index: A, name: i } = T(n),
-              g = n.replace(new RegExp($, "img"), i) + A;
-            (f.value = "https://data.hanyuguoxue.com/voice/".concat(g, ".mp3")),
-              t.value.play();
+      const f = q(""),
+        b = q(),
+        M = q(!1),
+        k = async (A, n = !1) => {
+          if (((M.value = n), A)) {
+            b.value.pause();
+            const { index: i, name: C } = Y(A),
+              B = A.replace(new RegExp(w, "img"), C) + (i || ""),
+              c = "https://data.hanyuguoxue.com/voice/".concat(B, ".mp3"),
+              m = await fetch(c).then((u) => u.status);
+            (f.value =
+              m === 200
+                ? c
+                : "https://data.hanyuguoxue.com/pinyin_voice/".concat(
+                    B,
+                    ".mp3",
+                  )),
+              b.value.play();
           }
         },
-        k = async (n, A = !1) => {
-          let i = 0;
-          for (; i < n.length; ) {
-            const { pinyin: h } = A ? { pinyin: n[i] } : n[i] || {};
-            h &&
-              (d(h),
-              await new Promise((g) => {
-                (function E() {
-                  t.value.ended ? g(!0) : setTimeout(E);
-                })();
-              })),
-              (i += 1);
-          }
-        },
-        I = r(() =>
-          y.value.data.map((n) => ({
-            ...n,
-            title: R(n.title),
-            pinyin: M(
-              n.pinyin.map((A) => (typeof A == "string" ? A.split(" ") : A)),
+        O = r(() =>
+          z.value.data.map((A) => ({
+            ...A,
+            title: P(A.title),
+            pinyin: R(
+              A.pinyin.map((n) => (typeof n == "string" ? n.split(" ") : n)),
             ),
           })),
         );
-      return (n, A) => {
-        const i = L;
-        return (
-          B(),
-          D("div", n2, [
-            C("div", A2, [
-              A[0] ||
-                (A[0] = C(
-                  "div",
-                  {
-                    class:
-                      "text-12px text-#999 b-b-solid b-#eee b-1x w-full text-center",
-                  },
-                  " 部编版一年级语文一天一过关拼音练习题 ",
-                  -1,
-                )),
-              C("h1", i2, o(w(y).title), 1),
-              A[1] ||
-                (A[1] = C(
-                  "div",
-                  { class: "text-14px text-#333 flex-center" },
-                  [
-                    C("span", null, "班级"),
-                    C(
-                      "span",
-                      {
-                        class:
-                          "b-1px b-#000 b-b-solid flex-center p-x-15px bold",
-                      },
-                      "101",
-                    ),
-                    C("span", null, "姓名"),
-                    C(
-                      "span",
-                      {
-                        class:
-                          "b-1px b-#000 b-b-solid flex-center p-x-15px bold",
-                      },
-                      "张景旗",
-                    ),
-                  ],
-                  -1,
-                )),
-            ]),
-            C("div", h2, [
-              (B(!0),
-              D(
-                c,
+      return (A, n) => (
+        D(),
+        E("div", X, [
+          h("div", Z, [
+            n[0] ||
+              (n[0] = h(
+                "div",
+                {
+                  class:
+                    "text-12px text-#999 b-b-solid b-#eee b-1x w-full text-center",
+                },
+                " 部编版一年级语文一天一过关拼音练习题 ",
+                -1,
+              )),
+            h("h1", n2, l(p(z).title), 1),
+            n[1] ||
+              (n[1] = h(
+                "div",
+                { class: "text-14px text-#333 flex-center" },
+                [
+                  h("span", null, "班级"),
+                  h(
+                    "span",
+                    {
+                      class: "b-1px b-#000 b-b-solid flex-center p-x-15px bold",
+                    },
+                    "101",
+                  ),
+                  h("span", null, "姓名"),
+                  h(
+                    "span",
+                    {
+                      class: "b-1px b-#000 b-b-solid flex-center p-x-15px bold",
+                    },
+                    "张景旗",
+                  ),
+                ],
+                -1,
+              )),
+          ]),
+          h("div", A2, [
+            h("div", i2, [
+              (D(!0),
+              E(
+                s,
                 null,
-                s(
-                  w(I),
-                  (h, g) => (
-                    B(),
-                    D("div", { key: g, class: "m-t-15px" }, [
-                      C("h2", g2, [
-                        C("span", null, o(S(g + 1)) + "、", 1),
-                        (B(!0),
-                        D(
-                          c,
+                x(
+                  p(O),
+                  (i, C) => (
+                    D(),
+                    E("div", { key: C, class: "m-t-15px" }, [
+                      h("h2", h2, [
+                        h("span", null, l(T(C + 1)) + "、", 1),
+                        (D(!0),
+                        E(
+                          s,
                           null,
-                          s(
-                            h.title,
-                            (E, b) => (
-                              B(),
-                              D(
+                          x(
+                            i.title,
+                            (g, B) => (
+                              D(),
+                              E(
                                 "span",
                                 {
                                   class:
                                     "text-14px text-#333 flex-center flex-col cursor-pointer underline-blue hover:underline",
-                                  key: b,
-                                  onClick: (m) => d(E.pinyin),
+                                  key: B,
+                                  onClick: (c) => k(g.pinyin),
                                 },
                                 [
-                                  C("span", null, o(E.pinyin), 1),
-                                  C("span", null, o(E.text), 1),
+                                  h("span", null, l(g.pinyin), 1),
+                                  h("span", null, l(g.text), 1),
                                 ],
                                 8,
-                                C2,
+                                g2,
                               )
                             ),
                           ),
                           128,
                         )),
-                        e(
-                          i,
-                          {
-                            name: "pinyin1",
-                            class: "cursor-pointer",
-                            onClick: (E) => k(h.title),
-                          },
-                          null,
-                          8,
-                          ["onClick"],
-                        ),
                       ]),
-                      C("div", E2, [
-                        (B(!0),
-                        D(
-                          c,
+                      h("div", C2, [
+                        (D(!0),
+                        E(
+                          s,
                           null,
-                          s(
-                            h.pinyin,
-                            (E, b) => (
-                              B(),
-                              D(
+                          x(
+                            i.pinyin,
+                            (g, B) => (
+                              D(),
+                              E(
                                 "div",
                                 {
                                   class: "flex-center-start gap-30px flex-wrap",
-                                  key: b,
+                                  key: B,
                                 },
                                 [
-                                  (B(!0),
-                                  D(
-                                    c,
+                                  (D(!0),
+                                  E(
+                                    s,
                                     null,
-                                    s(
-                                      E,
-                                      (m, O) => (
-                                        B(),
-                                        D(
+                                    x(
+                                      g,
+                                      (c, m) => (
+                                        D(),
+                                        E(
                                           "div",
                                           {
                                             class:
                                               "flex-center-start gap-5px flex-wrap",
-                                            key: O,
+                                            key: m,
                                           },
                                           [
-                                            (B(!0),
-                                            D(
-                                              c,
+                                            (D(!0),
+                                            E(
+                                              s,
                                               null,
-                                              s(
-                                                m
+                                              x(
+                                                c
                                                   .split(" ")
-                                                  .map((z) => z.trim())
-                                                  .filter((z) => z),
-                                                (z, K) => (
-                                                  B(),
-                                                  D(
+                                                  .map((u) => u.trim())
+                                                  .filter((u) => u),
+                                                (u, S) => (
+                                                  D(),
+                                                  E(
                                                     "div",
                                                     {
                                                       class:
                                                         "flex-center flex-col cursor-pointer underline-blue hover:underline",
-                                                      key: K,
-                                                      onClick: (u2) => d(z),
+                                                      key: S,
+                                                      onClick: (u2) => k(u),
                                                     },
-                                                    [C("div", null, o(z), 1)],
+                                                    [h("div", null, l(u), 1)],
                                                     8,
-                                                    D2,
+                                                    E2,
                                                   )
                                                 ),
                                               ),
@@ -41588,17 +41651,6 @@ const Z = V(X),
                                     ),
                                     128,
                                   )),
-                                  e(
-                                    i,
-                                    {
-                                      name: "pinyin1",
-                                      class: "cursor-pointer",
-                                      onClick: (m) => k(E, !0),
-                                    },
-                                    null,
-                                    8,
-                                    ["onClick"],
-                                  ),
                                 ],
                               )
                             ),
@@ -41606,23 +41658,24 @@ const Z = V(X),
                           128,
                         )),
                       ]),
+                      i.des ? (D(), E("div", D2, l(i.des), 1)) : V("", !0),
                     ])
                   ),
                 ),
                 128,
               )),
             ]),
-            C(
-              "audio",
-              { src: w(f), ref_key: "audio", ref: t, autoplay: "" },
-              null,
-              8,
-              B2,
-            ),
-          ])
-        );
-      };
+          ]),
+          h(
+            "audio",
+            { src: p(f), ref_key: "audio", ref: b, autoplay: "" },
+            null,
+            8,
+            B2,
+          ),
+        ])
+      );
     },
   }),
-  l2 = J(F2, [["__scopeId", "data-v-bf6af0d7"]]);
-export { l2 as default };
+  z2 = J(F2, [["__scopeId", "data-v-d563cea5"]]);
+export { z2 as default };

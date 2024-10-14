@@ -1,91 +1,94 @@
 import {
   r as M,
   f as D,
-  H as oe,
-  J as tt,
-  d as re,
-  K as be,
-  L as $n,
-  M as On,
-  g as Ct,
-  O as Fn,
-  P as Mn,
+  H as re,
+  J as ot,
+  d as ne,
+  K as me,
+  L as Fn,
+  M as Mn,
+  g as wt,
+  O as jn,
+  P as Vn,
   Q as j,
-  R as Se,
-  T as Re,
+  R as Re,
+  T as _e,
   s as v,
-  U as jn,
-  V as Pt,
-  X as ct,
+  U as Xt,
+  V as Dt,
+  X as ft,
   Y as Hn,
   Z as Un,
-  $ as Vn,
-  a0 as Wn,
-  x as T,
-  y as O,
-  a1 as Y,
-  z as Ue,
+  $ as Wn,
+  a0 as Gn,
+  x as _,
+  y as $,
+  a1 as U,
+  z as je,
   A as ge,
-  a2 as Gn,
-  G as Je,
+  a2 as qn,
+  G as tt,
   C as Ve,
-  N as wt,
-  a3 as We,
-  a4 as $,
-  a5 as Yt,
-  a6 as qn,
-  a7 as Yn,
-  a8 as Fe,
-  a9 as Xn,
-  aa as Zn,
-  ab as Xt,
-  ac as Qn,
-  ad as Jn,
-  ae as Zt,
-  af as eo,
-  ag as ne,
-  ah as to,
-  ai as no,
+  N as St,
+  a3 as Ge,
+  a4 as O,
+  a5 as Zt,
+  a6 as Yn,
+  a7 as Xn,
+  a8 as Me,
+  a9 as Zn,
+  aa as Qn,
+  ab as Qt,
+  ac as Jn,
+  ad as eo,
+  ae as Jt,
+  af as to,
+  ag as oe,
+  ah as no,
+  ai as et,
   aj as oo,
-  ak as Dt,
-  al as Qt,
-  am as Jt,
-  an as ut,
-  ao as ro,
-  ap as ft,
-  aq as lo,
-  ar as io,
-  as as ao,
-  at as zt,
-  au as $e,
-  av as so,
-  aw as Oe,
-  ax as Xe,
-  ay as He,
-  az as ht,
-  aA as At,
-  aB as Bt,
-  aC as co,
-  o as xe,
+  ak as ro,
+  al as lo,
+  am as io,
+  an as At,
+  ao as en,
+  ap as tn,
+  aq as ao,
+  ar as ht,
+  as as so,
+  at as co,
+  au as uo,
+  av as zt,
+  aw as $e,
+  ax as fo,
+  ay as Fe,
+  az as Ze,
+  aA as We,
+  aB as vt,
+  aC as Ot,
+  aD as Bt,
+  aE as ho,
+  o as pe,
   h as Ne,
-  e as pe,
-  t as en,
-  i as we,
-  _ as St,
-  u as uo,
-  p as fo,
-  aD as $t,
+  e as Ce,
+  t as nn,
+  i as Se,
+  _ as Rt,
+  aF as fe,
+  aG as vo,
+  u as go,
+  p as bo,
+  aH as $t,
   a as Te,
-  F as ho,
-  j as vo,
-  q as go,
-  c as bo,
-  n as yo,
-  w as vt,
-  aE as mo,
-} from "./index-D1df6D06.js";
-import { _ as Ot } from "./svg-icon-DgSBpzdX.js";
-function Ze(e, t) {
+  F as mo,
+  j as yo,
+  q as ko,
+  c as xo,
+  n as po,
+  w as gt,
+  aI as Co,
+} from "./index-BqxKyRSO.js";
+function Qe(e, t) {
   let { target: n } = e;
   for (; n; ) {
     if (n.dataset && n.dataset[t] !== void 0) return !0;
@@ -93,13 +96,13 @@ function Ze(e, t) {
   }
   return !1;
 }
-function tn(e) {
+function on(e) {
   return typeof e == "string" ? "s-".concat(e) : "n-".concat(e);
 }
 function Ft(e) {
   return e & -e;
 }
-class nn {
+class rn {
   constructor(t, n) {
     (this.l = t), (this.min = n);
     const o = new Array(t + 1);
@@ -118,20 +121,20 @@ class nn {
     if ((t === void 0 && (t = this.l), t <= 0)) return 0;
     const { ft: n, min: o, l: r } = this;
     if (t > r) throw new Error("[FinweckTree.sum]: `i` is larger than length.");
-    let i = t * o;
-    for (; t > 0; ) (i += n[t]), (t -= Ft(t));
-    return i;
+    let l = t * o;
+    for (; t > 0; ) (l += n[t]), (t -= Ft(t));
+    return l;
   }
   getBound(t) {
     let n = 0,
       o = this.l;
     for (; o > n; ) {
       const r = Math.floor((n + o) / 2),
-        i = this.sum(r);
-      if (i > t) {
+        l = this.sum(r);
+      if (l > t) {
         o = r;
         continue;
-      } else if (i < t) {
+      } else if (l < t) {
         if (n === r) return this.sum(n + 1) <= t ? n + 1 : r;
         n = r;
       } else return r;
@@ -139,31 +142,31 @@ class nn {
     return n;
   }
 }
-let Qe;
-function ko() {
+let Je;
+function wo() {
   return typeof document > "u"
     ? !1
-    : (Qe === void 0 &&
+    : (Je === void 0 &&
         ("matchMedia" in window
-          ? (Qe = window.matchMedia("(pointer:coarse)").matches)
-          : (Qe = !1)),
-      Qe);
+          ? (Je = window.matchMedia("(pointer:coarse)").matches)
+          : (Je = !1)),
+      Je);
 }
-let gt;
+let bt;
 function Mt() {
   return typeof document > "u"
     ? 1
-    : (gt === void 0 && (gt = "chrome" in window ? window.devicePixelRatio : 1),
-      gt);
+    : (bt === void 0 && (bt = "chrome" in window ? window.devicePixelRatio : 1),
+      bt);
 }
-const on = "VVirtualListXScroll";
-function xo({ columnsRef: e, renderColRef: t, renderItemWithColsRef: n }) {
+const ln = "VVirtualListXScroll";
+function So({ columnsRef: e, renderColRef: t, renderItemWithColsRef: n }) {
   const o = M(0),
     r = M(0),
-    i = D(() => {
+    l = D(() => {
       const a = e.value;
       if (a.length === 0) return null;
-      const c = new nn(a.length, 0);
+      const c = new rn(a.length, 0);
       return (
         a.forEach((g, h) => {
           c.add(h, g.width);
@@ -171,22 +174,22 @@ function xo({ columnsRef: e, renderColRef: t, renderItemWithColsRef: n }) {
         c
       );
     }),
-    s = oe(() => {
-      const a = i.value;
+    s = re(() => {
+      const a = l.value;
       return a !== null ? Math.max(a.getBound(r.value) - 1, 0) : 0;
     }),
     f = (a) => {
-      const c = i.value;
+      const c = l.value;
       return c !== null ? c.sum(a) : 0;
     },
-    d = oe(() => {
-      const a = i.value;
+    d = re(() => {
+      const a = l.value;
       return a !== null
         ? Math.min(a.getBound(r.value + o.value) + 1, e.value.length - 1)
         : 0;
     });
   return (
-    tt(on, {
+    ot(ln, {
       startIndexRef: s,
       endIndexRef: d,
       columnsRef: e,
@@ -197,7 +200,7 @@ function xo({ columnsRef: e, renderColRef: t, renderItemWithColsRef: n }) {
     { listWidthRef: o, scrollLeftRef: r }
   );
 }
-const jt = re({
+const jt = ne({
     name: "VirtualListRow",
     props: {
       index: { type: Number, required: !0 },
@@ -210,14 +213,14 @@ const jt = re({
         columnsRef: n,
         getLeft: o,
         renderColRef: r,
-        renderItemWithColsRef: i,
-      } = be(on);
+        renderItemWithColsRef: l,
+      } = me(ln);
       return {
         startIndex: e,
         endIndex: t,
         columns: n,
         renderCol: r,
-        renderItemWithCols: i,
+        renderItemWithCols: l,
         getLeft: o,
       };
     },
@@ -228,7 +231,7 @@ const jt = re({
         columns: n,
         renderCol: o,
         renderItemWithCols: r,
-        getLeft: i,
+        getLeft: l,
         item: s,
       } = this;
       if (r != null)
@@ -238,32 +241,32 @@ const jt = re({
           endColIndex: t,
           allColumns: n,
           item: s,
-          getLeft: i,
+          getLeft: l,
         });
       if (o != null) {
         const f = [];
         for (let d = e; d <= t; ++d) {
           const a = n[d];
-          f.push(o({ column: a, left: i(d), item: s }));
+          f.push(o({ column: a, left: l(d), item: s }));
         }
         return f;
       }
       return null;
     },
   }),
-  po = ct(
+  Ro = ft(
     ".v-vl",
     { maxHeight: "inherit", height: "100%", overflow: "auto", minWidth: "1px" },
     [
-      ct("&:not(.v-vl--show-scrollbar)", { scrollbarWidth: "none" }, [
-        ct(
+      ft("&:not(.v-vl--show-scrollbar)", { scrollbarWidth: "none" }, [
+        ft(
           "&::-webkit-scrollbar, &::-webkit-scrollbar-track-piece, &::-webkit-scrollbar-thumb",
           { width: 0, height: 0, display: "none" },
         ),
       ]),
     ],
   ),
-  Co = re({
+  _o = ne({
     name: "VirtualList",
     inheritAttrs: !1,
     props: {
@@ -288,30 +291,30 @@ const jt = re({
       paddingBottom: { type: [Number, String], default: 0 },
     },
     setup(e) {
-      const t = $n();
-      po.mount({
+      const t = Fn();
+      Ro.mount({
         id: "vueuc/virtual-list",
         head: !0,
-        anchorMetaName: On,
+        anchorMetaName: Mn,
         ssr: t,
       }),
-        Ct(() => {
-          const { defaultScrollIndex: R, defaultScrollKey: _ } = e;
-          R != null ? m({ index: R }) : _ != null && m({ key: _ });
+        wt(() => {
+          const { defaultScrollIndex: R, defaultScrollKey: T } = e;
+          R != null ? y({ index: R }) : T != null && y({ key: T });
         });
       let n = !1,
         o = !1;
-      Fn(() => {
+      jn(() => {
         if (((n = !1), !o)) {
           o = !0;
           return;
         }
-        m({ top: N.value, left: s.value });
+        y({ top: N.value, left: s.value });
       }),
-        Mn(() => {
+        Vn(() => {
           (n = !0), o || (o = !0);
         });
-      const r = oe(() => {
+      const r = re(() => {
           if (
             (e.renderCol == null && e.renderItemWithCols == null) ||
             e.columns.length === 0
@@ -319,23 +322,23 @@ const jt = re({
             return;
           let R = 0;
           return (
-            e.columns.forEach((_) => {
-              R += _.width;
+            e.columns.forEach((T) => {
+              R += T.width;
             }),
             R
           );
         }),
-        i = D(() => {
+        l = D(() => {
           const R = new Map(),
-            { keyField: _ } = e;
+            { keyField: T } = e;
           return (
-            e.items.forEach((B, G) => {
-              R.set(B[_], G);
+            e.items.forEach((B, q) => {
+              R.set(B[T], q);
             }),
             R
           );
         }),
-        { scrollLeftRef: s, listWidthRef: f } = xo({
+        { scrollLeftRef: s, listWidthRef: f } = So({
           columnsRef: j(e, "columns"),
           renderColRef: j(e, "renderCol"),
           renderItemWithColsRef: j(e, "renderItemWithCols"),
@@ -344,124 +347,124 @@ const jt = re({
         a = M(void 0),
         c = new Map(),
         g = D(() => {
-          const { items: R, itemSize: _, keyField: B } = e,
-            G = new nn(R.length, _);
+          const { items: R, itemSize: T, keyField: B } = e,
+            q = new rn(R.length, T);
           return (
-            R.forEach((J, V) => {
-              const W = J[B],
-                ee = c.get(W);
-              ee !== void 0 && G.add(V, ee);
+            R.forEach((J, W) => {
+              const G = J[B],
+                ee = c.get(G);
+              ee !== void 0 && q.add(W, ee);
             }),
-            G
+            q
           );
         }),
         h = M(0),
         N = M(0),
-        k = oe(() =>
-          Math.max(g.value.getBound(N.value - Se(e.paddingTop)) - 1, 0),
+        k = re(() =>
+          Math.max(g.value.getBound(N.value - Re(e.paddingTop)) - 1, 0),
         ),
         w = D(() => {
           const { value: R } = a;
           if (R === void 0) return [];
-          const { items: _, itemSize: B } = e,
-            G = k.value,
-            J = Math.min(G + Math.ceil(R / B + 1), _.length - 1),
-            V = [];
-          for (let W = G; W <= J; ++W) V.push(_[W]);
-          return V;
+          const { items: T, itemSize: B } = e,
+            q = k.value,
+            J = Math.min(q + Math.ceil(R / B + 1), T.length - 1),
+            W = [];
+          for (let G = q; G <= J; ++G) W.push(T[G]);
+          return W;
         }),
-        m = (R, _) => {
+        y = (R, T) => {
           if (typeof R == "number") {
-            p(R, _, "auto");
+            p(R, T, "auto");
             return;
           }
           const {
             left: B,
-            top: G,
+            top: q,
             index: J,
-            key: V,
-            position: W,
+            key: W,
+            position: G,
             behavior: ee,
             debounce: se = !0,
           } = R;
-          if (B !== void 0 || G !== void 0) p(B, G, ee);
+          if (B !== void 0 || q !== void 0) p(B, q, ee);
           else if (J !== void 0) P(J, ee, se);
-          else if (V !== void 0) {
-            const ye = i.value.get(V);
+          else if (W !== void 0) {
+            const ye = l.value.get(W);
             ye !== void 0 && P(ye, ee, se);
           } else
-            W === "bottom"
+            G === "bottom"
               ? p(0, Number.MAX_SAFE_INTEGER, ee)
-              : W === "top" && p(0, 0, ee);
+              : G === "top" && p(0, 0, ee);
         };
-      let y,
-        L = null;
-      function P(R, _, B) {
-        const { value: G } = g,
-          J = G.sum(R) + Se(e.paddingTop);
-        if (!B) d.value.scrollTo({ left: 0, top: J, behavior: _ });
+      let m,
+        K = null;
+      function P(R, T, B) {
+        const { value: q } = g,
+          J = q.sum(R) + Re(e.paddingTop);
+        if (!B) d.value.scrollTo({ left: 0, top: J, behavior: T });
         else {
-          (y = R),
-            L !== null && window.clearTimeout(L),
-            (L = window.setTimeout(() => {
-              (y = void 0), (L = null);
+          (m = R),
+            K !== null && window.clearTimeout(K),
+            (K = window.setTimeout(() => {
+              (m = void 0), (K = null);
             }, 16));
-          const { scrollTop: V, offsetHeight: W } = d.value;
-          if (J > V) {
-            const ee = G.get(R);
-            J + ee <= V + W ||
-              d.value.scrollTo({ left: 0, top: J + ee - W, behavior: _ });
-          } else d.value.scrollTo({ left: 0, top: J, behavior: _ });
+          const { scrollTop: W, offsetHeight: G } = d.value;
+          if (J > W) {
+            const ee = q.get(R);
+            J + ee <= W + G ||
+              d.value.scrollTo({ left: 0, top: J + ee - G, behavior: T });
+          } else d.value.scrollTo({ left: 0, top: J, behavior: T });
         }
       }
-      function p(R, _, B) {
-        d.value.scrollTo({ left: R, top: _, behavior: B });
+      function p(R, T, B) {
+        d.value.scrollTo({ left: R, top: T, behavior: B });
       }
-      function x(R, _) {
-        var B, G, J;
-        if (n || e.ignoreItemResize || ae(_.target)) return;
-        const { value: V } = g,
-          W = i.value.get(R),
-          ee = V.get(W),
+      function x(R, T) {
+        var B, q, J;
+        if (n || e.ignoreItemResize || ae(T.target)) return;
+        const { value: W } = g,
+          G = l.value.get(R),
+          ee = W.get(G),
           se =
             (J =
-              (G =
-                (B = _.borderBoxSize) === null || B === void 0
+              (q =
+                (B = T.borderBoxSize) === null || B === void 0
                   ? void 0
-                  : B[0]) === null || G === void 0
+                  : B[0]) === null || q === void 0
                 ? void 0
-                : G.blockSize) !== null && J !== void 0
+                : q.blockSize) !== null && J !== void 0
               ? J
-              : _.contentRect.height;
+              : T.contentRect.height;
         if (se === ee) return;
         se - e.itemSize === 0 ? c.delete(R) : c.set(R, se - e.itemSize);
         const S = se - ee;
         if (S === 0) return;
-        V.add(W, S);
-        const z = d.value;
-        if (z != null) {
-          if (y === void 0) {
-            const U = V.sum(W);
-            z.scrollTop > U && z.scrollBy(0, S);
-          } else if (W < y) z.scrollBy(0, S);
-          else if (W === y) {
-            const U = V.sum(W);
-            se + U > z.scrollTop + z.offsetHeight && z.scrollBy(0, S);
+        W.add(G, S);
+        const A = d.value;
+        if (A != null) {
+          if (m === void 0) {
+            const H = W.sum(G);
+            A.scrollTop > H && A.scrollBy(0, S);
+          } else if (G < m) A.scrollBy(0, S);
+          else if (G === m) {
+            const H = W.sum(G);
+            se + H > A.scrollTop + A.offsetHeight && A.scrollBy(0, S);
           }
           X();
         }
         h.value++;
       }
-      const b = !ko();
+      const b = !wo();
       let E = !1;
-      function A(R) {
-        var _;
-        (_ = e.onScroll) === null || _ === void 0 || _.call(e, R),
+      function z(R) {
+        var T;
+        (T = e.onScroll) === null || T === void 0 || T.call(e, R),
           (!b || !E) && X();
       }
-      function H(R) {
-        var _;
-        if (((_ = e.onWheel) === null || _ === void 0 || _.call(e, R), b)) {
+      function V(R) {
+        var T;
+        if (((T = e.onWheel) === null || T === void 0 || T.call(e, R), b)) {
           const B = d.value;
           if (B != null) {
             if (
@@ -492,39 +495,39 @@ const jt = re({
         )
           return;
         (a.value = R.contentRect.height), (f.value = R.contentRect.width);
-        const { onResize: _ } = e;
-        _ !== void 0 && _(R);
+        const { onResize: T } = e;
+        T !== void 0 && T(R);
       }
       function X() {
         const { value: R } = d;
         R != null && ((N.value = R.scrollTop), (s.value = R.scrollLeft));
       }
       function ae(R) {
-        let _ = R;
-        for (; _ !== null; ) {
-          if (_.style.display === "none") return !0;
-          _ = _.parentElement;
+        let T = R;
+        for (; T !== null; ) {
+          if (T.style.display === "none") return !0;
+          T = T.parentElement;
         }
         return !1;
       }
       return {
         listHeight: a,
         listStyle: { overflow: "auto" },
-        keyToIndex: i,
+        keyToIndex: l,
         itemsStyle: D(() => {
           const { itemResizable: R } = e,
-            _ = Re(g.value.sum());
+            T = _e(g.value.sum());
           return (
             h.value,
             [
               e.itemsStyle,
               {
                 boxSizing: "content-box",
-                width: Re(r.value),
-                height: R ? "" : _,
-                minHeight: R ? _ : "",
-                paddingTop: Re(e.paddingTop),
-                paddingBottom: Re(e.paddingBottom),
+                width: _e(r.value),
+                height: R ? "" : T,
+                minHeight: R ? T : "",
+                paddingTop: _e(e.paddingTop),
+                paddingBottom: _e(e.paddingBottom),
               },
             ]
           );
@@ -532,16 +535,16 @@ const jt = re({
         visibleItemsStyle: D(
           () => (
             h.value,
-            { transform: "translateY(".concat(Re(g.value.sum(k.value)), ")") }
+            { transform: "translateY(".concat(_e(g.value.sum(k.value)), ")") }
           ),
         ),
         viewportItems: w,
         listElRef: d,
         itemsElRef: M(null),
-        scrollTo: m,
+        scrollTo: y,
         handleListResize: F,
-        handleListScroll: A,
-        handleListWheel: H,
+        handleListScroll: z,
+        handleListWheel: V,
         handleItemResize: x,
       };
     },
@@ -553,14 +556,14 @@ const jt = re({
         visibleItemsTag: o,
       } = this;
       return v(
-        Pt,
+        Dt,
         { onResize: this.handleListResize },
         {
           default: () => {
-            var r, i;
+            var r, l;
             return v(
               "div",
-              jn(this.$attrs, {
+              Xt(this.$attrs, {
                 class: ["v-vl", this.showScrollbar && "v-vl--show-scrollbar"],
                 onScroll: this.handleListScroll,
                 onWheel: this.handleListWheel,
@@ -608,7 +611,7 @@ const jt = re({
                                   })[0];
                                 return e
                                   ? v(
-                                      Pt,
+                                      Dt,
                                       {
                                         key: a,
                                         onResize: (k) =>
@@ -623,9 +626,9 @@ const jt = re({
                         ),
                       ],
                     )
-                  : (i = (r = this.$slots).empty) === null || i === void 0
+                  : (l = (r = this.$slots).empty) === null || l === void 0
                     ? void 0
-                    : i.call(r),
+                    : l.call(r),
               ],
             );
           },
@@ -633,28 +636,28 @@ const jt = re({
       );
     },
   });
-function wo(e) {
-  const { mergedLocaleRef: t, mergedDateLocaleRef: n } = be(Un, null) || {},
+function No(e) {
+  const { mergedLocaleRef: t, mergedDateLocaleRef: n } = me(Un, null) || {},
     o = D(() => {
-      var i, s;
+      var l, s;
       return (s =
-        (i = t == null ? void 0 : t.value) === null || i === void 0
+        (l = t == null ? void 0 : t.value) === null || l === void 0
           ? void 0
-          : i[e]) !== null && s !== void 0
+          : l[e]) !== null && s !== void 0
         ? s
-        : Vn[e];
+        : Wn[e];
     });
   return {
     dateLocaleRef: D(() => {
-      var i;
-      return (i = n == null ? void 0 : n.value) !== null && i !== void 0
-        ? i
-        : Wn;
+      var l;
+      return (l = n == null ? void 0 : n.value) !== null && l !== void 0
+        ? l
+        : Gn;
     }),
     localeRef: o,
   };
 }
-const So = re({
+const To = ne({
     name: "ChevronRight",
     render() {
       return v(
@@ -671,7 +674,7 @@ const So = re({
       );
     },
   }),
-  Ro = re({
+  Io = ne({
     name: "Empty",
     render() {
       return v(
@@ -692,7 +695,7 @@ const So = re({
       );
     },
   }),
-  No = re({
+  Lo = ne({
     name: "Switcher",
     render() {
       return v(
@@ -702,53 +705,53 @@ const So = re({
       );
     },
   });
-function Ht(e) {
+function Vt(e) {
   return Array.isArray(e) ? e : [e];
 }
-const xt = { STOP: "STOP" };
-function rn(e, t) {
+const pt = { STOP: "STOP" };
+function an(e, t) {
   const n = t(e);
-  e.children !== void 0 && n !== xt.STOP && e.children.forEach((o) => rn(o, t));
+  e.children !== void 0 && n !== pt.STOP && e.children.forEach((o) => an(o, t));
 }
-function To(e, t = {}) {
+function Ko(e, t = {}) {
   const { preserveGroup: n = !1 } = t,
     o = [],
     r = n
       ? (s) => {
-          s.isLeaf || (o.push(s.key), i(s.children));
+          s.isLeaf || (o.push(s.key), l(s.children));
         }
       : (s) => {
-          s.isLeaf || (s.isGroup || o.push(s.key), i(s.children));
+          s.isLeaf || (s.isGroup || o.push(s.key), l(s.children));
         };
-  function i(s) {
+  function l(s) {
     s.forEach(r);
   }
-  return i(e), o;
-}
-function _o(e, t) {
-  const { isLeaf: n } = e;
-  return n !== void 0 ? n : !t(e);
-}
-function Ko(e) {
-  return e.children;
-}
-function Io(e) {
-  return e.key;
-}
-function Lo() {
-  return !1;
+  return l(e), o;
 }
 function Eo(e, t) {
   const { isLeaf: n } = e;
-  return !(n === !1 && !Array.isArray(t(e)));
+  return n !== void 0 ? n : !t(e);
 }
 function Po(e) {
+  return e.children;
+}
+function Do(e) {
+  return e.key;
+}
+function Ao() {
+  return !1;
+}
+function zo(e, t) {
+  const { isLeaf: n } = e;
+  return !(n === !1 && !Array.isArray(t(e)));
+}
+function Oo(e) {
   return e.disabled === !0;
 }
-function Do(e, t) {
+function Bo(e, t) {
   return e.isLeaf === !1 && !Array.isArray(t(e));
 }
-function bt(e) {
+function mt(e) {
   var t;
   return e == null
     ? []
@@ -766,7 +769,7 @@ function yt(e) {
       ? t
       : [];
 }
-function zo(e, t) {
+function $o(e, t) {
   const n = new Set(e);
   return (
     t.forEach((o) => {
@@ -775,7 +778,7 @@ function zo(e, t) {
     Array.from(n)
   );
 }
-function Ao(e, t) {
+function Fo(e, t) {
   const n = new Set(e);
   return (
     t.forEach((o) => {
@@ -784,10 +787,10 @@ function Ao(e, t) {
     Array.from(n)
   );
 }
-function Bo(e) {
+function Mo(e) {
   return (e == null ? void 0 : e.type) === "group";
 }
-function $o(e) {
+function jo(e) {
   const t = new Map();
   return (
     e.forEach((n, o) => {
@@ -799,49 +802,49 @@ function $o(e) {
     }
   );
 }
-class Oo extends Error {
+class Vo extends Error {
   constructor() {
     super(),
       (this.message =
         "SubtreeNotLoadedError: checking a subtree whose required nodes are not fully loaded.");
   }
 }
-function Fo(e, t, n, o) {
-  return et(t.concat(e), n, o, !1);
+function Ho(e, t, n, o) {
+  return nt(t.concat(e), n, o, !1);
 }
-function Mo(e, t) {
+function Uo(e, t) {
   const n = new Set();
   return (
     e.forEach((o) => {
       const r = t.treeNodeMap.get(o);
       if (r !== void 0) {
-        let i = r.parent;
-        for (; i !== null && !(i.disabled || n.has(i.key)); )
-          n.add(i.key), (i = i.parent);
+        let l = r.parent;
+        for (; l !== null && !(l.disabled || n.has(l.key)); )
+          n.add(l.key), (l = l.parent);
       }
     }),
     n
   );
 }
-function jo(e, t, n, o) {
-  const r = et(t, n, o, !1),
-    i = et(e, n, o, !0),
-    s = Mo(e, n),
+function Wo(e, t, n, o) {
+  const r = nt(t, n, o, !1),
+    l = nt(e, n, o, !0),
+    s = Uo(e, n),
     f = [];
   return (
     r.forEach((d) => {
-      (i.has(d) || s.has(d)) && f.push(d);
+      (l.has(d) || s.has(d)) && f.push(d);
     }),
     f.forEach((d) => r.delete(d)),
     r
   );
 }
-function mt(e, t) {
+function kt(e, t) {
   const {
     checkedKeys: n,
     keysToCheck: o,
     keysToUncheck: r,
-    indeterminateKeys: i,
+    indeterminateKeys: l,
     cascade: s,
     leafOnly: f,
     checkStrategy: d,
@@ -849,25 +852,25 @@ function mt(e, t) {
   } = e;
   if (!s)
     return o !== void 0
-      ? { checkedKeys: zo(n, o), indeterminateKeys: Array.from(i) }
+      ? { checkedKeys: $o(n, o), indeterminateKeys: Array.from(l) }
       : r !== void 0
-        ? { checkedKeys: Ao(n, r), indeterminateKeys: Array.from(i) }
-        : { checkedKeys: Array.from(n), indeterminateKeys: Array.from(i) };
+        ? { checkedKeys: Fo(n, r), indeterminateKeys: Array.from(l) }
+        : { checkedKeys: Array.from(n), indeterminateKeys: Array.from(l) };
   const { levelTreeNodeMap: c } = t;
   let g;
   r !== void 0
-    ? (g = jo(r, n, t, a))
+    ? (g = Wo(r, n, t, a))
     : o !== void 0
-      ? (g = Fo(o, n, t, a))
-      : (g = et(n, t, a, !1));
+      ? (g = Ho(o, n, t, a))
+      : (g = nt(n, t, a, !1));
   const h = d === "parent",
     N = d === "child" || f,
     k = g,
     w = new Set(),
-    m = Math.max.apply(null, Array.from(c.keys()));
-  for (let y = m; y >= 0; y -= 1) {
-    const L = y === 0,
-      P = c.get(y);
+    y = Math.max.apply(null, Array.from(c.keys()));
+  for (let m = y; m >= 0; m -= 1) {
+    const K = m === 0,
+      P = c.get(m);
     for (const p of P) {
       if (p.isLeaf) continue;
       const { key: x, shallowLoaded: b } = p;
@@ -885,54 +888,54 @@ function mt(e, t) {
       )
         continue;
       let E = !0,
-        A = !1,
-        H = !0;
+        z = !1,
+        V = !0;
       for (const F of p.children) {
         const X = F.key;
         if (!F.disabled) {
-          if ((H && (H = !1), k.has(X))) A = !0;
+          if ((V && (V = !1), k.has(X))) z = !0;
           else if (w.has(X)) {
-            (A = !0), (E = !1);
+            (z = !0), (E = !1);
             break;
-          } else if (((E = !1), A)) break;
+          } else if (((E = !1), z)) break;
         }
       }
-      E && !H
+      E && !V
         ? (h &&
             p.children.forEach((F) => {
               !F.disabled && k.has(F.key) && k.delete(F.key);
             }),
           k.add(x))
-        : A && w.add(x),
-        L && N && k.has(x) && k.delete(x);
+        : z && w.add(x),
+        K && N && k.has(x) && k.delete(x);
     }
   }
   return { checkedKeys: Array.from(k), indeterminateKeys: Array.from(w) };
 }
-function et(e, t, n, o) {
-  const { treeNodeMap: r, getChildren: i } = t,
+function nt(e, t, n, o) {
+  const { treeNodeMap: r, getChildren: l } = t,
     s = new Set(),
     f = new Set(e);
   return (
     e.forEach((d) => {
       const a = r.get(d);
       a !== void 0 &&
-        rn(a, (c) => {
-          if (c.disabled) return xt.STOP;
+        an(a, (c) => {
+          if (c.disabled) return pt.STOP;
           const { key: g } = c;
-          if (!s.has(g) && (s.add(g), f.add(g), Do(c.rawNode, i))) {
-            if (o) return xt.STOP;
-            if (!n) throw new Oo();
+          if (!s.has(g) && (s.add(g), f.add(g), Bo(c.rawNode, l))) {
+            if (o) return pt.STOP;
+            if (!n) throw new Vo();
           }
         });
     }),
     f
   );
 }
-function Ho(e, { includeGroup: t = !1, includeSelf: n = !0 }, o) {
+function Go(e, { includeGroup: t = !1, includeSelf: n = !0 }, o) {
   var r;
-  const i = o.treeNodeMap;
-  let s = e == null ? null : (r = i.get(e)) !== null && r !== void 0 ? r : null;
+  const l = o.treeNodeMap;
+  let s = e == null ? null : (r = l.get(e)) !== null && r !== void 0 ? r : null;
   const f = { keyPath: [], treeNodePath: [], treeNode: s };
   if (s != null && s.ignored) return (f.treeNode = null), f;
   for (; s; )
@@ -944,20 +947,20 @@ function Ho(e, { includeGroup: t = !1, includeSelf: n = !0 }, o) {
     f
   );
 }
-function Uo(e) {
+function qo(e) {
   if (e.length === 0) return null;
   const t = e[0];
   return t.isGroup || t.ignored || t.disabled ? t.getNext() : t;
 }
-function Vo(e, t) {
+function Yo(e, t) {
   const n = e.siblings,
     o = n.length,
     { index: r } = e;
   return t ? n[(r + 1) % o] : r === n.length - 1 ? null : n[r + 1];
 }
-function Ut(e, t, { loop: n = !1, includeDisabled: o = !1 } = {}) {
-  const r = t === "prev" ? Wo : Vo,
-    i = { reverse: t === "prev" };
+function Ht(e, t, { loop: n = !1, includeDisabled: o = !1 } = {}) {
+  const r = t === "prev" ? Xo : Yo,
+    l = { reverse: t === "prev" };
   let s = !1,
     f = null;
   function d(a) {
@@ -973,13 +976,13 @@ function Ut(e, t, { loop: n = !1, includeDisabled: o = !1 } = {}) {
         return;
       }
       if (a.isGroup) {
-        const c = Rt(a, i);
+        const c = _t(a, l);
         c !== null ? (f = c) : d(r(a, n));
       } else {
         const c = r(a, !1);
         if (c !== null) d(c);
         else {
-          const g = Go(a);
+          const g = Zo(a);
           g != null && g.isGroup ? d(r(g, n)) : n && d(r(a, !0));
         }
       }
@@ -987,54 +990,54 @@ function Ut(e, t, { loop: n = !1, includeDisabled: o = !1 } = {}) {
   }
   return d(e), f;
 }
-function Wo(e, t) {
+function Xo(e, t) {
   const n = e.siblings,
     o = n.length,
     { index: r } = e;
   return t ? n[(r - 1 + o) % o] : r === 0 ? null : n[r - 1];
 }
-function Go(e) {
+function Zo(e) {
   return e.parent;
 }
-function Rt(e, t = {}) {
+function _t(e, t = {}) {
   const { reverse: n = !1 } = t,
     { children: o } = e;
   if (o) {
     const { length: r } = o,
-      i = n ? r - 1 : 0,
+      l = n ? r - 1 : 0,
       s = n ? -1 : r,
       f = n ? -1 : 1;
-    for (let d = i; d !== s; d += f) {
+    for (let d = l; d !== s; d += f) {
       const a = o[d];
       if (!a.disabled && !a.ignored)
         if (a.isGroup) {
-          const c = Rt(a, t);
+          const c = _t(a, t);
           if (c !== null) return c;
         } else return a;
     }
   }
   return null;
 }
-const qo = {
+const Qo = {
   getChild() {
-    return this.ignored ? null : Rt(this);
+    return this.ignored ? null : _t(this);
   },
   getParent() {
     const { parent: e } = this;
     return e != null && e.isGroup ? e.getParent() : e;
   },
   getNext(e = {}) {
-    return Ut(this, "next", e);
+    return Ht(this, "next", e);
   },
   getPrev(e = {}) {
-    return Ut(this, "prev", e);
+    return Ht(this, "prev", e);
   },
 };
-function pt(e, t) {
+function Ct(e, t) {
   const n = t ? new Set(t) : void 0,
     o = [];
-  function r(i) {
-    i.forEach((s) => {
+  function r(l) {
+    l.forEach((s) => {
       o.push(s),
         !(s.isLeaf || !s.children || s.ignored) &&
           (s.isGroup || n === void 0 || n.has(s.key)) &&
@@ -1043,7 +1046,7 @@ function pt(e, t) {
   }
   return r(e), o;
 }
-function Yo(e, t) {
+function Jo(e, t) {
   const n = e.key;
   for (; t; ) {
     if (t.key === n) return !0;
@@ -1051,7 +1054,7 @@ function Yo(e, t) {
   }
   return !1;
 }
-function ln(e, t, n, o, r, i = null, s = 0) {
+function sn(e, t, n, o, r, l = null, s = 0) {
   const f = [];
   return (
     e.forEach((d, a) => {
@@ -1064,11 +1067,11 @@ function ln(e, t, n, o, r, i = null, s = 0) {
         (g.index = a),
         (g.isFirstChild = a === 0),
         (g.isLastChild = a + 1 === e.length),
-        (g.parent = i),
+        (g.parent = l),
         !g.ignored)
       ) {
         const h = r(d);
-        Array.isArray(h) && (g.children = ln(h, t, n, o, r, g, s + 1));
+        Array.isArray(h) && (g.children = sn(h, t, n, o, r, g, s + 1));
       }
       f.push(g),
         t.set(g.key, g),
@@ -1078,17 +1081,17 @@ function ln(e, t, n, o, r, i = null, s = 0) {
     f
   );
 }
-function Vt(e, t = {}) {
+function Ut(e, t = {}) {
   var n;
   const o = new Map(),
     r = new Map(),
     {
-      getDisabled: i = Po,
-      getIgnored: s = Lo,
-      getIsGroup: f = Bo,
-      getKey: d = Io,
+      getDisabled: l = Oo,
+      getIgnored: s = Ao,
+      getIsGroup: f = Mo,
+      getKey: d = Do,
     } = t,
-    a = (n = t.getChildren) !== null && n !== void 0 ? n : Ko,
+    a = (n = t.getChildren) !== null && n !== void 0 ? n : Po,
     c = t.ignoreEmptyChildren
       ? (p) => {
           const x = a(p);
@@ -1101,27 +1104,27 @@ function Vt(e, t = {}) {
           return d(this.rawNode);
         },
         get disabled() {
-          return i(this.rawNode);
+          return l(this.rawNode);
         },
         get isGroup() {
           return f(this.rawNode);
         },
         get isLeaf() {
-          return _o(this.rawNode, c);
+          return Eo(this.rawNode, c);
         },
         get shallowLoaded() {
-          return Eo(this.rawNode, c);
+          return zo(this.rawNode, c);
         },
         get ignored() {
           return s(this.rawNode);
         },
         contains(p) {
-          return Yo(this, p);
+          return Jo(this, p);
         },
       },
-      qo,
+      Qo,
     ),
-    h = ln(e, o, r, g, c);
+    h = sn(e, o, r, g, c);
   function N(p) {
     if (p == null) return null;
     const x = o.get(p);
@@ -1136,15 +1139,15 @@ function Vt(e, t = {}) {
     const b = k(p);
     return b ? b.getPrev(x) : null;
   }
-  function m(p, x) {
+  function y(p, x) {
     const b = k(p);
     return b ? b.getNext(x) : null;
   }
-  function y(p) {
+  function m(p) {
     const x = k(p);
     return x ? x.getParent() : null;
   }
-  function L(p) {
+  function K(p) {
     const x = k(p);
     return x ? x.getChild() : null;
   }
@@ -1155,34 +1158,34 @@ function Vt(e, t = {}) {
     maxLevel: Math.max(...r.keys()),
     getChildren: c,
     getFlattenedNodes(p) {
-      return pt(h, p);
+      return Ct(h, p);
     },
     getNode: N,
     getPrev: w,
-    getNext: m,
-    getParent: y,
-    getChild: L,
+    getNext: y,
+    getParent: m,
+    getChild: K,
     getFirstAvailableNode() {
-      return Uo(h);
+      return qo(h);
     },
     getPath(p, x = {}) {
-      return Ho(p, x, P);
+      return Go(p, x, P);
     },
     getCheckedKeys(p, x = {}) {
       const {
         cascade: b = !0,
         leafOnly: E = !1,
-        checkStrategy: A = "all",
-        allowNotLoaded: H = !1,
+        checkStrategy: z = "all",
+        allowNotLoaded: V = !1,
       } = x;
-      return mt(
+      return kt(
         {
-          checkedKeys: bt(p),
+          checkedKeys: mt(p),
           indeterminateKeys: yt(p),
           cascade: b,
           leafOnly: E,
-          checkStrategy: A,
-          allowNotLoaded: H,
+          checkStrategy: z,
+          allowNotLoaded: V,
         },
         P,
       );
@@ -1190,18 +1193,18 @@ function Vt(e, t = {}) {
     check(p, x, b = {}) {
       const {
         cascade: E = !0,
-        leafOnly: A = !1,
-        checkStrategy: H = "all",
+        leafOnly: z = !1,
+        checkStrategy: V = "all",
         allowNotLoaded: F = !1,
       } = b;
-      return mt(
+      return kt(
         {
-          checkedKeys: bt(x),
+          checkedKeys: mt(x),
           indeterminateKeys: yt(x),
-          keysToCheck: p == null ? [] : Ht(p),
+          keysToCheck: p == null ? [] : Vt(p),
           cascade: E,
-          leafOnly: A,
-          checkStrategy: H,
+          leafOnly: z,
+          checkStrategy: V,
           allowNotLoaded: F,
         },
         P,
@@ -1210,66 +1213,66 @@ function Vt(e, t = {}) {
     uncheck(p, x, b = {}) {
       const {
         cascade: E = !0,
-        leafOnly: A = !1,
-        checkStrategy: H = "all",
+        leafOnly: z = !1,
+        checkStrategy: V = "all",
         allowNotLoaded: F = !1,
       } = b;
-      return mt(
+      return kt(
         {
-          checkedKeys: bt(x),
+          checkedKeys: mt(x),
           indeterminateKeys: yt(x),
-          keysToUncheck: p == null ? [] : Ht(p),
+          keysToUncheck: p == null ? [] : Vt(p),
           cascade: E,
-          leafOnly: A,
-          checkStrategy: H,
+          leafOnly: z,
+          checkStrategy: V,
           allowNotLoaded: F,
         },
         P,
       );
     },
     getNonLeafKeys(p = {}) {
-      return To(h, p);
+      return Ko(h, p);
     },
   };
   return P;
 }
-const Xo = T(
+const er = _(
     "empty",
     "\n display: flex;\n flex-direction: column;\n align-items: center;\n font-size: var(--n-font-size);\n",
     [
-      O(
+      $(
         "icon",
         "\n width: var(--n-icon-size);\n height: var(--n-icon-size);\n font-size: var(--n-icon-size);\n line-height: var(--n-icon-size);\n color: var(--n-icon-color);\n transition:\n color .3s var(--n-bezier);\n ",
-        [Y("+", [O("description", "\n margin-top: 8px;\n ")])],
+        [U("+", [$("description", "\n margin-top: 8px;\n ")])],
       ),
-      O(
+      $(
         "description",
         "\n transition: color .3s var(--n-bezier);\n color: var(--n-text-color);\n ",
       ),
-      O(
+      $(
         "extra",
         "\n text-align: center;\n transition: color .3s var(--n-bezier);\n margin-top: 12px;\n color: var(--n-extra-text-color);\n ",
       ),
     ],
   ),
-  Zo = Object.assign(Object.assign({}, ge.props), {
+  tr = Object.assign(Object.assign({}, ge.props), {
     description: String,
     showDescription: { type: Boolean, default: !0 },
     showIcon: { type: Boolean, default: !0 },
     size: { type: String, default: "medium" },
     renderIcon: Function,
   }),
-  Wt = re({
+  Wt = ne({
     name: "Empty",
-    props: Zo,
+    props: tr,
     setup(e) {
       const {
           mergedClsPrefixRef: t,
           inlineThemeDisabled: n,
           mergedComponentPropsRef: o,
-        } = Ue(e),
-        r = ge("Empty", "-empty", Xo, Gn, e, t),
-        { localeRef: i } = wo("Empty"),
+        } = je(e),
+        r = ge("Empty", "-empty", er, qn, e, t),
+        { localeRef: l } = No("Empty"),
         s = D(() => {
           var c, g, h;
           return (c = e.description) !== null && c !== void 0
@@ -1289,7 +1292,7 @@ const Xo = T(
                 ? void 0
                 : c.Empty) === null || g === void 0
               ? void 0
-              : g.renderIcon) || (() => v(Ro, null))
+              : g.renderIcon) || (() => v(Io, null))
           );
         }),
         d = D(() => {
@@ -1297,11 +1300,11 @@ const Xo = T(
             {
               common: { cubicBezierEaseInOut: g },
               self: {
-                [Je("iconSize", c)]: h,
-                [Je("fontSize", c)]: N,
+                [tt("iconSize", c)]: h,
+                [tt("fontSize", c)]: N,
                 textColor: k,
                 iconColor: w,
-                extraTextColor: m,
+                extraTextColor: y,
               },
             } = r.value;
           return {
@@ -1310,7 +1313,7 @@ const Xo = T(
             "--n-bezier": g,
             "--n-text-color": k,
             "--n-icon-color": w,
-            "--n-extra-text-color": m,
+            "--n-extra-text-color": y,
           };
         }),
         a = n
@@ -1328,7 +1331,7 @@ const Xo = T(
       return {
         mergedClsPrefix: t,
         mergedRenderIcon: f,
-        localizedDescription: D(() => s.value || i.value.description),
+        localizedDescription: D(() => s.value || l.value.description),
         cssVars: n ? void 0 : d,
         themeClass: a == null ? void 0 : a.themeClass,
         onRender: a == null ? void 0 : a.onRender,
@@ -1350,7 +1353,7 @@ const Xo = T(
                 { class: "".concat(t, "-empty__icon") },
                 e.icon
                   ? e.icon()
-                  : v(wt, { clsPrefix: t }, { default: this.mergedRenderIcon }),
+                  : v(St, { clsPrefix: t }, { default: this.mergedRenderIcon }),
               )
             : null,
           this.showDescription
@@ -1367,150 +1370,150 @@ const Xo = T(
       );
     },
   }),
-  Qo = v(
+  nr = v(
     "svg",
     { viewBox: "0 0 64 64", class: "check-icon" },
     v("path", {
       d: "M50.42,16.76L22.34,39.45l-8.1-11.46c-1.12-1.58-3.3-1.96-4.88-0.84c-1.58,1.12-1.95,3.3-0.84,4.88l10.26,14.51  c0.56,0.79,1.42,1.31,2.38,1.45c0.16,0.02,0.32,0.03,0.48,0.03c0.8,0,1.57-0.27,2.2-0.78l30.99-25.03c1.5-1.21,1.74-3.42,0.52-4.92  C54.13,15.78,51.93,15.55,50.42,16.76z",
     }),
   ),
-  Jo = v(
+  or = v(
     "svg",
     { viewBox: "0 0 100 100", class: "line-icon" },
     v("path", {
       d: "M80.2,55.5H21.4c-2.8,0-5.1-2.5-5.1-5.5l0,0c0-3,2.3-5.5,5.1-5.5h58.7c2.8,0,5.1,2.5,5.1,5.5l0,0C85.2,53.1,82.9,55.5,80.2,55.5z",
     }),
   ),
-  er = We("n-checkbox-group"),
-  tr = Y([
-    T(
+  rr = Ge("n-checkbox-group"),
+  lr = U([
+    _(
       "checkbox",
       "\n font-size: var(--n-font-size);\n outline: none;\n cursor: pointer;\n display: inline-flex;\n flex-wrap: nowrap;\n align-items: flex-start;\n word-break: break-word;\n line-height: var(--n-size);\n --n-merged-color-table: var(--n-color-table);\n ",
       [
-        $("show-label", "line-height: var(--n-label-line-height);"),
-        Y("&:hover", [
-          T("checkbox-box", [O("border", "border: var(--n-border-checked);")]),
+        O("show-label", "line-height: var(--n-label-line-height);"),
+        U("&:hover", [
+          _("checkbox-box", [$("border", "border: var(--n-border-checked);")]),
         ]),
-        Y("&:focus:not(:active)", [
-          T("checkbox-box", [
-            O(
+        U("&:focus:not(:active)", [
+          _("checkbox-box", [
+            $(
               "border",
               "\n border: var(--n-border-focus);\n box-shadow: var(--n-box-shadow-focus);\n ",
             ),
           ]),
         ]),
-        $("inside-table", [
-          T(
+        O("inside-table", [
+          _(
             "checkbox-box",
             "\n background-color: var(--n-merged-color-table);\n ",
           ),
         ]),
-        $("checked", [
-          T("checkbox-box", "\n background-color: var(--n-color-checked);\n ", [
-            T("checkbox-icon", [
-              Y(".check-icon", "\n opacity: 1;\n transform: scale(1);\n "),
+        O("checked", [
+          _("checkbox-box", "\n background-color: var(--n-color-checked);\n ", [
+            _("checkbox-icon", [
+              U(".check-icon", "\n opacity: 1;\n transform: scale(1);\n "),
             ]),
           ]),
         ]),
-        $("indeterminate", [
-          T("checkbox-box", [
-            T("checkbox-icon", [
-              Y(".check-icon", "\n opacity: 0;\n transform: scale(.5);\n "),
-              Y(".line-icon", "\n opacity: 1;\n transform: scale(1);\n "),
+        O("indeterminate", [
+          _("checkbox-box", [
+            _("checkbox-icon", [
+              U(".check-icon", "\n opacity: 0;\n transform: scale(.5);\n "),
+              U(".line-icon", "\n opacity: 1;\n transform: scale(1);\n "),
             ]),
           ]),
         ]),
-        $("checked, indeterminate", [
-          Y("&:focus:not(:active)", [
-            T("checkbox-box", [
-              O(
+        O("checked, indeterminate", [
+          U("&:focus:not(:active)", [
+            _("checkbox-box", [
+              $(
                 "border",
                 "\n border: var(--n-border-checked);\n box-shadow: var(--n-box-shadow-focus);\n ",
               ),
             ]),
           ]),
-          T(
+          _(
             "checkbox-box",
             "\n background-color: var(--n-color-checked);\n border-left: 0;\n border-top: 0;\n ",
-            [O("border", { border: "var(--n-border-checked)" })],
+            [$("border", { border: "var(--n-border-checked)" })],
           ),
         ]),
-        $("disabled", { cursor: "not-allowed" }, [
-          $("checked", [
-            T(
+        O("disabled", { cursor: "not-allowed" }, [
+          O("checked", [
+            _(
               "checkbox-box",
               "\n background-color: var(--n-color-disabled-checked);\n ",
               [
-                O("border", { border: "var(--n-border-disabled-checked)" }),
-                T("checkbox-icon", [
-                  Y(".check-icon, .line-icon", {
+                $("border", { border: "var(--n-border-disabled-checked)" }),
+                _("checkbox-icon", [
+                  U(".check-icon, .line-icon", {
                     fill: "var(--n-check-mark-color-disabled-checked)",
                   }),
                 ]),
               ],
             ),
           ]),
-          T(
+          _(
             "checkbox-box",
             "\n background-color: var(--n-color-disabled);\n ",
             [
-              O("border", "\n border: var(--n-border-disabled);\n "),
-              T("checkbox-icon", [
-                Y(
+              $("border", "\n border: var(--n-border-disabled);\n "),
+              _("checkbox-icon", [
+                U(
                   ".check-icon, .line-icon",
                   "\n fill: var(--n-check-mark-color-disabled);\n ",
                 ),
               ]),
             ],
           ),
-          O("label", "\n color: var(--n-text-color-disabled);\n "),
+          $("label", "\n color: var(--n-text-color-disabled);\n "),
         ]),
-        T(
+        _(
           "checkbox-box-wrapper",
           "\n position: relative;\n width: var(--n-size);\n flex-shrink: 0;\n flex-grow: 0;\n user-select: none;\n -webkit-user-select: none;\n ",
         ),
-        T(
+        _(
           "checkbox-box",
           "\n position: absolute;\n left: 0;\n top: 50%;\n transform: translateY(-50%);\n height: var(--n-size);\n width: var(--n-size);\n display: inline-block;\n box-sizing: border-box;\n border-radius: var(--n-border-radius);\n background-color: var(--n-color);\n transition: background-color 0.3s var(--n-bezier);\n ",
           [
-            O(
+            $(
               "border",
               "\n transition:\n border-color .3s var(--n-bezier),\n box-shadow .3s var(--n-bezier);\n border-radius: inherit;\n position: absolute;\n left: 0;\n right: 0;\n top: 0;\n bottom: 0;\n border: var(--n-border);\n ",
             ),
-            T(
+            _(
               "checkbox-icon",
               "\n display: flex;\n align-items: center;\n justify-content: center;\n position: absolute;\n left: 1px;\n right: 1px;\n top: 1px;\n bottom: 1px;\n ",
               [
-                Y(
+                U(
                   ".check-icon, .line-icon",
                   "\n width: 100%;\n fill: var(--n-check-mark-color);\n opacity: 0;\n transform: scale(0.5);\n transform-origin: center;\n transition:\n fill 0.3s var(--n-bezier),\n transform 0.3s var(--n-bezier),\n opacity 0.3s var(--n-bezier),\n border-color 0.3s var(--n-bezier);\n ",
                 ),
-                Yt({ left: "1px", top: "1px" }),
+                Zt({ left: "1px", top: "1px" }),
               ],
             ),
           ],
         ),
-        O(
+        $(
           "label",
           "\n color: var(--n-text-color);\n transition: color .3s var(--n-bezier);\n user-select: none;\n -webkit-user-select: none;\n padding: var(--n-label-padding);\n font-weight: var(--n-label-font-weight);\n ",
-          [Y("&:empty", { display: "none" })],
+          [U("&:empty", { display: "none" })],
         ),
       ],
     ),
-    qn(
-      T(
+    Yn(
+      _(
         "checkbox",
         "\n --n-merged-color-table: var(--n-color-table-modal);\n ",
       ),
     ),
-    Yn(
-      T(
+    Xn(
+      _(
         "checkbox",
         "\n --n-merged-color-table: var(--n-color-table-popover);\n ",
       ),
     ),
   ]),
-  nr = Object.assign(Object.assign({}, ge.props), {
+  ir = Object.assign(Object.assign({}, ge.props), {
     size: String,
     checked: { type: [Boolean, String, Number], default: void 0 },
     defaultChecked: { type: [Boolean, String, Number], default: !1 },
@@ -1526,37 +1529,37 @@ const Xo = T(
     privateInsideTable: Boolean,
     onChange: [Function, Array],
   }),
-  or = re({
+  ar = ne({
     name: "Checkbox",
-    props: nr,
+    props: ir,
     setup(e) {
-      const t = be(er, null),
+      const t = me(rr, null),
         n = M(null),
         {
           mergedClsPrefixRef: o,
           inlineThemeDisabled: r,
-          mergedRtlRef: i,
-        } = Ue(e),
+          mergedRtlRef: l,
+        } = je(e),
         s = M(e.defaultChecked),
         f = j(e, "checked"),
-        d = Fe(f, s),
-        a = oe(() => {
+        d = Me(f, s),
+        a = re(() => {
           if (t) {
             const b = t.valueSetRef.value;
             return b && e.value !== void 0 ? b.has(e.value) : !1;
           } else return d.value === e.checkedValue;
         }),
-        c = Xn(e, {
+        c = Zn(e, {
           mergedSize(b) {
             const { size: E } = e;
             if (E !== void 0) return E;
             if (t) {
-              const { value: A } = t.mergedSizeRef;
-              if (A !== void 0) return A;
+              const { value: z } = t.mergedSizeRef;
+              if (z !== void 0) return z;
             }
             if (b) {
-              const { mergedSize: A } = b;
-              if (A !== void 0) return A.value;
+              const { mergedSize: z } = b;
+              if (z !== void 0) return z.value;
             }
             return "medium";
           },
@@ -1566,29 +1569,29 @@ const Xo = T(
             if (t) {
               if (t.disabledRef.value) return !0;
               const {
-                maxRef: { value: A },
-                checkedCountRef: H,
+                maxRef: { value: z },
+                checkedCountRef: V,
               } = t;
-              if (A !== void 0 && H.value >= A && !a.value) return !0;
+              if (z !== void 0 && V.value >= z && !a.value) return !0;
               const {
                 minRef: { value: F },
               } = t;
-              if (F !== void 0 && H.value <= F && a.value) return !0;
+              if (F !== void 0 && V.value <= F && a.value) return !0;
             }
             return b ? b.disabled.value : !1;
           },
         }),
         { mergedDisabledRef: g, mergedSizeRef: h } = c,
-        N = ge("Checkbox", "-checkbox", tr, Zn, e, o);
+        N = ge("Checkbox", "-checkbox", lr, Qn, e, o);
       function k(b) {
         if (t && e.value !== void 0) t.toggleCheckbox(!a.value, e.value);
         else {
-          const { onChange: E, "onUpdate:checked": A, onUpdateChecked: H } = e,
+          const { onChange: E, "onUpdate:checked": z, onUpdateChecked: V } = e,
             { nTriggerFormInput: F, nTriggerFormChange: X } = c,
             ae = a.value ? e.uncheckedValue : e.checkedValue;
-          A && ne(A, ae, b),
-            H && ne(H, ae, b),
-            E && ne(E, ae, b),
+          z && oe(z, ae, b),
+            V && oe(V, ae, b),
+            E && oe(E, ae, b),
             F(),
             X(),
             (s.value = ae);
@@ -1597,7 +1600,7 @@ const Xo = T(
       function w(b) {
         g.value || k(b);
       }
-      function m(b) {
+      function y(b) {
         if (!g.value)
           switch (b.key) {
             case " ":
@@ -1605,13 +1608,13 @@ const Xo = T(
               k(b);
           }
       }
-      function y(b) {
+      function m(b) {
         switch (b.key) {
           case " ":
             b.preventDefault();
         }
       }
-      const L = {
+      const K = {
           focus: () => {
             var b;
             (b = n.value) === null || b === void 0 || b.focus();
@@ -1621,63 +1624,63 @@ const Xo = T(
             (b = n.value) === null || b === void 0 || b.blur();
           },
         },
-        P = Xt("Checkbox", i, o),
+        P = Qt("Checkbox", l, o),
         p = D(() => {
           const { value: b } = h,
             {
               common: { cubicBezierEaseInOut: E },
               self: {
-                borderRadius: A,
-                color: H,
+                borderRadius: z,
+                color: V,
                 colorChecked: F,
                 colorDisabled: X,
                 colorTableHeader: ae,
                 colorTableHeaderModal: R,
-                colorTableHeaderPopover: _,
+                colorTableHeaderPopover: T,
                 checkMarkColor: B,
-                checkMarkColorDisabled: G,
+                checkMarkColorDisabled: q,
                 border: J,
-                borderFocus: V,
-                borderDisabled: W,
+                borderFocus: W,
+                borderDisabled: G,
                 borderChecked: ee,
                 boxShadowFocus: se,
                 textColor: ye,
                 textColorDisabled: S,
-                checkMarkColorDisabledChecked: z,
-                colorDisabledChecked: U,
+                checkMarkColorDisabledChecked: A,
+                colorDisabledChecked: H,
                 borderDisabledChecked: te,
                 labelPadding: le,
-                labelLineHeight: _e,
-                labelFontWeight: Ke,
-                [Je("fontSize", b)]: Ie,
-                [Je("size", b)]: nt,
+                labelLineHeight: Ie,
+                labelFontWeight: Le,
+                [tt("fontSize", b)]: Ke,
+                [tt("size", b)]: rt,
               },
             } = N.value;
           return {
-            "--n-label-line-height": _e,
-            "--n-label-font-weight": Ke,
-            "--n-size": nt,
+            "--n-label-line-height": Ie,
+            "--n-label-font-weight": Le,
+            "--n-size": rt,
             "--n-bezier": E,
-            "--n-border-radius": A,
+            "--n-border-radius": z,
             "--n-border": J,
             "--n-border-checked": ee,
-            "--n-border-focus": V,
-            "--n-border-disabled": W,
+            "--n-border-focus": W,
+            "--n-border-disabled": G,
             "--n-border-disabled-checked": te,
             "--n-box-shadow-focus": se,
-            "--n-color": H,
+            "--n-color": V,
             "--n-color-checked": F,
             "--n-color-table": ae,
             "--n-color-table-modal": R,
-            "--n-color-table-popover": _,
+            "--n-color-table-popover": T,
             "--n-color-disabled": X,
-            "--n-color-disabled-checked": U,
+            "--n-color-disabled-checked": H,
             "--n-text-color": ye,
             "--n-text-color-disabled": S,
             "--n-check-mark-color": B,
-            "--n-check-mark-color-disabled": G,
-            "--n-check-mark-color-disabled-checked": z,
-            "--n-font-size": Ie,
+            "--n-check-mark-color-disabled": q,
+            "--n-check-mark-color-disabled-checked": A,
+            "--n-font-size": Ke,
             "--n-label-padding": le,
           };
         }),
@@ -1689,17 +1692,17 @@ const Xo = T(
               e,
             )
           : void 0;
-      return Object.assign(c, L, {
+      return Object.assign(c, K, {
         rtlEnabled: P,
         selfRef: n,
         mergedClsPrefix: o,
         mergedDisabled: g,
         renderedChecked: a,
         mergedTheme: N,
-        labelId: Qn(),
+        labelId: Jn(),
         handleClick: w,
-        handleKeyUp: m,
-        handleKeyDown: y,
+        handleKeyUp: y,
+        handleKeyDown: m,
         cssVars: r ? void 0 : p,
         themeClass: x == null ? void 0 : x.themeClass,
         onRender: x == null ? void 0 : x.onRender,
@@ -1712,7 +1715,7 @@ const Xo = T(
         renderedChecked: n,
         mergedDisabled: o,
         indeterminate: r,
-        privateInsideTable: i,
+        privateInsideTable: l,
         cssVars: s,
         labelId: f,
         label: d,
@@ -1723,7 +1726,7 @@ const Xo = T(
         handleClick: N,
       } = this;
       (e = this.onRender) === null || e === void 0 || e.call(this);
-      const k = Jn(t.default, (w) =>
+      const k = eo(t.default, (w) =>
         d || w
           ? v(
               "span",
@@ -1743,7 +1746,7 @@ const Xo = T(
             n && "".concat(a, "-checkbox--checked"),
             o && "".concat(a, "-checkbox--disabled"),
             r && "".concat(a, "-checkbox--indeterminate"),
-            i && "".concat(a, "-checkbox--inside-table"),
+            l && "".concat(a, "-checkbox--inside-table"),
             k && "".concat(a, "-checkbox--show-label"),
           ],
           tabindex: o || !c ? void 0 : 0,
@@ -1755,7 +1758,7 @@ const Xo = T(
           onKeydown: h,
           onClick: N,
           onMousedown: () => {
-            eo(
+            to(
               "selectstart",
               window,
               (w) => {
@@ -1772,7 +1775,7 @@ const Xo = T(
           v(
             "div",
             { class: "".concat(a, "-checkbox-box") },
-            v(Zt, null, {
+            v(Jt, null, {
               default: () =>
                 this.indeterminate
                   ? v(
@@ -1781,12 +1784,12 @@ const Xo = T(
                         key: "indeterminate",
                         class: "".concat(a, "-checkbox-icon"),
                       },
-                      Jo,
+                      or,
                     )
                   : v(
                       "div",
                       { key: "check", class: "".concat(a, "-checkbox-icon") },
-                      Qo,
+                      nr,
                     ),
             }),
             v("div", { class: "".concat(a, "-checkbox-box__border") }),
@@ -1795,14 +1798,107 @@ const Xo = T(
         k,
       );
     },
+  }),
+  sr = _(
+    "icon",
+    "\n height: 1em;\n width: 1em;\n line-height: 1em;\n text-align: center;\n display: inline-block;\n position: relative;\n fill: currentColor;\n transform: translateZ(0);\n",
+    [
+      O("color-transition", { transition: "color .3s var(--n-bezier)" }),
+      O("depth", { color: "var(--n-color)" }, [
+        U("svg", {
+          opacity: "var(--n-opacity)",
+          transition: "opacity .3s var(--n-bezier)",
+        }),
+      ]),
+      U("svg", { height: "1em", width: "1em" }),
+    ],
+  ),
+  dr = Object.assign(Object.assign({}, ge.props), {
+    depth: [String, Number],
+    size: [Number, String],
+    color: String,
+    component: [Object, Function],
+  }),
+  cr = ne({
+    _n_icon__: !0,
+    name: "Icon",
+    inheritAttrs: !1,
+    props: dr,
+    setup(e) {
+      const { mergedClsPrefixRef: t, inlineThemeDisabled: n } = je(e),
+        o = ge("Icon", "-icon", sr, no, e, t),
+        r = D(() => {
+          const { depth: s } = e,
+            {
+              common: { cubicBezierEaseInOut: f },
+              self: d,
+            } = o.value;
+          if (s !== void 0) {
+            const { color: a, ["opacity".concat(s, "Depth")]: c } = d;
+            return { "--n-bezier": f, "--n-color": a, "--n-opacity": c };
+          }
+          return { "--n-bezier": f, "--n-color": "", "--n-opacity": "" };
+        }),
+        l = n
+          ? Ve(
+              "icon",
+              D(() => "".concat(e.depth || "d")),
+              r,
+              e,
+            )
+          : void 0;
+      return {
+        mergedClsPrefix: t,
+        mergedStyle: D(() => {
+          const { size: s, color: f } = e;
+          return { fontSize: et(s), color: f };
+        }),
+        cssVars: n ? void 0 : r,
+        themeClass: l == null ? void 0 : l.themeClass,
+        onRender: l == null ? void 0 : l.onRender,
+      };
+    },
+    render() {
+      var e;
+      const {
+        $parent: t,
+        depth: n,
+        mergedClsPrefix: o,
+        component: r,
+        onRender: l,
+        themeClass: s,
+      } = this;
+      return (
+        !((e = t == null ? void 0 : t.$options) === null || e === void 0) &&
+          e._n_icon__ &&
+          oo("icon", "don't wrap `n-icon` inside `n-icon`"),
+        l == null || l(),
+        v(
+          "i",
+          Xt(this.$attrs, {
+            role: "img",
+            class: [
+              "".concat(o, "-icon"),
+              s,
+              {
+                ["".concat(o, "-icon--depth")]: n,
+                ["".concat(o, "-icon--color-transition")]: n !== void 0,
+              },
+            ],
+            style: [this.cssVars, this.mergedStyle],
+          }),
+          r ? v(r) : this.$slots,
+        )
+      );
+    },
   });
-function rr(e) {
+function ur(e) {
   const {
     baseColor: t,
     textColor2: n,
     bodyColor: o,
     cardColor: r,
-    dividerColor: i,
+    dividerColor: l,
     actionColor: s,
     scrollbarColor: f,
     scrollbarColorHover: d,
@@ -1817,48 +1913,48 @@ function rr(e) {
     headerColorInverted: a,
     footerColor: s,
     footerColorInverted: a,
-    headerBorderColor: i,
+    headerBorderColor: l,
     headerBorderColorInverted: a,
-    footerBorderColor: i,
+    footerBorderColor: l,
     footerBorderColorInverted: a,
-    siderBorderColor: i,
+    siderBorderColor: l,
     siderBorderColorInverted: a,
     siderColor: r,
     siderColorInverted: a,
-    siderToggleButtonBorder: "1px solid ".concat(i),
+    siderToggleButtonBorder: "1px solid ".concat(l),
     siderToggleButtonColor: t,
     siderToggleButtonIconColor: n,
     siderToggleButtonIconColorInverted: n,
-    siderToggleBarColor: Dt(o, f),
-    siderToggleBarColorHover: Dt(o, d),
+    siderToggleBarColor: At(o, f),
+    siderToggleBarColorHover: At(o, d),
     __invertScrollbar: "true",
   };
 }
-const an = to({
+const dn = ro({
     name: "Layout",
-    common: no,
-    peers: { Scrollbar: oo },
-    self: rr,
+    common: lo,
+    peers: { Scrollbar: io },
+    self: ur,
   }),
-  lr = We("n-layout-sider"),
-  sn = { type: String, default: "static" },
-  ir = T(
+  fr = Ge("n-layout-sider"),
+  cn = { type: String, default: "static" },
+  hr = _(
     "layout",
     "\n color: var(--n-text-color);\n background-color: var(--n-color);\n box-sizing: border-box;\n position: relative;\n z-index: auto;\n flex: auto;\n overflow: hidden;\n transition:\n box-shadow .3s var(--n-bezier),\n background-color .3s var(--n-bezier),\n color .3s var(--n-bezier);\n",
     [
-      T(
+      _(
         "layout-scroll-container",
         "\n overflow-x: hidden;\n box-sizing: border-box;\n height: 100%;\n ",
       ),
-      $(
+      O(
         "absolute-positioned",
         "\n position: absolute;\n left: 0;\n right: 0;\n top: 0;\n bottom: 0;\n ",
       ),
     ],
   ),
-  ar = {
+  vr = {
     embedded: Boolean,
-    position: sn,
+    position: cn,
     nativeScrollbar: { type: Boolean, default: !0 },
     scrollbarProps: Object,
     onScroll: Function,
@@ -1867,36 +1963,36 @@ const an = to({
     hasSider: Boolean,
     siderPlacement: { type: String, default: "left" },
   },
-  dn = We("n-layout");
-function cn(e) {
-  return re({
+  un = Ge("n-layout");
+function fn(e) {
+  return ne({
     name: e ? "LayoutContent" : "Layout",
-    props: Object.assign(Object.assign({}, ge.props), ar),
+    props: Object.assign(Object.assign({}, ge.props), vr),
     setup(t) {
       const n = M(null),
         o = M(null),
-        { mergedClsPrefixRef: r, inlineThemeDisabled: i } = Ue(t),
-        s = ge("Layout", "-layout", ir, an, t, r);
-      function f(w, m) {
+        { mergedClsPrefixRef: r, inlineThemeDisabled: l } = je(t),
+        s = ge("Layout", "-layout", hr, dn, t, r);
+      function f(w, y) {
         if (t.nativeScrollbar) {
-          const { value: y } = n;
-          y && (m === void 0 ? y.scrollTo(w) : y.scrollTo(w, m));
+          const { value: m } = n;
+          m && (y === void 0 ? m.scrollTo(w) : m.scrollTo(w, y));
         } else {
-          const { value: y } = o;
-          y && y.scrollTo(w, m);
+          const { value: m } = o;
+          m && m.scrollTo(w, y);
         }
       }
-      tt(dn, t);
+      ot(un, t);
       let d = 0,
         a = 0;
       const c = (w) => {
-        var m;
-        const y = w.target;
-        (d = y.scrollLeft),
-          (a = y.scrollTop),
-          (m = t.onScroll) === null || m === void 0 || m.call(t, w);
+        var y;
+        const m = w.target;
+        (d = m.scrollLeft),
+          (a = m.scrollTop),
+          (y = t.onScroll) === null || y === void 0 || y.call(t, w);
       };
-      Qt(() => {
+      en(() => {
         if (t.nativeScrollbar) {
           const w = n.value;
           w && ((w.scrollTop = a), (w.scrollLeft = d));
@@ -1912,15 +2008,15 @@ function cn(e) {
         N = D(() => {
           const {
             common: { cubicBezierEaseInOut: w },
-            self: m,
+            self: y,
           } = s.value;
           return {
             "--n-bezier": w,
-            "--n-color": t.embedded ? m.colorEmbedded : m.color,
-            "--n-text-color": m.textColor,
+            "--n-color": t.embedded ? y.colorEmbedded : y.color,
+            "--n-text-color": y.textColor,
           };
         }),
-        k = i
+        k = l
           ? Ve(
               "layout",
               D(() => (t.embedded ? "e" : "")),
@@ -1936,7 +2032,7 @@ function cn(e) {
           hasSiderStyle: g,
           mergedTheme: s,
           handleNativeElScroll: c,
-          cssVars: i ? void 0 : N,
+          cssVars: l ? void 0 : N,
           themeClass: k == null ? void 0 : k.themeClass,
           onRender: k == null ? void 0 : k.onRender,
         },
@@ -1948,7 +2044,7 @@ function cn(e) {
       const { mergedClsPrefix: n, hasSider: o } = this;
       (t = this.onRender) === null || t === void 0 || t.call(this);
       const r = o ? this.hasSiderStyle : void 0,
-        i = [
+        l = [
           this.themeClass,
           e && "".concat(n, "-layout-content"),
           "".concat(n, "-layout"),
@@ -1956,7 +2052,7 @@ function cn(e) {
         ];
       return v(
         "div",
-        { class: i, style: this.cssVars },
+        { class: l, style: this.cssVars },
         this.nativeScrollbar
           ? v(
               "div",
@@ -1972,7 +2068,7 @@ function cn(e) {
               this.$slots,
             )
           : v(
-              Jt,
+              tn,
               Object.assign({}, this.scrollbarProps, {
                 onScroll: this.onScroll,
                 ref: "scrollbarInstRef",
@@ -1987,122 +2083,122 @@ function cn(e) {
     },
   });
 }
-const sr = cn(!1),
-  dr = cn(!0),
-  cr = T(
+const gr = fn(!1),
+  br = fn(!0),
+  mr = _(
     "layout-sider",
     "\n flex-shrink: 0;\n box-sizing: border-box;\n position: relative;\n z-index: 1;\n color: var(--n-text-color);\n transition:\n color .3s var(--n-bezier),\n border-color .3s var(--n-bezier),\n min-width .3s var(--n-bezier),\n max-width .3s var(--n-bezier),\n transform .3s var(--n-bezier),\n background-color .3s var(--n-bezier);\n background-color: var(--n-color);\n display: flex;\n justify-content: flex-end;\n",
     [
-      $("bordered", [
-        O(
+      O("bordered", [
+        $(
           "border",
           '\n content: "";\n position: absolute;\n top: 0;\n bottom: 0;\n width: 1px;\n background-color: var(--n-border-color);\n transition: background-color .3s var(--n-bezier);\n ',
         ),
       ]),
-      O("left-placement", [$("bordered", [O("border", "\n right: 0;\n ")])]),
-      $("right-placement", "\n justify-content: flex-start;\n ", [
-        $("bordered", [O("border", "\n left: 0;\n ")]),
-        $("collapsed", [
-          T("layout-toggle-button", [
-            T("base-icon", "\n transform: rotate(180deg);\n "),
+      $("left-placement", [O("bordered", [$("border", "\n right: 0;\n ")])]),
+      O("right-placement", "\n justify-content: flex-start;\n ", [
+        O("bordered", [$("border", "\n left: 0;\n ")]),
+        O("collapsed", [
+          _("layout-toggle-button", [
+            _("base-icon", "\n transform: rotate(180deg);\n "),
           ]),
-          T("layout-toggle-bar", [
-            Y("&:hover", [
-              O("top", {
+          _("layout-toggle-bar", [
+            U("&:hover", [
+              $("top", {
                 transform: "rotate(-12deg) scale(1.15) translateY(-2px)",
               }),
-              O("bottom", {
+              $("bottom", {
                 transform: "rotate(12deg) scale(1.15) translateY(2px)",
               }),
             ]),
           ]),
         ]),
-        T(
+        _(
           "layout-toggle-button",
           "\n left: 0;\n transform: translateX(-50%) translateY(-50%);\n ",
-          [T("base-icon", "\n transform: rotate(0);\n ")],
+          [_("base-icon", "\n transform: rotate(0);\n ")],
         ),
-        T(
+        _(
           "layout-toggle-bar",
           "\n left: -28px;\n transform: rotate(180deg);\n ",
           [
-            Y("&:hover", [
-              O("top", {
+            U("&:hover", [
+              $("top", {
                 transform: "rotate(12deg) scale(1.15) translateY(-2px)",
               }),
-              O("bottom", {
+              $("bottom", {
                 transform: "rotate(-12deg) scale(1.15) translateY(2px)",
               }),
             ]),
           ],
         ),
       ]),
-      $("collapsed", [
-        T("layout-toggle-bar", [
-          Y("&:hover", [
-            O("top", {
+      O("collapsed", [
+        _("layout-toggle-bar", [
+          U("&:hover", [
+            $("top", {
               transform: "rotate(-12deg) scale(1.15) translateY(-2px)",
             }),
-            O("bottom", {
+            $("bottom", {
               transform: "rotate(12deg) scale(1.15) translateY(2px)",
             }),
           ]),
         ]),
-        T("layout-toggle-button", [
-          T("base-icon", "\n transform: rotate(0);\n "),
+        _("layout-toggle-button", [
+          _("base-icon", "\n transform: rotate(0);\n "),
         ]),
       ]),
-      T(
+      _(
         "layout-toggle-button",
         "\n transition:\n color .3s var(--n-bezier),\n right .3s var(--n-bezier),\n left .3s var(--n-bezier),\n border-color .3s var(--n-bezier),\n background-color .3s var(--n-bezier);\n cursor: pointer;\n width: 24px;\n height: 24px;\n position: absolute;\n top: 50%;\n right: 0;\n border-radius: 50%;\n display: flex;\n align-items: center;\n justify-content: center;\n font-size: 18px;\n color: var(--n-toggle-button-icon-color);\n border: var(--n-toggle-button-border);\n background-color: var(--n-toggle-button-color);\n box-shadow: 0 2px 4px 0px rgba(0, 0, 0, .06);\n transform: translateX(50%) translateY(-50%);\n z-index: 1;\n ",
         [
-          T(
+          _(
             "base-icon",
             "\n transition: transform .3s var(--n-bezier);\n transform: rotate(180deg);\n ",
           ),
         ],
       ),
-      T(
+      _(
         "layout-toggle-bar",
         "\n cursor: pointer;\n height: 72px;\n width: 32px;\n position: absolute;\n top: calc(50% - 36px);\n right: -28px;\n ",
         [
-          O(
+          $(
             "top, bottom",
             "\n position: absolute;\n width: 4px;\n border-radius: 2px;\n height: 38px;\n left: 14px;\n transition: \n background-color .3s var(--n-bezier),\n transform .3s var(--n-bezier);\n ",
           ),
-          O("bottom", "\n position: absolute;\n top: 34px;\n "),
-          Y("&:hover", [
-            O("top", {
+          $("bottom", "\n position: absolute;\n top: 34px;\n "),
+          U("&:hover", [
+            $("top", {
               transform: "rotate(12deg) scale(1.15) translateY(-2px)",
             }),
-            O("bottom", {
+            $("bottom", {
               transform: "rotate(-12deg) scale(1.15) translateY(2px)",
             }),
           ]),
-          O("top, bottom", { backgroundColor: "var(--n-toggle-bar-color)" }),
-          Y("&:hover", [
-            O("top, bottom", {
+          $("top, bottom", { backgroundColor: "var(--n-toggle-bar-color)" }),
+          U("&:hover", [
+            $("top, bottom", {
               backgroundColor: "var(--n-toggle-bar-color-hover)",
             }),
           ]),
         ],
       ),
-      O(
+      $(
         "border",
         "\n position: absolute;\n top: 0;\n right: 0;\n bottom: 0;\n width: 1px;\n transition: background-color .3s var(--n-bezier);\n ",
       ),
-      T(
+      _(
         "layout-sider-scroll-container",
         "\n flex-grow: 1;\n flex-shrink: 0;\n box-sizing: border-box;\n height: 100%;\n opacity: 0;\n transition: opacity .3s var(--n-bezier);\n max-width: 100%;\n ",
       ),
-      $("show-content", [T("layout-sider-scroll-container", { opacity: 1 })]),
-      $(
+      O("show-content", [_("layout-sider-scroll-container", { opacity: 1 })]),
+      O(
         "absolute-positioned",
         "\n position: absolute;\n left: 0;\n top: 0;\n bottom: 0;\n ",
       ),
     ],
   ),
-  ur = re({
+  yr = ne({
     name: "LayoutToggleButton",
     props: { clsPrefix: { type: String, required: !0 }, onClick: Function },
     render() {
@@ -2110,11 +2206,11 @@ const sr = cn(!1),
       return v(
         "div",
         { class: "".concat(e, "-layout-toggle-button"), onClick: this.onClick },
-        v(wt, { clsPrefix: e }, { default: () => v(So, null) }),
+        v(St, { clsPrefix: e }, { default: () => v(To, null) }),
       );
     },
   }),
-  fr = re({
+  kr = ne({
     props: { clsPrefix: { type: String, required: !0 }, onClick: Function },
     render() {
       const { clsPrefix: e } = this;
@@ -2126,8 +2222,8 @@ const sr = cn(!1),
       );
     },
   }),
-  hr = {
-    position: sn,
+  xr = {
+    position: cn,
     bordered: Boolean,
     collapsedWidth: { type: Number, default: 48 },
     width: { type: [Number, String], default: 272 },
@@ -2153,18 +2249,18 @@ const sr = cn(!1),
     onCollapse: [Function, Array],
     onScroll: Function,
   },
-  vr = re({
+  pr = ne({
     name: "LayoutSider",
-    props: Object.assign(Object.assign({}, ge.props), hr),
+    props: Object.assign(Object.assign({}, ge.props), xr),
     setup(e) {
-      const t = be(dn),
+      const t = me(un),
         n = M(null),
         o = M(null),
         r = M(e.defaultCollapsed),
-        i = Fe(j(e, "collapsed"), r),
-        s = D(() => ut(i.value ? e.collapsedWidth : e.width)),
+        l = Me(j(e, "collapsed"), r),
+        s = D(() => et(l.value ? e.collapsedWidth : e.width)),
         f = D(() =>
-          e.collapseMode !== "transform" ? {} : { minWidth: ut(e.width) },
+          e.collapseMode !== "transform" ? {} : { minWidth: et(e.width) },
         ),
         d = D(() => (t ? t.siderPlacement : "left"));
       function a(x, b) {
@@ -2181,13 +2277,13 @@ const sr = cn(!1),
             "onUpdate:collapsed": x,
             onUpdateCollapsed: b,
             onExpand: E,
-            onCollapse: A,
+            onCollapse: z,
           } = e,
-          { value: H } = i;
-        b && ne(b, !H),
-          x && ne(x, !H),
-          (r.value = !H),
-          H ? E && ne(E) : A && ne(A);
+          { value: V } = l;
+        b && oe(b, !V),
+          x && oe(x, !V),
+          (r.value = !V),
+          V ? E && oe(E) : z && oe(z);
       }
       let g = 0,
         h = 0;
@@ -2198,39 +2294,39 @@ const sr = cn(!1),
           (h = E.scrollTop),
           (b = e.onScroll) === null || b === void 0 || b.call(e, x);
       };
-      Qt(() => {
+      en(() => {
         if (e.nativeScrollbar) {
           const x = n.value;
           x && ((x.scrollTop = h), (x.scrollLeft = g));
         }
       }),
-        tt(lr, { collapsedRef: i, collapseModeRef: j(e, "collapseMode") });
-      const { mergedClsPrefixRef: k, inlineThemeDisabled: w } = Ue(e),
-        m = ge("Layout", "-layout-sider", cr, an, e, k);
-      function y(x) {
+        ot(fr, { collapsedRef: l, collapseModeRef: j(e, "collapseMode") });
+      const { mergedClsPrefixRef: k, inlineThemeDisabled: w } = je(e),
+        y = ge("Layout", "-layout-sider", mr, dn, e, k);
+      function m(x) {
         var b, E;
         x.propertyName === "max-width" &&
-          (i.value
+          (l.value
             ? (b = e.onAfterLeave) === null || b === void 0 || b.call(e)
             : (E = e.onAfterEnter) === null || E === void 0 || E.call(e));
       }
-      const L = { scrollTo: a },
+      const K = { scrollTo: a },
         P = D(() => {
           const {
               common: { cubicBezierEaseInOut: x },
               self: b,
-            } = m.value,
+            } = y.value,
             {
               siderToggleButtonColor: E,
-              siderToggleButtonBorder: A,
-              siderToggleBarColor: H,
+              siderToggleButtonBorder: z,
+              siderToggleBarColor: V,
               siderToggleBarColorHover: F,
             } = b,
             X = {
               "--n-bezier": x,
               "--n-toggle-button-color": E,
-              "--n-toggle-button-border": A,
-              "--n-toggle-bar-color": H,
+              "--n-toggle-button-border": z,
+              "--n-toggle-bar-color": V,
               "--n-toggle-bar-color-hover": F,
             };
           return (
@@ -2262,20 +2358,20 @@ const sr = cn(!1),
           scrollableElRef: n,
           scrollbarInstRef: o,
           mergedClsPrefix: k,
-          mergedTheme: m,
+          mergedTheme: y,
           styleMaxWidth: s,
-          mergedCollapsed: i,
+          mergedCollapsed: l,
           scrollContainerStyle: f,
           siderPlacement: d,
           handleNativeElScroll: N,
-          handleTransitionend: y,
+          handleTransitionend: m,
           handleTriggerClick: c,
           inlineThemeDisabled: w,
           cssVars: P,
           themeClass: p == null ? void 0 : p.themeClass,
           onRender: p == null ? void 0 : p.onRender,
         },
-        L,
+        K,
       );
     },
     render() {
@@ -2303,7 +2399,7 @@ const sr = cn(!1),
             onTransitionend: this.handleTransitionend,
             style: [
               this.inlineThemeDisabled ? void 0 : this.cssVars,
-              { maxWidth: this.styleMaxWidth, width: ut(this.width) },
+              { maxWidth: this.styleMaxWidth, width: et(this.width) },
             ],
           },
           this.nativeScrollbar
@@ -2325,7 +2421,7 @@ const sr = cn(!1),
                 this.$slots,
               )
             : v(
-                Jt,
+                tn,
                 Object.assign({}, this.scrollbarProps, {
                   onScroll: this.onScroll,
                   ref: "scrollbarInstRef",
@@ -2346,13 +2442,13 @@ const sr = cn(!1),
               ),
           o
             ? o === "bar"
-              ? v(fr, {
+              ? v(kr, {
                   clsPrefix: t,
                   class: n ? this.collapsedTriggerClass : this.triggerClass,
                   style: n ? this.collapsedTriggerStyle : this.triggerStyle,
                   onClick: this.handleTriggerClick,
                 })
-              : v(ur, {
+              : v(yr, {
                   clsPrefix: t,
                   class: n ? this.collapsedTriggerClass : this.triggerClass,
                   style: n ? this.collapsedTriggerStyle : this.triggerStyle,
@@ -2366,9 +2462,9 @@ const sr = cn(!1),
       );
     },
   }),
-  un = We("n-tree-select"),
-  Ge = We("n-tree"),
-  gr = re({
+  hn = Ge("n-tree-select"),
+  qe = Ge("n-tree"),
+  Cr = ne({
     name: "NTreeSwitcher",
     props: {
       clsPrefix: { type: String, required: !0 },
@@ -2381,9 +2477,9 @@ const sr = cn(!1),
       tmNode: { type: Object, required: !0 },
     },
     setup(e) {
-      const { renderSwitcherIconRef: t } = be(Ge, null);
+      const { renderSwitcherIconRef: t } = me(qe, null);
       return () => {
-        const { clsPrefix: n, expanded: o, hide: r, indent: i, onClick: s } = e;
+        const { clsPrefix: n, expanded: o, hide: r, indent: l, onClick: s } = e;
         return v(
           "span",
           {
@@ -2393,16 +2489,16 @@ const sr = cn(!1),
               o && "".concat(n, "-tree-node-switcher--expanded"),
               r && "".concat(n, "-tree-node-switcher--hide"),
             ],
-            style: { width: "".concat(i, "px") },
+            style: { width: "".concat(l, "px") },
             onClick: s,
           },
           v(
             "div",
             { class: "".concat(n, "-tree-node-switcher__icon") },
-            v(Zt, null, {
+            v(Jt, null, {
               default: () => {
                 if (e.loading)
-                  return v(ro, {
+                  return v(ao, {
                     clsPrefix: n,
                     key: "loading",
                     radius: 85,
@@ -2416,9 +2512,9 @@ const sr = cn(!1),
                       option: e.tmNode.rawNode,
                     })
                   : v(
-                      wt,
+                      St,
                       { clsPrefix: n, key: "switcher" },
-                      { default: () => v(No, null) },
+                      { default: () => v(Lo, null) },
                     );
               },
             }),
@@ -2427,7 +2523,7 @@ const sr = cn(!1),
       };
     },
   }),
-  br = re({
+  wr = ne({
     name: "NTreeNodeCheckbox",
     props: {
       clsPrefix: { type: String, required: !0 },
@@ -2440,10 +2536,10 @@ const sr = cn(!1),
       onCheck: Function,
     },
     setup(e) {
-      const t = be(Ge);
+      const t = me(qe);
       function n(r) {
-        const { onCheck: i } = e;
-        i && i(r);
+        const { onCheck: l } = e;
+        l && l(r);
       }
       function o(r) {
         n(r);
@@ -2457,7 +2553,7 @@ const sr = cn(!1),
         checked: n,
         indeterminate: o,
         disabled: r,
-        focusable: i,
+        focusable: l,
         indent: s,
         handleUpdateValue: f,
       } = this;
@@ -2471,8 +2567,8 @@ const sr = cn(!1),
           style: { width: "".concat(s, "px") },
           "data-checkbox": !0,
         },
-        v(or, {
-          focusable: i,
+        v(ar, {
+          focusable: l,
           disabled: r,
           theme: t.peers.Checkbox,
           themeOverrides: t.peerOverrides.Checkbox,
@@ -2483,7 +2579,7 @@ const sr = cn(!1),
       );
     },
   }),
-  yr = re({
+  Sr = ne({
     name: "TreeNodeContent",
     props: {
       clsPrefix: { type: String, required: !0 },
@@ -2501,8 +2597,8 @@ const sr = cn(!1),
           renderPrefixRef: n,
           renderSuffixRef: o,
           labelFieldRef: r,
-        } = be(Ge),
-        i = M(null);
+        } = me(qe),
+        l = M(null);
       function s(d) {
         const { onClick: a } = e;
         a && a(d);
@@ -2511,7 +2607,7 @@ const sr = cn(!1),
         s(d);
       }
       return {
-        selfRef: i,
+        selfRef: l,
         renderLabel: t,
         renderPrefix: n,
         renderSuffix: o,
@@ -2526,7 +2622,7 @@ const sr = cn(!1),
         nodeProps: n,
         checked: o = !1,
         selected: r = !1,
-        renderLabel: i,
+        renderLabel: l,
         renderPrefix: s,
         renderSuffix: f,
         handleClick: d,
@@ -2552,19 +2648,19 @@ const sr = cn(!1),
           ? v(
               "div",
               { class: "".concat(e, "-tree-node-content__prefix") },
-              s ? s({ option: c, selected: r, checked: o }) : ft(g),
+              s ? s({ option: c, selected: r, checked: o }) : ht(g),
             )
           : null,
         v(
           "div",
           { class: "".concat(e, "-tree-node-content__text") },
-          i ? i({ option: c, selected: r, checked: o }) : ft(N),
+          l ? l({ option: c, selected: r, checked: o }) : ht(N),
         ),
         f || h
           ? v(
               "div",
               { class: "".concat(e, "-tree-node-content__suffix") },
-              f ? f({ option: c, selected: r, checked: o }) : ft(h),
+              f ? f({ option: c, selected: r, checked: o }) : ht(h),
             )
           : null,
       );
@@ -2579,45 +2675,45 @@ function Gt({ position: e, offsetLevel: t, indent: n, el: o }) {
       (r.borderRadius = "inherit"),
       (r.boxShadow = "inset 0 0 0 2px var(--n-drop-mark-color)");
   else {
-    const i = e === "before" ? "top" : "bottom";
-    (r[i] = 0),
+    const l = e === "before" ? "top" : "bottom";
+    (r[l] = 0),
       (r.left = "".concat(o.offsetLeft + 6 - t * n, "px")),
       (r.height = "2px"),
       (r.backgroundColor = "var(--n-drop-mark-color)"),
-      (r.transformOrigin = i),
+      (r.transformOrigin = l),
       (r.borderRadius = "1px"),
       (r.transform = e === "before" ? "translateY(-4px)" : "translateY(4px)");
   }
   return v("div", { style: r });
 }
-function mr({ dropPosition: e, node: t }) {
+function Rr({ dropPosition: e, node: t }) {
   return t.isLeaf === !1 || t.children ? !0 : e !== "inside";
 }
-function kr(e) {
+function _r(e) {
   return D(() => (e.leafOnly ? "child" : e.checkStrategy));
 }
-function ke(e, t) {
+function xe(e, t) {
   return !!e.rawNode[t];
 }
-function fn(e, t, n, o) {
+function vn(e, t, n, o) {
   e == null ||
     e.forEach((r) => {
-      n(r), fn(r[t], t, n, o), o(r);
+      n(r), vn(r[t], t, n, o), o(r);
     });
 }
-function xr(e, t, n, o, r) {
-  const i = new Set(),
+function Nr(e, t, n, o, r) {
+  const l = new Set(),
     s = new Set(),
     f = [];
   return (
-    fn(
+    vn(
       e,
       o,
       (d) => {
         if ((f.push(d), r(t, d))) {
           s.add(d[n]);
           for (let a = f.length - 2; a >= 0; --a)
-            if (!i.has(f[a][n])) i.add(f[a][n]);
+            if (!l.has(f[a][n])) l.add(f[a][n]);
             else return;
         }
       },
@@ -2625,16 +2721,16 @@ function xr(e, t, n, o, r) {
         f.pop();
       },
     ),
-    { expandedKeys: Array.from(i), highlightKeySet: s }
+    { expandedKeys: Array.from(l), highlightKeySet: s }
   );
 }
-if (lo && Image) {
+if (so && Image) {
   const e = new Image();
   e.src =
     "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==";
 }
-function pr(e, t, n, o, r) {
-  const i = new Set(),
+function Tr(e, t, n, o, r) {
+  const l = new Set(),
     s = new Set(),
     f = new Set(),
     d = [],
@@ -2643,10 +2739,10 @@ function pr(e, t, n, o, r) {
   function g(N) {
     N.forEach((k) => {
       if ((c.push(k), t(n, k))) {
-        i.add(k[o]), f.add(k[o]);
-        for (let m = c.length - 2; m >= 0; --m) {
-          const y = c[m][o];
-          if (!s.has(y)) s.add(y), i.has(y) && i.delete(y);
+        l.add(k[o]), f.add(k[o]);
+        for (let y = c.length - 2; y >= 0; --y) {
+          const m = c[y][o];
+          if (!s.has(m)) s.add(m), l.has(m) && l.delete(m);
           else break;
         }
       }
@@ -2657,15 +2753,15 @@ function pr(e, t, n, o, r) {
   g(e);
   function h(N, k) {
     N.forEach((w) => {
-      const m = w[o],
-        y = i.has(m),
-        L = s.has(m);
-      if (!y && !L) return;
+      const y = w[o],
+        m = l.has(y),
+        K = s.has(y);
+      if (!m && !K) return;
       const P = w[r];
       if (P)
-        if (y) k.push(w);
+        if (m) k.push(w);
         else {
-          d.push(m);
+          d.push(y);
           const p = Object.assign(Object.assign({}, w), { [r]: [] });
           k.push(p), h(P, p[r]);
         }
@@ -2674,19 +2770,19 @@ function pr(e, t, n, o, r) {
   }
   return h(e, a), { filteredTree: a, highlightKeySet: f, expandedKeys: d };
 }
-const hn = re({
+const gn = ne({
   name: "TreeNode",
   props: {
     clsPrefix: { type: String, required: !0 },
     tmNode: { type: Object, required: !0 },
   },
   setup(e) {
-    const t = be(Ge),
+    const t = me(qe),
       {
         droppingNodeParentRef: n,
         droppingMouseNodeRef: o,
         draggingNodeRef: r,
-        droppingPositionRef: i,
+        droppingPositionRef: l,
         droppingOffsetLevelRef: s,
         nodePropsRef: f,
         indentRef: d,
@@ -2698,43 +2794,43 @@ const hn = re({
         renderSwitcherIconRef: k,
         overrideDefaultNodeClickBehaviorRef: w,
       } = t,
-      m = oe(() => !!e.tmNode.rawNode.checkboxDisabled),
-      y = oe(() => ke(e.tmNode, h.value)),
-      L = oe(() => t.disabledRef.value || y.value),
+      y = re(() => !!e.tmNode.rawNode.checkboxDisabled),
+      m = re(() => xe(e.tmNode, h.value)),
+      K = re(() => t.disabledRef.value || m.value),
       P = D(() => {
         const { value: S } = f;
         if (S) return S({ option: e.tmNode.rawNode });
       }),
       p = M(null),
       x = { value: null };
-    Ct(() => {
+    wt(() => {
       x.value = p.value.$el;
     });
     function b() {
       const S = () => {
-        const { tmNode: z } = e;
-        if (!z.isLeaf && !z.shallowLoaded) {
-          if (!t.loadingKeysRef.value.has(z.key))
-            t.loadingKeysRef.value.add(z.key);
+        const { tmNode: A } = e;
+        if (!A.isLeaf && !A.shallowLoaded) {
+          if (!t.loadingKeysRef.value.has(A.key))
+            t.loadingKeysRef.value.add(A.key);
           else return;
           const {
-            onLoadRef: { value: U },
+            onLoadRef: { value: H },
           } = t;
-          U &&
-            U(z.rawNode)
+          H &&
+            H(A.rawNode)
               .then((te) => {
-                te !== !1 && t.handleSwitcherClick(z);
+                te !== !1 && t.handleSwitcherClick(A);
               })
               .finally(() => {
-                t.loadingKeysRef.value.delete(z.key);
+                t.loadingKeysRef.value.delete(A.key);
               });
-        } else t.handleSwitcherClick(z);
+        } else t.handleSwitcherClick(A);
       };
       k.value ? setTimeout(S, 0) : S();
     }
-    const E = oe(
+    const E = re(
         () =>
-          !y.value &&
+          !m.value &&
           t.selectableRef.value &&
           (t.internalTreeSelect
             ? t.mergedCheckStrategyRef.value !== "child" ||
@@ -2742,39 +2838,39 @@ const hn = re({
               e.tmNode.isLeaf
             : !0),
       ),
-      A = oe(
+      z = re(
         () =>
           t.checkableRef.value &&
           (t.cascadeRef.value ||
             t.mergedCheckStrategyRef.value !== "child" ||
             e.tmNode.isLeaf),
       ),
-      H = oe(() => t.displayedCheckedKeysRef.value.includes(e.tmNode.key)),
-      F = oe(() => {
-        const { value: S } = A;
+      V = re(() => t.displayedCheckedKeysRef.value.includes(e.tmNode.key)),
+      F = re(() => {
+        const { value: S } = z;
         if (!S) return !1;
-        const { value: z } = g,
-          { tmNode: U } = e;
-        return typeof z == "boolean" ? !U.disabled && z : z(e.tmNode.rawNode);
+        const { value: A } = g,
+          { tmNode: H } = e;
+        return typeof A == "boolean" ? !H.disabled && A : A(e.tmNode.rawNode);
       });
     function X(S) {
-      const { value: z } = t.expandOnClickRef,
-        { value: U } = E,
+      const { value: A } = t.expandOnClickRef,
+        { value: H } = E,
         { value: te } = F;
-      if ((!U && !z && !te) || Ze(S, "checkbox") || Ze(S, "switcher")) return;
+      if ((!H && !A && !te) || Qe(S, "checkbox") || Qe(S, "switcher")) return;
       const { tmNode: le } = e;
-      U && t.handleSelect(le), z && !le.isLeaf && b(), te && B(!H.value);
+      H && t.handleSelect(le), A && !le.isLeaf && b(), te && B(!V.value);
     }
     function ae(S) {
-      var z, U;
-      if (!(Ze(S, "checkbox") || Ze(S, "switcher"))) {
-        if (!L.value) {
+      var A, H;
+      if (!(Qe(S, "checkbox") || Qe(S, "switcher"))) {
+        if (!K.value) {
           const te = w.value;
           let le = !1;
           if (te)
             switch (te({ option: e.tmNode.rawNode })) {
               case "toggleCheck":
-                (le = !0), B(!H.value);
+                (le = !0), B(!V.value);
                 break;
               case "toggleSelect":
                 (le = !0), t.handleSelect(e.tmNode);
@@ -2788,32 +2884,32 @@ const hn = re({
             }
           le || X(S);
         }
-        (U = (z = P.value) === null || z === void 0 ? void 0 : z.onClick) ===
+        (H = (A = P.value) === null || A === void 0 ? void 0 : A.onClick) ===
           null ||
-          U === void 0 ||
-          U.call(z, S);
+          H === void 0 ||
+          H.call(A, S);
       }
     }
     function R(S) {
       a.value || ae(S);
     }
-    function _(S) {
+    function T(S) {
       a.value && ae(S);
     }
     function B(S) {
       t.handleCheck(e.tmNode, S);
     }
-    function G(S) {
+    function q(S) {
       t.handleDragStart({ event: S, node: e.tmNode });
     }
     function J(S) {
       S.currentTarget === S.target &&
         t.handleDragEnter({ event: S, node: e.tmNode });
     }
-    function V(S) {
+    function W(S) {
       S.preventDefault(), t.handleDragOver({ event: S, node: e.tmNode });
     }
-    function W(S) {
+    function G(S) {
       t.handleDragEnd({ event: S, node: e.tmNode });
     }
     function ee(S) {
@@ -2822,25 +2918,25 @@ const hn = re({
     }
     function se(S) {
       S.preventDefault(),
-        i.value !== null &&
-          t.handleDrop({ event: S, node: e.tmNode, dropPosition: i.value });
+        l.value !== null &&
+          t.handleDrop({ event: S, node: e.tmNode, dropPosition: l.value });
     }
     const ye = D(() => {
       const { clsPrefix: S } = e,
-        { value: z } = d;
+        { value: A } = d;
       if (N.value) {
-        const U = [];
+        const H = [];
         let te = e.tmNode.parent;
         for (; te; )
           te.isLastChild
-            ? U.push(
+            ? H.push(
                 v(
                   "div",
                   { class: "".concat(S, "-tree-node-indent") },
-                  v("div", { style: { width: "".concat(z, "px") } }),
+                  v("div", { style: { width: "".concat(A, "px") } }),
                 ),
               )
-            : U.push(
+            : H.push(
                 v(
                   "div",
                   {
@@ -2849,57 +2945,57 @@ const hn = re({
                       "".concat(S, "-tree-node-indent--show-line"),
                     ],
                   },
-                  v("div", { style: { width: "".concat(z, "px") } }),
+                  v("div", { style: { width: "".concat(A, "px") } }),
                 ),
               ),
             (te = te.parent);
-        return U.reverse();
+        return H.reverse();
       } else
-        return io(
+        return co(
           e.tmNode.level,
           v(
             "div",
             { class: "".concat(e.clsPrefix, "-tree-node-indent") },
-            v("div", { style: { width: "".concat(z, "px") } }),
+            v("div", { style: { width: "".concat(A, "px") } }),
           ),
         );
     });
     return {
-      showDropMark: oe(() => {
+      showDropMark: re(() => {
         const { value: S } = r;
         if (!S) return;
-        const { value: z } = i;
-        if (!z) return;
-        const { value: U } = o;
-        if (!U) return;
+        const { value: A } = l;
+        if (!A) return;
+        const { value: H } = o;
+        if (!H) return;
         const { tmNode: te } = e;
-        return te.key === U.key;
+        return te.key === H.key;
       }),
-      showDropMarkAsParent: oe(() => {
+      showDropMarkAsParent: re(() => {
         const { value: S } = n;
         if (!S) return !1;
-        const { tmNode: z } = e,
-          { value: U } = i;
-        return U === "before" || U === "after" ? S.key === z.key : !1;
+        const { tmNode: A } = e,
+          { value: H } = l;
+        return H === "before" || H === "after" ? S.key === A.key : !1;
       }),
-      pending: oe(() => t.pendingNodeKeyRef.value === e.tmNode.key),
-      loading: oe(() => t.loadingKeysRef.value.has(e.tmNode.key)),
-      highlight: oe(() => {
+      pending: re(() => t.pendingNodeKeyRef.value === e.tmNode.key),
+      loading: re(() => t.loadingKeysRef.value.has(e.tmNode.key)),
+      highlight: re(() => {
         var S;
         return (S = t.highlightKeySetRef.value) === null || S === void 0
           ? void 0
           : S.has(e.tmNode.key);
       }),
-      checked: H,
-      indeterminate: oe(() =>
+      checked: V,
+      indeterminate: re(() =>
         t.displayedIndeterminateKeysRef.value.includes(e.tmNode.key),
       ),
-      selected: oe(() => t.mergedSelectedKeysRef.value.includes(e.tmNode.key)),
-      expanded: oe(() => t.mergedExpandedKeysRef.value.includes(e.tmNode.key)),
-      disabled: L,
-      checkable: A,
+      selected: re(() => t.mergedSelectedKeysRef.value.includes(e.tmNode.key)),
+      expanded: re(() => t.mergedExpandedKeysRef.value.includes(e.tmNode.key)),
+      disabled: K,
+      checkable: z,
       mergedCheckOnClick: F,
-      checkboxDisabled: m,
+      checkboxDisabled: y,
       selectable: E,
       expandOnClick: t.expandOnClickRef,
       internalScrollable: t.internalScrollableRef,
@@ -2907,7 +3003,7 @@ const hn = re({
       blockLine: a,
       nodeProps: P,
       checkboxFocusable: t.internalCheckboxFocusableRef,
-      droppingPosition: i,
+      droppingPosition: l,
       droppingOffsetLevel: s,
       indent: d,
       checkboxPlacement: c,
@@ -2917,12 +3013,12 @@ const hn = re({
       indentNodes: ye,
       handleCheck: B,
       handleDrop: se,
-      handleDragStart: G,
+      handleDragStart: q,
       handleDragEnter: J,
-      handleDragOver: V,
-      handleDragEnd: W,
+      handleDragOver: W,
+      handleDragEnd: G,
       handleDragLeave: ee,
-      handleLineClick: _,
+      handleLineClick: T,
       handleContentClick: R,
       handleSwitcherClick: b,
     };
@@ -2934,7 +3030,7 @@ const hn = re({
         checkable: n,
         expandOnClick: o,
         selectable: r,
-        selected: i,
+        selected: l,
         checked: s,
         highlight: f,
         draggable: d,
@@ -2945,9 +3041,9 @@ const hn = re({
         pending: N,
         internalScrollable: k,
         nodeProps: w,
-        checkboxPlacement: m,
+        checkboxPlacement: y,
       } = this,
-      y =
+      m =
         d && !h
           ? {
               onDragenter: this.handleDragEnter,
@@ -2957,10 +3053,10 @@ const hn = re({
               onDragover: this.handleDragOver,
             }
           : void 0,
-      L = k ? tn(e.key) : void 0,
-      P = m === "right",
+      K = k ? on(e.key) : void 0,
+      P = y === "right",
       p = n
-        ? v(br, {
+        ? v(wr, {
             indent: c,
             right: P,
             focusable: this.checkboxFocusable,
@@ -2973,14 +3069,14 @@ const hn = re({
         : null;
     return v(
       "div",
-      Object.assign({ class: "".concat(t, "-tree-node-wrapper") }, y),
+      Object.assign({ class: "".concat(t, "-tree-node-wrapper") }, m),
       v(
         "div",
         Object.assign({}, a ? w : void 0, {
           class: [
             "".concat(t, "-tree-node"),
             {
-              ["".concat(t, "-tree-node--selected")]: i,
+              ["".concat(t, "-tree-node--selected")]: l,
               ["".concat(t, "-tree-node--checkable")]: n,
               ["".concat(t, "-tree-node--highlight")]: f,
               ["".concat(t, "-tree-node--pending")]: N,
@@ -2991,7 +3087,7 @@ const hn = re({
             },
             w == null ? void 0 : w.class,
           ],
-          "data-key": L,
+          "data-key": K,
           draggable: d && a,
           onClick: this.handleLineClick,
           onDragstart: d && a && !h ? this.handleDragStart : void 0,
@@ -3011,10 +3107,10 @@ const hn = re({
               },
               v("div", { style: { width: "".concat(c, "px") } }),
             )
-          : v(gr, {
+          : v(Cr, {
               clsPrefix: t,
               expanded: this.expanded,
-              selected: i,
+              selected: l,
               loading: this.loading,
               hide: e.isLeaf,
               tmNode: this.tmNode,
@@ -3022,11 +3118,11 @@ const hn = re({
               onClick: this.handleSwitcherClick,
             }),
         P ? null : p,
-        v(yr, {
+        v(Sr, {
           ref: "contentInstRef",
           clsPrefix: t,
           checked: s,
-          selected: i,
+          selected: l,
           onClick: this.handleContentClick,
           nodeProps: a ? void 0 : w,
           onDragstart: d && !a && !h ? this.handleDragStart : void 0,
@@ -3054,18 +3150,18 @@ const hn = re({
     );
   },
 });
-function Cr({
+function Ir({
   props: e,
   fNodesRef: t,
   mergedExpandedKeysRef: n,
   mergedSelectedKeysRef: o,
   mergedCheckedKeysRef: r,
-  handleCheck: i,
+  handleCheck: l,
   handleSelect: s,
   handleSwitcherClick: f,
 }) {
   const { value: d } = o,
-    a = be(un, null),
+    a = me(hn, null),
     c = a ? a.pendingNodeKeyRef : M(d.length ? d[d.length - 1] : null);
   function g(h) {
     var N;
@@ -3078,77 +3174,77 @@ function Cr({
         ["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"].includes(h.key) &&
           k === null)
       ) {
-        const { value: m } = t;
-        let y = 0;
-        for (; y < m.length; ) {
-          if (!m[y].disabled) {
-            c.value = m[y].key;
+        const { value: y } = t;
+        let m = 0;
+        for (; m < y.length; ) {
+          if (!y[m].disabled) {
+            c.value = y[m].key;
             break;
           }
-          y += 1;
+          m += 1;
         }
       }
     } else {
-      const { value: m } = t;
-      let y = m.findIndex((L) => L.key === k);
-      if (!~y) return { enterBehavior: null };
+      const { value: y } = t;
+      let m = y.findIndex((K) => K.key === k);
+      if (!~m) return { enterBehavior: null };
       if (h.key === "Enter") {
-        const L = m[y];
+        const K = y[m];
         switch (
           ((w =
             ((N = e.overrideDefaultNodeClickBehavior) === null || N === void 0
               ? void 0
-              : N.call(e, { option: L.rawNode })) || null),
+              : N.call(e, { option: K.rawNode })) || null),
           w)
         ) {
           case "toggleCheck":
-            i(L, !r.value.includes(L.key));
+            l(K, !r.value.includes(K.key));
             break;
           case "toggleSelect":
-            s(L);
+            s(K);
             break;
           case "toggleExpand":
-            f(L);
+            f(K);
             break;
           case "none":
             break;
           case "default":
           default:
-            (w = "default"), s(L);
+            (w = "default"), s(K);
         }
       } else if (h.key === "ArrowDown")
-        for (h.preventDefault(), y += 1; y < m.length; ) {
-          if (!m[y].disabled) {
-            c.value = m[y].key;
+        for (h.preventDefault(), m += 1; m < y.length; ) {
+          if (!y[m].disabled) {
+            c.value = y[m].key;
             break;
           }
-          y += 1;
+          m += 1;
         }
       else if (h.key === "ArrowUp")
-        for (h.preventDefault(), y -= 1; y >= 0; ) {
-          if (!m[y].disabled) {
-            c.value = m[y].key;
+        for (h.preventDefault(), m -= 1; m >= 0; ) {
+          if (!y[m].disabled) {
+            c.value = y[m].key;
             break;
           }
-          y -= 1;
+          m -= 1;
         }
       else if (h.key === "ArrowLeft") {
-        const L = m[y];
-        if (L.isLeaf || !n.value.includes(k)) {
-          const P = L.getParent();
+        const K = y[m];
+        if (K.isLeaf || !n.value.includes(k)) {
+          const P = K.getParent();
           P && (c.value = P.key);
-        } else f(L);
+        } else f(K);
       } else if (h.key === "ArrowRight") {
-        const L = m[y];
-        if (L.isLeaf) return { enterBehavior: null };
-        if (!n.value.includes(k)) f(L);
+        const K = y[m];
+        if (K.isLeaf) return { enterBehavior: null };
+        if (!n.value.includes(k)) f(K);
         else
-          for (y += 1; y < m.length; ) {
-            if (!m[y].disabled) {
-              c.value = m[y].key;
+          for (m += 1; m < y.length; ) {
+            if (!y[m].disabled) {
+              c.value = y[m].key;
               break;
             }
-            y += 1;
+            m += 1;
           }
       }
     }
@@ -3156,7 +3252,7 @@ function Cr({
   }
   return { pendingNodeKeyRef: c, handleKeydown: g };
 }
-const wr = re({
+const Lr = ne({
     name: "TreeMotionWrapper",
     props: {
       clsPrefix: { type: String, required: !0 },
@@ -3168,7 +3264,7 @@ const wr = re({
     render() {
       const { clsPrefix: e } = this;
       return v(
-        ao,
+        uo,
         {
           onAfterEnter: this.onAfterEnter,
           appear: !0,
@@ -3183,101 +3279,101 @@ const wr = re({
                   "".concat(e, "-tree-motion-wrapper"),
                   "".concat(e, "-tree-motion-wrapper--").concat(this.mode),
                 ],
-                style: { height: Re(this.height) },
+                style: { height: _e(this.height) },
               },
-              this.nodes.map((t) => v(hn, { clsPrefix: e, tmNode: t })),
+              this.nodes.map((t) => v(gn, { clsPrefix: e, tmNode: t })),
             ),
         },
       );
     },
   }),
-  kt = Yt(),
-  Sr = T("tree", "\n font-size: var(--n-font-size);\n outline: none;\n", [
-    Y("ul, li", "\n margin: 0;\n padding: 0;\n list-style: none;\n "),
-    Y(">", [T("tree-node", [Y("&:first-child", "margin-top: 0;")])]),
-    T("tree-motion-wrapper", [
-      $("expand", [zt({ duration: "0.2s" })]),
-      $("collapse", [zt({ duration: "0.2s", reverse: !0 })]),
+  xt = Zt(),
+  Kr = _("tree", "\n font-size: var(--n-font-size);\n outline: none;\n", [
+    U("ul, li", "\n margin: 0;\n padding: 0;\n list-style: none;\n "),
+    U(">", [_("tree-node", [U("&:first-child", "margin-top: 0;")])]),
+    _("tree-motion-wrapper", [
+      O("expand", [zt({ duration: "0.2s" })]),
+      O("collapse", [zt({ duration: "0.2s", reverse: !0 })]),
     ]),
-    T(
+    _(
       "tree-node-wrapper",
       "\n box-sizing: border-box;\n padding: var(--n-node-wrapper-padding);\n ",
     ),
-    T(
+    _(
       "tree-node",
       "\n transform: translate3d(0,0,0);\n position: relative;\n display: flex;\n border-radius: var(--n-node-border-radius);\n transition: background-color .3s var(--n-bezier);\n ",
       [
-        $("highlight", [
-          T("tree-node-content", [
-            O(
+        O("highlight", [
+          _("tree-node-content", [
+            $(
               "text",
               "border-bottom-color: var(--n-node-text-color-disabled);",
             ),
           ]),
         ]),
-        $("disabled", [
-          T(
+        O("disabled", [
+          _(
             "tree-node-content",
             "\n color: var(--n-node-text-color-disabled);\n cursor: not-allowed;\n ",
           ),
         ]),
         $e("disabled", [
-          $("clickable", [T("tree-node-content", "\n cursor: pointer;\n ")]),
+          O("clickable", [_("tree-node-content", "\n cursor: pointer;\n ")]),
         ]),
       ],
     ),
-    $("block-node", [T("tree-node-content", "\n flex: 1;\n min-width: 0;\n ")]),
+    O("block-node", [_("tree-node-content", "\n flex: 1;\n min-width: 0;\n ")]),
     $e("block-line", [
-      T("tree-node", [
+      _("tree-node", [
         $e("disabled", [
-          T("tree-node-content", [
-            Y("&:hover", "background: var(--n-node-color-hover);"),
+          _("tree-node-content", [
+            U("&:hover", "background: var(--n-node-color-hover);"),
           ]),
-          $("selectable", [
-            T("tree-node-content", [
-              Y("&:active", "background: var(--n-node-color-pressed);"),
+          O("selectable", [
+            _("tree-node-content", [
+              U("&:active", "background: var(--n-node-color-pressed);"),
             ]),
           ]),
-          $("pending", [
-            T(
+          O("pending", [
+            _(
               "tree-node-content",
               "\n background: var(--n-node-color-hover);\n ",
             ),
           ]),
-          $("selected", [
-            T("tree-node-content", "background: var(--n-node-color-active);"),
+          O("selected", [
+            _("tree-node-content", "background: var(--n-node-color-active);"),
           ]),
         ]),
-        $("selected", [
-          T("tree-node-content", "background: var(--n-node-color-active);"),
+        O("selected", [
+          _("tree-node-content", "background: var(--n-node-color-active);"),
         ]),
       ]),
     ]),
-    $("block-line", [
-      T("tree-node", [
+    O("block-line", [
+      _("tree-node", [
         $e("disabled", [
-          Y("&:hover", "background: var(--n-node-color-hover);"),
-          $("pending", "\n background: var(--n-node-color-hover);\n "),
-          $("selectable", [
+          U("&:hover", "background: var(--n-node-color-hover);"),
+          O("pending", "\n background: var(--n-node-color-hover);\n "),
+          O("selectable", [
             $e("selected", [
-              Y("&:active", "background: var(--n-node-color-pressed);"),
+              U("&:active", "background: var(--n-node-color-pressed);"),
             ]),
           ]),
-          $("selected", "background: var(--n-node-color-active);"),
+          O("selected", "background: var(--n-node-color-active);"),
         ]),
-        $("selected", "background: var(--n-node-color-active);"),
-        $("disabled", "\n cursor: not-allowed;\n "),
+        O("selected", "background: var(--n-node-color-active);"),
+        O("disabled", "\n cursor: not-allowed;\n "),
       ]),
     ]),
-    T("tree-node-indent", "\n flex-grow: 0;\n flex-shrink: 0;\n ", [
-      $("show-line", "position: relative", [
-        Y(
+    _("tree-node-indent", "\n flex-grow: 0;\n flex-shrink: 0;\n ", [
+      O("show-line", "position: relative", [
+        U(
           "&::before",
           '\n position: absolute;\n left: 50%;\n border-left: 1px solid var(--n-line-color);\n transition: border-color .3s var(--n-bezier);\n transform: translate(-50%);\n content: "";\n top: var(--n-line-offset-top);\n bottom: var(--n-line-offset-bottom);\n ',
         ),
-        $("last-child", [Y("&::before", "\n bottom: 50%;\n ")]),
-        $("is-leaf", [
-          Y(
+        O("last-child", [U("&::before", "\n bottom: 50%;\n ")]),
+        O("is-leaf", [
+          U(
             "&::after",
             '\n position: absolute;\n content: "";\n left: calc(50% + 0.5px);\n right: 0;\n bottom: 50%;\n transition: border-color .3s var(--n-bezier);\n border-bottom: 1px solid var(--n-line-color);\n ',
           ),
@@ -3285,55 +3381,55 @@ const wr = re({
       ]),
       $e("show-line", "height: 0;"),
     ]),
-    T(
+    _(
       "tree-node-switcher",
       "\n cursor: pointer;\n display: inline-flex;\n flex-shrink: 0;\n height: var(--n-node-content-height);\n align-items: center;\n justify-content: center;\n transition: transform .15s var(--n-bezier);\n vertical-align: bottom;\n ",
       [
-        O(
+        $(
           "icon",
           "\n position: relative;\n height: 14px;\n width: 14px;\n display: flex;\n color: var(--n-arrow-color);\n transition: color .3s var(--n-bezier);\n font-size: 14px;\n ",
           [
-            T("icon", [kt]),
-            T(
+            _("icon", [xt]),
+            _(
               "base-loading",
               "\n color: var(--n-loading-color);\n position: absolute;\n left: 0;\n top: 0;\n right: 0;\n bottom: 0;\n ",
-              [kt],
+              [xt],
             ),
-            T("base-icon", [kt]),
+            _("base-icon", [xt]),
           ],
         ),
-        $("hide", "visibility: hidden;"),
-        $("expanded", "transform: rotate(90deg);"),
+        O("hide", "visibility: hidden;"),
+        O("expanded", "transform: rotate(90deg);"),
       ],
     ),
-    T(
+    _(
       "tree-node-checkbox",
       "\n display: inline-flex;\n height: var(--n-node-content-height);\n vertical-align: bottom;\n align-items: center;\n justify-content: center;\n ",
     ),
-    T(
+    _(
       "tree-node-content",
       "\n user-select: none;\n position: relative;\n display: inline-flex;\n align-items: center;\n min-height: var(--n-node-content-height);\n box-sizing: border-box;\n line-height: var(--n-line-height);\n vertical-align: bottom;\n padding: 0 6px 0 4px;\n cursor: default;\n border-radius: var(--n-node-border-radius);\n color: var(--n-node-text-color);\n transition:\n color .3s var(--n-bezier),\n background-color .3s var(--n-bezier),\n border-color .3s var(--n-bezier);\n ",
       [
-        Y("&:last-child", "margin-bottom: 0;"),
-        O("prefix", "\n display: inline-flex;\n margin-right: 8px;\n "),
-        O(
+        U("&:last-child", "margin-bottom: 0;"),
+        $("prefix", "\n display: inline-flex;\n margin-right: 8px;\n "),
+        $(
           "text",
           "\n border-bottom: 1px solid #0000;\n transition: border-color .3s var(--n-bezier);\n flex-grow: 1;\n max-width: 100%;\n ",
         ),
-        O("suffix", "\n display: inline-flex;\n "),
+        $("suffix", "\n display: inline-flex;\n "),
       ],
     ),
-    O("empty", "margin: auto;"),
+    $("empty", "margin: auto;"),
   ]);
-var Rr = function (e, t, n, o) {
-  function r(i) {
-    return i instanceof n
-      ? i
+var Er = function (e, t, n, o) {
+  function r(l) {
+    return l instanceof n
+      ? l
       : new n(function (s) {
-          s(i);
+          s(l);
         });
   }
-  return new (n || (n = Promise))(function (i, s) {
+  return new (n || (n = Promise))(function (l, s) {
     function f(c) {
       try {
         a(o.next(c));
@@ -3349,7 +3445,7 @@ var Rr = function (e, t, n, o) {
       }
     }
     function a(c) {
-      c.done ? i(c.value) : r(c.value).then(f, d);
+      c.done ? l(c.value) : r(c.value).then(f, d);
     }
     a((o = o.apply(e, [])).next());
   });
@@ -3359,16 +3455,16 @@ function qt(e, t, n, o) {
     getIsGroup() {
       return !1;
     },
-    getKey(i) {
-      return i[e];
+    getKey(l) {
+      return l[e];
     },
-    getChildren: o || ((i) => i[t]),
-    getDisabled(i) {
-      return !!(i[n] || i.checkboxDisabled);
+    getChildren: o || ((l) => l[t]),
+    getDisabled(l) {
+      return !!(l[n] || l.checkboxDisabled);
     },
   };
 }
-const Nr = {
+const Pr = {
     allowCheckingNotLoaded: Boolean,
     filter: Function,
     defaultExpandAll: Boolean,
@@ -3386,7 +3482,7 @@ const Nr = {
     "onUpdate:expandedKeys": [Function, Array],
     overrideDefaultNodeClickBehavior: Function,
   },
-  Tr = Object.assign(
+  Dr = Object.assign(
     Object.assign(
       Object.assign(Object.assign({}, ge.props), {
         accordion: Boolean,
@@ -3413,7 +3509,7 @@ const Nr = {
         selectable: { type: Boolean, default: !0 },
         scrollbarProps: Object,
         indent: { type: Number, default: 24 },
-        allowDrop: { type: Function, default: mr },
+        allowDrop: { type: Function, default: Rr },
         animated: { type: Boolean, default: !0 },
         checkboxPlacement: { type: String, default: "left" },
         virtualScroll: Boolean,
@@ -3435,7 +3531,7 @@ const Nr = {
         onUpdateSelectedKeys: [Function, Array],
         "onUpdate:selectedKeys": [Function, Array],
       }),
-      Nr,
+      Pr,
     ),
     {
       internalTreeSelect: Boolean,
@@ -3450,50 +3546,50 @@ const Nr = {
       leafOnly: Boolean,
     },
   ),
-  _r = re({
+  Ar = ne({
     name: "Tree",
-    props: Tr,
+    props: Dr,
     setup(e) {
       const {
           mergedClsPrefixRef: t,
           inlineThemeDisabled: n,
           mergedRtlRef: o,
-        } = Ue(e),
-        r = Xt("Tree", o, t),
-        i = ge("Tree", "-tree", Sr, so, e, t),
+        } = je(e),
+        r = Qt("Tree", o, t),
+        l = ge("Tree", "-tree", Kr, fo, e, t),
         s = M(null),
         f = M(null),
         d = M(null);
       function a() {
-        var l;
-        return (l = d.value) === null || l === void 0 ? void 0 : l.listElRef;
+        var i;
+        return (i = d.value) === null || i === void 0 ? void 0 : i.listElRef;
       }
       function c() {
-        var l;
-        return (l = d.value) === null || l === void 0 ? void 0 : l.itemsElRef;
+        var i;
+        return (i = d.value) === null || i === void 0 ? void 0 : i.itemsElRef;
       }
       const g = D(() => {
-          const { filter: l } = e;
-          if (l) return l;
+          const { filter: i } = e;
+          if (i) return i;
           const { labelField: u } = e;
-          return (C, K) => {
+          return (C, I) => {
             if (!C.length) return !0;
-            const I = K[u];
-            return typeof I == "string"
-              ? I.toLowerCase().includes(C.toLowerCase())
+            const L = I[u];
+            return typeof L == "string"
+              ? L.toLowerCase().includes(C.toLowerCase())
               : !1;
           };
         }),
         h = D(() => {
-          const { pattern: l } = e;
-          return l
-            ? !l.length || !g.value
+          const { pattern: i } = e;
+          return i
+            ? !i.length || !g.value
               ? {
                   filteredTree: e.data,
                   highlightKeySet: null,
                   expandedKeys: void 0,
                 }
-              : pr(e.data, g.value, l, e.keyField, e.childrenField)
+              : Tr(e.data, g.value, i, e.keyField, e.childrenField)
             : {
                 filteredTree: e.data,
                 highlightKeySet: null,
@@ -3501,18 +3597,18 @@ const Nr = {
               };
         }),
         N = D(() =>
-          Vt(
+          Ut(
             e.showIrrelevantNodes ? e.data : h.value.filteredTree,
             qt(e.keyField, e.childrenField, e.disabledField, e.getChildren),
           ),
         ),
-        k = be(un, null),
+        k = me(hn, null),
         w = e.internalTreeSelect
           ? k.dataTreeMate
           : D(() =>
               e.showIrrelevantNodes
                 ? N.value
-                : Vt(
+                : Ut(
                     e.data,
                     qt(
                       e.keyField,
@@ -3522,309 +3618,309 @@ const Nr = {
                     ),
                   ),
             ),
-        { watchProps: m } = e,
-        y = M([]);
-      m != null && m.includes("defaultCheckedKeys")
-        ? Oe(() => {
-            y.value = e.defaultCheckedKeys;
+        { watchProps: y } = e,
+        m = M([]);
+      y != null && y.includes("defaultCheckedKeys")
+        ? Fe(() => {
+            m.value = e.defaultCheckedKeys;
           })
-        : (y.value = e.defaultCheckedKeys);
-      const L = j(e, "checkedKeys"),
-        P = Fe(L, y),
+        : (m.value = e.defaultCheckedKeys);
+      const K = j(e, "checkedKeys"),
+        P = Me(K, m),
         p = D(() =>
           w.value.getCheckedKeys(P.value, {
             cascade: e.cascade,
             allowNotLoaded: e.allowCheckingNotLoaded,
           }),
         ),
-        x = kr(e),
+        x = _r(e),
         b = D(() => p.value.checkedKeys),
         E = D(() => {
-          const { indeterminateKeys: l } = e;
-          return l !== void 0 ? l : p.value.indeterminateKeys;
+          const { indeterminateKeys: i } = e;
+          return i !== void 0 ? i : p.value.indeterminateKeys;
         }),
-        A = M([]);
-      m != null && m.includes("defaultSelectedKeys")
-        ? Oe(() => {
-            A.value = e.defaultSelectedKeys;
+        z = M([]);
+      y != null && y.includes("defaultSelectedKeys")
+        ? Fe(() => {
+            z.value = e.defaultSelectedKeys;
           })
-        : (A.value = e.defaultSelectedKeys);
-      const H = j(e, "selectedKeys"),
-        F = Fe(H, A),
+        : (z.value = e.defaultSelectedKeys);
+      const V = j(e, "selectedKeys"),
+        F = Me(V, z),
         X = M([]),
-        ae = (l) => {
+        ae = (i) => {
           X.value = e.defaultExpandAll
             ? w.value.getNonLeafKeys()
-            : l === void 0
+            : i === void 0
               ? e.defaultExpandedKeys
-              : l;
+              : i;
         };
-      m != null && m.includes("defaultExpandedKeys")
-        ? Oe(() => {
+      y != null && y.includes("defaultExpandedKeys")
+        ? Fe(() => {
             ae(void 0);
           })
-        : Oe(() => {
+        : Fe(() => {
             ae(e.defaultExpandedKeys);
           });
       const R = j(e, "expandedKeys"),
-        _ = Fe(R, X),
-        B = D(() => N.value.getFlattenedNodes(_.value)),
-        { pendingNodeKeyRef: G, handleKeydown: J } = Cr({
+        T = Me(R, X),
+        B = D(() => N.value.getFlattenedNodes(T.value)),
+        { pendingNodeKeyRef: q, handleKeydown: J } = Ir({
           props: e,
           mergedCheckedKeysRef: P,
           mergedSelectedKeysRef: F,
           fNodesRef: B,
-          mergedExpandedKeysRef: _,
-          handleCheck: at,
-          handleSelect: st,
-          handleSwitcherClick: _t,
+          mergedExpandedKeysRef: T,
+          handleCheck: dt,
+          handleSelect: ct,
+          handleSwitcherClick: It,
         });
-      let V = null,
-        W = null;
+      let W = null,
+        G = null;
       const ee = M(new Set()),
         se = D(() => e.internalHighlightKeySet || h.value.highlightKeySet),
-        ye = Fe(se, ee),
+        ye = Me(se, ee),
         S = M(new Set()),
-        z = D(() => _.value.filter((l) => !S.value.has(l)));
-      let U = 0;
+        A = D(() => T.value.filter((i) => !S.value.has(i)));
+      let H = 0;
       const te = M(null),
         le = M(null),
-        _e = M(null),
-        Ke = M(null),
-        Ie = M(0),
-        nt = D(() => {
-          const { value: l } = le;
-          return l ? l.parent : null;
+        Ie = M(null),
+        Le = M(null),
+        Ke = M(0),
+        rt = D(() => {
+          const { value: i } = le;
+          return i ? i.parent : null;
         });
-      let ot = !1;
-      Xe(
+      let lt = !1;
+      Ze(
         j(e, "data"),
         () => {
-          (ot = !0),
-            He(() => {
-              ot = !1;
+          (lt = !0),
+            We(() => {
+              lt = !1;
             }),
             S.value.clear(),
-            (G.value = null),
-            je();
+            (q.value = null),
+            Ue();
         },
         { deep: !1 },
       );
-      let rt = !1;
-      const lt = () => {
-        (rt = !0),
-          He(() => {
-            rt = !1;
+      let it = !1;
+      const at = () => {
+        (it = !0),
+          We(() => {
+            it = !1;
           });
       };
-      let Me;
-      Xe(j(e, "pattern"), (l, u) => {
+      let He;
+      Ze(j(e, "pattern"), (i, u) => {
         if (e.showIrrelevantNodes)
-          if (((Me = void 0), l)) {
-            const { expandedKeys: C, highlightKeySet: K } = xr(
+          if (((He = void 0), i)) {
+            const { expandedKeys: C, highlightKeySet: I } = Nr(
               e.data,
               e.pattern,
               e.keyField,
               e.childrenField,
               g.value,
             );
-            (ee.value = K),
-              lt(),
-              Ee(C, ce(C), { node: null, action: "filter" });
+            (ee.value = I),
+              at(),
+              Pe(C, ce(C), { node: null, action: "filter" });
           } else ee.value = new Set();
-        else if (!l.length)
-          Me !== void 0 &&
-            (lt(), Ee(Me, ce(Me), { node: null, action: "filter" }));
+        else if (!i.length)
+          He !== void 0 &&
+            (at(), Pe(He, ce(He), { node: null, action: "filter" }));
         else {
-          u.length || (Me = _.value);
+          u.length || (He = T.value);
           const { expandedKeys: C } = h.value;
           C !== void 0 &&
-            (lt(), Ee(C, ce(C), { node: null, action: "filter" }));
+            (at(), Pe(C, ce(C), { node: null, action: "filter" }));
         }
       });
-      function Nt(l) {
-        return Rr(this, void 0, void 0, function* () {
+      function Nt(i) {
+        return Er(this, void 0, void 0, function* () {
           const { onLoad: u } = e;
           if (!u) {
             yield Promise.resolve();
             return;
           }
           const { value: C } = S;
-          if (!C.has(l.key)) {
-            C.add(l.key);
+          if (!C.has(i.key)) {
+            C.add(i.key);
             try {
-              (yield u(l.rawNode)) === !1 && Pe();
-            } catch (K) {
-              console.error(K), Pe();
+              (yield u(i.rawNode)) === !1 && De();
+            } catch (I) {
+              console.error(I), De();
             }
-            C.delete(l.key);
+            C.delete(i.key);
           }
         });
       }
-      Oe(() => {
-        var l;
+      Fe(() => {
+        var i;
         const { value: u } = N;
         if (!u) return;
         const { getNode: C } = u;
-        (l = _.value) === null ||
-          l === void 0 ||
-          l.forEach((K) => {
-            const I = C(K);
-            I && !I.shallowLoaded && Nt(I);
+        (i = T.value) === null ||
+          i === void 0 ||
+          i.forEach((I) => {
+            const L = C(I);
+            L && !L.shallowLoaded && Nt(L);
           });
       });
-      const Le = M(!1),
-        me = M([]);
-      Xe(z, (l, u) => {
-        if (!e.animated || rt) {
-          He(qe);
+      const Ee = M(!1),
+        ke = M([]);
+      Ze(A, (i, u) => {
+        if (!e.animated || it) {
+          We(Ye);
           return;
         }
-        if (ot) return;
-        const C = Se(i.value.self.nodeHeight),
-          K = new Set(u);
-        let I = null,
+        if (lt) return;
+        const C = Re(l.value.self.nodeHeight),
+          I = new Set(u);
+        let L = null,
           Q = null;
-        for (const Z of l)
-          if (!K.has(Z)) {
-            if (I !== null) return;
-            I = Z;
+        for (const Z of i)
+          if (!I.has(Z)) {
+            if (L !== null) return;
+            L = Z;
           }
-        const de = new Set(l);
+        const de = new Set(i);
         for (const Z of u)
           if (!de.has(Z)) {
             if (Q !== null) return;
             Q = Z;
           }
-        if (I === null && Q === null) return;
+        if (L === null && Q === null) return;
         const { virtualScroll: ue } = e,
           ze = (ue ? d.value.listElRef : s.value).offsetHeight,
-          Ae = Math.ceil(ze / C) + 1;
-        let fe;
+          Oe = Math.ceil(ze / C) + 1;
+        let he;
         if (
-          (I !== null && (fe = u),
+          (L !== null && (he = u),
           Q !== null &&
-            (fe === void 0 ? (fe = l) : (fe = fe.filter((Z) => Z !== Q))),
-          (Le.value = !0),
-          (me.value = N.value.getFlattenedNodes(fe)),
-          I !== null)
+            (he === void 0 ? (he = i) : (he = he.filter((Z) => Z !== Q))),
+          (Ee.value = !0),
+          (ke.value = N.value.getFlattenedNodes(he)),
+          L !== null)
         ) {
-          const Z = me.value.findIndex((he) => he.key === I);
+          const Z = ke.value.findIndex((ve) => ve.key === L);
           if (~Z) {
-            const he = me.value[Z].children;
-            if (he) {
-              const ve = pt(he, l);
-              me.value.splice(Z + 1, 0, {
+            const ve = ke.value[Z].children;
+            if (ve) {
+              const be = Ct(ve, i);
+              ke.value.splice(Z + 1, 0, {
                 __motion: !0,
                 mode: "expand",
-                height: ue ? ve.length * C : void 0,
-                nodes: ue ? ve.slice(0, Ae) : ve,
+                height: ue ? be.length * C : void 0,
+                nodes: ue ? be.slice(0, Oe) : be,
               });
             }
           }
         }
         if (Q !== null) {
-          const Z = me.value.findIndex((he) => he.key === Q);
+          const Z = ke.value.findIndex((ve) => ve.key === Q);
           if (~Z) {
-            const he = me.value[Z].children;
-            if (!he) return;
-            Le.value = !0;
-            const ve = pt(he, l);
-            me.value.splice(Z + 1, 0, {
+            const ve = ke.value[Z].children;
+            if (!ve) return;
+            Ee.value = !0;
+            const be = Ct(ve, i);
+            ke.value.splice(Z + 1, 0, {
               __motion: !0,
               mode: "collapse",
-              height: ue ? ve.length * C : void 0,
-              nodes: ue ? ve.slice(0, Ae) : ve,
+              height: ue ? be.length * C : void 0,
+              nodes: ue ? be.slice(0, Oe) : be,
             });
           }
         }
       });
-      const vn = D(() => $o(B.value)),
-        gn = D(() => (Le.value ? me.value : B.value));
-      function qe() {
-        const { value: l } = f;
-        l && l.sync();
+      const bn = D(() => jo(B.value)),
+        mn = D(() => (Ee.value ? ke.value : B.value));
+      function Ye() {
+        const { value: i } = f;
+        i && i.sync();
       }
-      function bn() {
-        (Le.value = !1), e.virtualScroll && He(qe);
+      function yn() {
+        (Ee.value = !1), e.virtualScroll && We(Ye);
       }
-      function ce(l) {
+      function ce(i) {
         const { getNode: u } = w.value;
-        return l.map((C) => {
-          var K;
+        return i.map((C) => {
+          var I;
           return (
-            ((K = u(C)) === null || K === void 0 ? void 0 : K.rawNode) || null
+            ((I = u(C)) === null || I === void 0 ? void 0 : I.rawNode) || null
           );
         });
       }
-      function Ee(l, u, C) {
-        const { "onUpdate:expandedKeys": K, onUpdateExpandedKeys: I } = e;
-        (X.value = l), K && ne(K, l, u, C), I && ne(I, l, u, C);
+      function Pe(i, u, C) {
+        const { "onUpdate:expandedKeys": I, onUpdateExpandedKeys: L } = e;
+        (X.value = i), I && oe(I, i, u, C), L && oe(L, i, u, C);
       }
-      function Tt(l, u, C) {
-        const { "onUpdate:checkedKeys": K, onUpdateCheckedKeys: I } = e;
-        (y.value = l), I && ne(I, l, u, C), K && ne(K, l, u, C);
+      function Tt(i, u, C) {
+        const { "onUpdate:checkedKeys": I, onUpdateCheckedKeys: L } = e;
+        (m.value = i), L && oe(L, i, u, C), I && oe(I, i, u, C);
       }
-      function yn(l, u) {
+      function kn(i, u) {
         const {
           "onUpdate:indeterminateKeys": C,
-          onUpdateIndeterminateKeys: K,
+          onUpdateIndeterminateKeys: I,
         } = e;
-        C && ne(C, l, u), K && ne(K, l, u);
+        C && oe(C, i, u), I && oe(I, i, u);
       }
-      function it(l, u, C) {
-        const { "onUpdate:selectedKeys": K, onUpdateSelectedKeys: I } = e;
-        (A.value = l), I && ne(I, l, u, C), K && ne(K, l, u, C);
+      function st(i, u, C) {
+        const { "onUpdate:selectedKeys": I, onUpdateSelectedKeys: L } = e;
+        (z.value = i), L && oe(L, i, u, C), I && oe(I, i, u, C);
       }
-      function mn(l) {
+      function xn(i) {
         const { onDragenter: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function kn(l) {
+      function pn(i) {
         const { onDragleave: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function xn(l) {
+      function Cn(i) {
         const { onDragend: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function pn(l) {
+      function wn(i) {
         const { onDragstart: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function Cn(l) {
+      function Sn(i) {
         const { onDragover: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function wn(l) {
+      function Rn(i) {
         const { onDrop: u } = e;
-        u && ne(u, l);
+        u && oe(u, i);
       }
-      function je() {
-        Sn(), Ce();
+      function Ue() {
+        _n(), we();
       }
-      function Sn() {
+      function _n() {
         te.value = null;
       }
-      function Ce() {
-        (Ie.value = 0),
+      function we() {
+        (Ke.value = 0),
           (le.value = null),
-          (_e.value = null),
-          (Ke.value = null),
-          Pe();
+          (Ie.value = null),
+          (Le.value = null),
+          De();
       }
-      function Pe() {
-        V && (window.clearTimeout(V), (V = null)), (W = null);
+      function De() {
+        W && (window.clearTimeout(W), (W = null)), (G = null);
       }
-      function at(l, u) {
-        if (e.disabled || ke(l, e.disabledField)) return;
+      function dt(i, u) {
+        if (e.disabled || xe(i, e.disabledField)) return;
         if (e.internalUnifySelectCheck && !e.multiple) {
-          st(l);
+          ct(i);
           return;
         }
         const C = u ? "check" : "uncheck",
-          { checkedKeys: K, indeterminateKeys: I } = w.value[C](
-            l.key,
+          { checkedKeys: I, indeterminateKeys: L } = w.value[C](
+            i.key,
             b.value,
             {
               cascade: e.cascade,
@@ -3832,226 +3928,226 @@ const Nr = {
               allowNotLoaded: e.allowCheckingNotLoaded,
             },
           );
-        Tt(K, ce(K), { node: l.rawNode, action: C }), yn(I, ce(I));
+        Tt(I, ce(I), { node: i.rawNode, action: C }), kn(L, ce(L));
       }
-      function Rn(l) {
+      function Nn(i) {
         if (e.disabled) return;
-        const { key: u } = l,
-          { value: C } = _,
-          K = C.findIndex((I) => I === u);
-        if (~K) {
-          const I = Array.from(C);
-          I.splice(K, 1), Ee(I, ce(I), { node: l.rawNode, action: "collapse" });
+        const { key: u } = i,
+          { value: C } = T,
+          I = C.findIndex((L) => L === u);
+        if (~I) {
+          const L = Array.from(C);
+          L.splice(I, 1), Pe(L, ce(L), { node: i.rawNode, action: "collapse" });
         } else {
-          const I = N.value.getNode(u);
-          if (!I || I.isLeaf) return;
+          const L = N.value.getNode(u);
+          if (!L || L.isLeaf) return;
           let Q;
           if (e.accordion) {
-            const de = new Set(l.siblings.map(({ key: ue }) => ue));
+            const de = new Set(i.siblings.map(({ key: ue }) => ue));
             (Q = C.filter((ue) => !de.has(ue))), Q.push(u);
           } else Q = C.concat(u);
-          Ee(Q, ce(Q), { node: l.rawNode, action: "expand" });
+          Pe(Q, ce(Q), { node: i.rawNode, action: "expand" });
         }
       }
-      function _t(l) {
-        e.disabled || Le.value || Rn(l);
+      function It(i) {
+        e.disabled || Ee.value || Nn(i);
       }
-      function st(l) {
+      function ct(i) {
         if (!(e.disabled || !e.selectable)) {
-          if (((G.value = l.key), e.internalUnifySelectCheck)) {
+          if (((q.value = i.key), e.internalUnifySelectCheck)) {
             const {
               value: { checkedKeys: u, indeterminateKeys: C },
             } = p;
             e.multiple
-              ? at(l, !(u.includes(l.key) || C.includes(l.key)))
-              : Tt([l.key], ce([l.key]), { node: l.rawNode, action: "check" });
+              ? dt(i, !(u.includes(i.key) || C.includes(i.key)))
+              : Tt([i.key], ce([i.key]), { node: i.rawNode, action: "check" });
           }
           if (e.multiple) {
             const u = Array.from(F.value),
-              C = u.findIndex((K) => K === l.key);
-            ~C ? e.cancelable && u.splice(C, 1) : ~C || u.push(l.key),
-              it(u, ce(u), {
-                node: l.rawNode,
+              C = u.findIndex((I) => I === i.key);
+            ~C ? e.cancelable && u.splice(C, 1) : ~C || u.push(i.key),
+              st(u, ce(u), {
+                node: i.rawNode,
                 action: ~C ? "unselect" : "select",
               });
           } else
-            F.value.includes(l.key)
+            F.value.includes(i.key)
               ? e.cancelable &&
-                it([], [], { node: l.rawNode, action: "unselect" })
-              : it([l.key], ce([l.key]), { node: l.rawNode, action: "select" });
+                st([], [], { node: i.rawNode, action: "unselect" })
+              : st([i.key], ce([i.key]), { node: i.rawNode, action: "select" });
         }
       }
-      function Nn(l) {
-        if ((V && (window.clearTimeout(V), (V = null)), l.isLeaf)) return;
-        W = l.key;
+      function Tn(i) {
+        if ((W && (window.clearTimeout(W), (W = null)), i.isLeaf)) return;
+        G = i.key;
         const u = () => {
-          if (W !== l.key) return;
-          const { value: C } = _e;
-          if (C && C.key === l.key && !_.value.includes(l.key)) {
-            const K = _.value.concat(l.key);
-            Ee(K, ce(K), { node: l.rawNode, action: "expand" });
+          if (G !== i.key) return;
+          const { value: C } = Ie;
+          if (C && C.key === i.key && !T.value.includes(i.key)) {
+            const I = T.value.concat(i.key);
+            Pe(I, ce(I), { node: i.rawNode, action: "expand" });
           }
-          (V = null), (W = null);
+          (W = null), (G = null);
         };
-        l.shallowLoaded
-          ? (V = window.setTimeout(() => {
+        i.shallowLoaded
+          ? (W = window.setTimeout(() => {
               u();
             }, 1e3))
-          : (V = window.setTimeout(() => {
-              Nt(l).then(() => {
+          : (W = window.setTimeout(() => {
+              Nt(i).then(() => {
                 u();
               });
             }, 1e3));
       }
-      function Tn({ event: l, node: u }) {
+      function In({ event: i, node: u }) {
         !e.draggable ||
           e.disabled ||
-          ke(u, e.disabledField) ||
-          (Kt({ event: l, node: u }, !1), mn({ event: l, node: u.rawNode }));
+          xe(u, e.disabledField) ||
+          (Lt({ event: i, node: u }, !1), xn({ event: i, node: u.rawNode }));
       }
-      function _n({ event: l, node: u }) {
+      function Ln({ event: i, node: u }) {
         !e.draggable ||
           e.disabled ||
-          ke(u, e.disabledField) ||
-          kn({ event: l, node: u.rawNode });
+          xe(u, e.disabledField) ||
+          pn({ event: i, node: u.rawNode });
       }
-      function Kn(l) {
-        l.target === l.currentTarget && Ce();
+      function Kn(i) {
+        i.target === i.currentTarget && we();
       }
-      function In({ event: l, node: u }) {
-        je(),
-          !(!e.draggable || e.disabled || ke(u, e.disabledField)) &&
-            xn({ event: l, node: u.rawNode });
+      function En({ event: i, node: u }) {
+        Ue(),
+          !(!e.draggable || e.disabled || xe(u, e.disabledField)) &&
+            Cn({ event: i, node: u.rawNode });
       }
-      function Ln({ event: l, node: u }) {
+      function Pn({ event: i, node: u }) {
         !e.draggable ||
           e.disabled ||
-          ke(u, e.disabledField) ||
-          ((U = l.clientX), (te.value = u), pn({ event: l, node: u.rawNode }));
+          xe(u, e.disabledField) ||
+          ((H = i.clientX), (te.value = u), wn({ event: i, node: u.rawNode }));
       }
-      function Kt({ event: l, node: u }, C = !0) {
-        var K;
-        if (!e.draggable || e.disabled || ke(u, e.disabledField)) return;
-        const { value: I } = te;
-        if (!I) return;
+      function Lt({ event: i, node: u }, C = !0) {
+        var I;
+        if (!e.draggable || e.disabled || xe(u, e.disabledField)) return;
+        const { value: L } = te;
+        if (!L) return;
         const { allowDrop: Q, indent: de } = e;
-        C && Cn({ event: l, node: u.rawNode });
-        const ue = l.currentTarget,
-          { height: ze, top: Ae } = ue.getBoundingClientRect(),
-          fe = l.clientY - Ae;
+        C && Sn({ event: i, node: u.rawNode });
+        const ue = i.currentTarget,
+          { height: ze, top: Oe } = ue.getBoundingClientRect(),
+          he = i.clientY - Oe;
         let Z;
         Q({ node: u.rawNode, dropPosition: "inside", phase: "drag" })
-          ? fe <= 8
+          ? he <= 8
             ? (Z = "before")
-            : fe >= ze - 8
+            : he >= ze - 8
               ? (Z = "after")
               : (Z = "inside")
-          : fe <= ze / 2
+          : he <= ze / 2
             ? (Z = "before")
             : (Z = "after");
-        const { value: ve } = vn;
-        let q, ie;
-        const Be = ve(u.key);
+        const { value: be } = bn;
+        let Y, ie;
+        const Be = be(u.key);
         if (Be === null) {
-          Ce();
+          we();
           return;
         }
-        let Ye = !1;
+        let Xe = !1;
         Z === "inside"
-          ? ((q = u), (ie = "inside"))
+          ? ((Y = u), (ie = "inside"))
           : Z === "before"
             ? u.isFirstChild
-              ? ((q = u), (ie = "before"))
-              : ((q = B.value[Be - 1]), (ie = "after"))
-            : ((q = u), (ie = "after")),
-          !q.isLeaf &&
-            _.value.includes(q.key) &&
-            ((Ye = !0),
+              ? ((Y = u), (ie = "before"))
+              : ((Y = B.value[Be - 1]), (ie = "after"))
+            : ((Y = u), (ie = "after")),
+          !Y.isLeaf &&
+            T.value.includes(Y.key) &&
+            ((Xe = !0),
             ie === "after" &&
-              ((q = B.value[Be + 1]),
-              q ? (ie = "before") : ((q = u), (ie = "inside"))));
-        const Lt = q;
+              ((Y = B.value[Be + 1]),
+              Y ? (ie = "before") : ((Y = u), (ie = "inside"))));
+        const Et = Y;
         if (
-          ((_e.value = Lt),
-          !Ye && I.isLastChild && I.key === q.key && (ie = "after"),
+          ((Ie.value = Et),
+          !Xe && L.isLastChild && L.key === Y.key && (ie = "after"),
           ie === "after")
         ) {
-          let Et = U - l.clientX,
-            dt = 0;
-          for (; Et >= de / 2 && q.parent !== null && q.isLastChild && dt < 1; )
-            (Et -= de), (dt += 1), (q = q.parent);
-          Ie.value = dt;
-        } else Ie.value = 0;
+          let Pt = H - i.clientX,
+            ut = 0;
+          for (; Pt >= de / 2 && Y.parent !== null && Y.isLastChild && ut < 1; )
+            (Pt -= de), (ut += 1), (Y = Y.parent);
+          Ke.value = ut;
+        } else Ke.value = 0;
         if (
-          (I.contains(q) ||
+          (L.contains(Y) ||
             (ie === "inside" &&
-              ((K = I.parent) === null || K === void 0 ? void 0 : K.key) ===
-                q.key)) &&
-          !(I.key === Lt.key && I.key === q.key)
+              ((I = L.parent) === null || I === void 0 ? void 0 : I.key) ===
+                Y.key)) &&
+          !(L.key === Et.key && L.key === Y.key)
         ) {
-          Ce();
+          we();
           return;
         }
-        if (!Q({ node: q.rawNode, dropPosition: ie, phase: "drag" })) {
-          Ce();
+        if (!Q({ node: Y.rawNode, dropPosition: ie, phase: "drag" })) {
+          we();
           return;
         }
-        if (I.key === q.key) Pe();
-        else if (W !== q.key)
+        if (L.key === Y.key) De();
+        else if (G !== Y.key)
           if (ie === "inside") {
             if (e.expandOnDragenter) {
-              if ((Nn(q), !q.shallowLoaded && W !== q.key)) {
-                je();
+              if ((Tn(Y), !Y.shallowLoaded && G !== Y.key)) {
+                Ue();
                 return;
               }
-            } else if (!q.shallowLoaded) {
-              je();
+            } else if (!Y.shallowLoaded) {
+              Ue();
               return;
             }
-          } else Pe();
-        else ie !== "inside" && Pe();
-        (Ke.value = ie), (le.value = q);
+          } else De();
+        else ie !== "inside" && De();
+        (Le.value = ie), (le.value = Y);
       }
-      function En({ event: l, node: u, dropPosition: C }) {
-        if (!e.draggable || e.disabled || ke(u, e.disabledField)) return;
-        const { value: K } = te,
-          { value: I } = le,
-          { value: Q } = Ke;
+      function Dn({ event: i, node: u, dropPosition: C }) {
+        if (!e.draggable || e.disabled || xe(u, e.disabledField)) return;
+        const { value: I } = te,
+          { value: L } = le,
+          { value: Q } = Le;
         if (
-          !(!K || !I || !Q) &&
-          e.allowDrop({ node: I.rawNode, dropPosition: Q, phase: "drag" }) &&
-          K.key !== I.key
+          !(!I || !L || !Q) &&
+          e.allowDrop({ node: L.rawNode, dropPosition: Q, phase: "drag" }) &&
+          I.key !== L.key
         ) {
           if (Q === "before") {
-            const de = K.getNext({ includeDisabled: !0 });
-            if (de && de.key === I.key) {
-              Ce();
+            const de = I.getNext({ includeDisabled: !0 });
+            if (de && de.key === L.key) {
+              we();
               return;
             }
           }
           if (Q === "after") {
-            const de = K.getPrev({ includeDisabled: !0 });
-            if (de && de.key === I.key) {
-              Ce();
+            const de = I.getPrev({ includeDisabled: !0 });
+            if (de && de.key === L.key) {
+              we();
               return;
             }
           }
-          wn({
-            event: l,
-            node: I.rawNode,
-            dragNode: K.rawNode,
+          Rn({
+            event: i,
+            node: L.rawNode,
+            dragNode: I.rawNode,
             dropPosition: C,
           }),
-            je();
+            Ue();
         }
       }
-      function Pn() {
-        qe();
+      function An() {
+        Ye();
       }
-      function Dn() {
-        qe();
+      function zn() {
+        Ye();
       }
-      function zn(l) {
+      function On(i) {
         var u;
         if (e.virtualScroll || e.internalScrollable) {
           const { value: C } = f;
@@ -4059,41 +4155,41 @@ const Nr = {
             !(
               (u = C == null ? void 0 : C.containerRef) === null || u === void 0
             ) &&
-            u.contains(l.relatedTarget)
+            u.contains(i.relatedTarget)
           )
             return;
-          G.value = null;
+          q.value = null;
         } else {
           const { value: C } = s;
-          if (C != null && C.contains(l.relatedTarget)) return;
-          G.value = null;
+          if (C != null && C.contains(i.relatedTarget)) return;
+          q.value = null;
         }
       }
-      Xe(G, (l) => {
+      Ze(q, (i) => {
         var u, C;
-        if (l !== null) {
+        if (i !== null) {
           if (e.virtualScroll)
-            (u = d.value) === null || u === void 0 || u.scrollTo({ key: l });
+            (u = d.value) === null || u === void 0 || u.scrollTo({ key: i });
           else if (e.internalScrollable) {
-            const { value: K } = f;
-            if (K === null) return;
-            const I =
-              (C = K.contentRef) === null || C === void 0
+            const { value: I } = f;
+            if (I === null) return;
+            const L =
+              (C = I.contentRef) === null || C === void 0
                 ? void 0
-                : C.querySelector('[data-key="'.concat(tn(l), '"]'));
-            if (!I) return;
-            K.scrollTo({ el: I });
+                : C.querySelector('[data-key="'.concat(on(i), '"]'));
+            if (!L) return;
+            I.scrollTo({ el: L });
           }
         }
       }),
-        tt(Ge, {
+        ot(qe, {
           loadingKeysRef: S,
           highlightKeySetRef: ye,
           displayedCheckedKeysRef: b,
           displayedIndeterminateKeysRef: E,
           mergedSelectedKeysRef: F,
-          mergedExpandedKeysRef: _,
-          mergedThemeRef: i,
+          mergedExpandedKeysRef: T,
+          mergedThemeRef: l,
           mergedCheckStrategyRef: x,
           nodePropsRef: j(e, "nodeProps"),
           disabledRef: j(e, "disabled"),
@@ -4107,13 +4203,13 @@ const Nr = {
           cascadeRef: j(e, "cascade"),
           checkOnClickRef: j(e, "checkOnClick"),
           checkboxPlacementRef: e.checkboxPlacement,
-          droppingMouseNodeRef: _e,
-          droppingNodeParentRef: nt,
+          droppingMouseNodeRef: Ie,
+          droppingNodeParentRef: rt,
           draggingNodeRef: te,
-          droppingPositionRef: Ke,
-          droppingOffsetLevelRef: Ie,
+          droppingPositionRef: Le,
+          droppingOffsetLevelRef: Ke,
           fNodesRef: B,
-          pendingNodeKeyRef: G,
+          pendingNodeKeyRef: q,
           showLineRef: j(e, "showLine"),
           disabledFieldRef: j(e, "disabledField"),
           internalScrollableRef: j(e, "internalScrollable"),
@@ -4129,99 +4225,99 @@ const Nr = {
             e,
             "overrideDefaultNodeClickBehavior",
           ),
-          handleSwitcherClick: _t,
-          handleDragEnd: In,
-          handleDragEnter: Tn,
-          handleDragLeave: _n,
-          handleDragStart: Ln,
-          handleDrop: En,
-          handleDragOver: Kt,
-          handleSelect: st,
-          handleCheck: at,
+          handleSwitcherClick: It,
+          handleDragEnd: En,
+          handleDragEnter: In,
+          handleDragLeave: Ln,
+          handleDragStart: Pn,
+          handleDrop: Dn,
+          handleDragOver: Lt,
+          handleSelect: ct,
+          handleCheck: dt,
         });
-      function An(l, u) {
-        var C, K;
-        typeof l == "number"
-          ? (C = d.value) === null || C === void 0 || C.scrollTo(l, u || 0)
-          : (K = d.value) === null || K === void 0 || K.scrollTo(l);
+      function Bn(i, u) {
+        var C, I;
+        typeof i == "number"
+          ? (C = d.value) === null || C === void 0 || C.scrollTo(i, u || 0)
+          : (I = d.value) === null || I === void 0 || I.scrollTo(i);
       }
-      const Bn = {
+      const $n = {
           handleKeydown: J,
-          scrollTo: An,
+          scrollTo: Bn,
           getCheckedData: () => {
             if (!e.checkable) return { keys: [], options: [] };
-            const { checkedKeys: l } = p.value;
-            return { keys: l, options: ce(l) };
+            const { checkedKeys: i } = p.value;
+            return { keys: i, options: ce(i) };
           },
           getIndeterminateData: () => {
             if (!e.checkable) return { keys: [], options: [] };
-            const { indeterminateKeys: l } = p.value;
-            return { keys: l, options: ce(l) };
+            const { indeterminateKeys: i } = p.value;
+            return { keys: i, options: ce(i) };
           },
         },
-        It = D(() => {
+        Kt = D(() => {
           const {
-              common: { cubicBezierEaseInOut: l },
+              common: { cubicBezierEaseInOut: i },
               self: {
                 fontSize: u,
                 nodeBorderRadius: C,
-                nodeColorHover: K,
-                nodeColorPressed: I,
+                nodeColorHover: I,
+                nodeColorPressed: L,
                 nodeColorActive: Q,
                 arrowColor: de,
                 loadingColor: ue,
                 nodeTextColor: ze,
-                nodeTextColorDisabled: Ae,
-                dropMarkColor: fe,
+                nodeTextColorDisabled: Oe,
+                dropMarkColor: he,
                 nodeWrapperPadding: Z,
-                nodeHeight: he,
-                lineHeight: ve,
-                lineColor: q,
+                nodeHeight: ve,
+                lineHeight: be,
+                lineColor: Y,
               },
-            } = i.value,
-            ie = ht(Z, "top"),
-            Be = ht(Z, "bottom"),
-            Ye = Re(Se(he) - Se(ie) - Se(Be));
+            } = l.value,
+            ie = vt(Z, "top"),
+            Be = vt(Z, "bottom"),
+            Xe = _e(Re(ve) - Re(ie) - Re(Be));
           return {
             "--n-arrow-color": de,
             "--n-loading-color": ue,
-            "--n-bezier": l,
+            "--n-bezier": i,
             "--n-font-size": u,
             "--n-node-border-radius": C,
             "--n-node-color-active": Q,
-            "--n-node-color-hover": K,
-            "--n-node-color-pressed": I,
+            "--n-node-color-hover": I,
+            "--n-node-color-pressed": L,
             "--n-node-text-color": ze,
-            "--n-node-text-color-disabled": Ae,
-            "--n-drop-mark-color": fe,
+            "--n-node-text-color-disabled": Oe,
+            "--n-drop-mark-color": he,
             "--n-node-wrapper-padding": Z,
             "--n-line-offset-top": "-".concat(ie),
             "--n-line-offset-bottom": "-".concat(Be),
-            "--n-node-content-height": Ye,
-            "--n-line-height": ve,
-            "--n-line-color": q,
+            "--n-node-content-height": Xe,
+            "--n-line-height": be,
+            "--n-line-color": Y,
           };
         }),
-        De = n ? Ve("tree", void 0, It, e) : void 0;
-      return Object.assign(Object.assign({}, Bn), {
+        Ae = n ? Ve("tree", void 0, Kt, e) : void 0;
+      return Object.assign(Object.assign({}, $n), {
         mergedClsPrefix: t,
-        mergedTheme: i,
+        mergedTheme: l,
         rtlEnabled: r,
-        fNodes: gn,
-        aip: Le,
+        fNodes: mn,
+        aip: Ee,
         selfElRef: s,
         virtualListInstRef: d,
         scrollbarInstRef: f,
-        handleFocusout: zn,
+        handleFocusout: On,
         handleDragLeaveTree: Kn,
-        handleScroll: Pn,
+        handleScroll: An,
         getScrollContainer: a,
         getScrollContent: c,
-        handleAfterEnter: bn,
-        handleResize: Dn,
-        cssVars: n ? void 0 : It,
-        themeClass: De == null ? void 0 : De.themeClass,
-        onRender: De == null ? void 0 : De.onRender,
+        handleAfterEnter: yn,
+        handleResize: zn,
+        cssVars: n ? void 0 : Kt,
+        themeClass: Ae == null ? void 0 : Ae.themeClass,
+        onRender: Ae == null ? void 0 : Ae.onRender,
       });
     },
     render() {
@@ -4231,7 +4327,7 @@ const Nr = {
       const {
           mergedClsPrefix: o,
           blockNode: r,
-          blockLine: i,
+          blockLine: l,
           draggable: s,
           disabled: f,
           internalFocusable: d,
@@ -4243,26 +4339,26 @@ const Nr = {
         } = this,
         k = d && !f,
         w = k ? "0" : void 0,
-        m = [
+        y = [
           "".concat(o, "-tree"),
           g && "".concat(o, "-tree--rtl"),
           a && "".concat(o, "-tree--checkable"),
-          (i || r) && "".concat(o, "-tree--block-node"),
-          i && "".concat(o, "-tree--block-line"),
+          (l || r) && "".concat(o, "-tree--block-node"),
+          l && "".concat(o, "-tree--block-line"),
         ],
-        y = (P) =>
+        m = (P) =>
           "__motion" in P
-            ? v(wr, {
+            ? v(Lr, {
                 height: P.height,
                 nodes: P.nodes,
                 clsPrefix: o,
                 mode: P.mode,
                 onAfterEnter: this.handleAfterEnter,
               })
-            : v(hn, { key: P.key, tmNode: P, clsPrefix: o });
+            : v(gn, { key: P.key, tmNode: P, clsPrefix: o });
       if (this.virtualScroll) {
         const { mergedTheme: P, internalScrollablePadding: p } = this,
-          x = ht(p || "0");
+          x = vt(p || "0");
         return v(
           Bt,
           Object.assign({}, N, {
@@ -4270,7 +4366,7 @@ const Nr = {
             onDragleave: s ? this.handleDragLeaveTree : void 0,
             container: this.getScrollContainer,
             content: this.getScrollContent,
-            class: m,
+            class: y,
             theme: P.peers.Scrollbar,
             themeOverrides: P.peerOverrides.Scrollbar,
             tabindex: w,
@@ -4284,11 +4380,11 @@ const Nr = {
                 (b = this.onRender) === null || b === void 0 || b.call(this),
                 t.length
                   ? v(
-                      Co,
+                      _o,
                       {
                         ref: "virtualListInstRef",
                         items: this.fNodes,
-                        itemSize: Se(P.self.nodeHeight),
+                        itemSize: Re(P.self.nodeHeight),
                         ignoreItemResize: this.aip,
                         paddingTop: x.top,
                         paddingBottom: x.bottom,
@@ -4302,9 +4398,9 @@ const Nr = {
                         showScrollbar: !1,
                         itemResizable: !0,
                       },
-                      { default: ({ item: E }) => y(E) },
+                      { default: ({ item: E }) => m(E) },
                     )
-                  : At(this.$slots.empty, () => [
+                  : Ot(this.$slots.empty, () => [
                       v(Wt, {
                         class: "".concat(o, "-tree__empty"),
                         theme: this.mergedTheme.peers.Empty,
@@ -4316,15 +4412,15 @@ const Nr = {
           },
         );
       }
-      const { internalScrollable: L } = this;
+      const { internalScrollable: K } = this;
       return (
-        m.push(this.themeClass),
+        y.push(this.themeClass),
         (e = this.onRender) === null || e === void 0 || e.call(this),
-        L
+        K
           ? v(
               Bt,
               Object.assign({}, N, {
-                class: m,
+                class: y,
                 tabindex: w,
                 onKeydown: k ? c : void 0,
                 onFocusout: k ? h : void 0,
@@ -4339,14 +4435,14 @@ const Nr = {
                       onDragleave: s ? this.handleDragLeaveTree : void 0,
                       ref: "selfElRef",
                     },
-                    this.fNodes.map(y),
+                    this.fNodes.map(m),
                   ),
               },
             )
           : v(
               "div",
               {
-                class: m,
+                class: y,
                 tabindex: w,
                 ref: "selfElRef",
                 style: this.cssVars,
@@ -4355,8 +4451,8 @@ const Nr = {
                 onDragleave: s ? this.handleDragLeaveTree : void 0,
               },
               t.length
-                ? t.map(y)
-                : At(this.$slots.empty, () => [
+                ? t.map(m)
+                : Ot(this.$slots.empty, () => [
                     v(Wt, {
                       class: "".concat(o, "-tree__empty"),
                       theme: this.mergedTheme.peers.Empty,
@@ -4367,31 +4463,31 @@ const Nr = {
       );
     },
   }),
-  Kr = { class: "avatar flex" },
-  Ir = { class: "flex-1 flex items-center" },
-  Lr = { class: "text-20px font-bold p-x-24px" },
-  Er = re({
+  zr = { class: "avatar flex" },
+  Or = { class: "flex-1 flex items-center" },
+  Br = { class: "text-20px font-bold p-x-24px" },
+  $r = ne({
     __name: "avatar",
     setup(e) {
-      const t = M(co.html.title);
+      const t = M(ho.html.title);
       return (n, o) => (
-        xe(),
-        Ne("div", Kr, [
+        pe(),
+        Ne("div", zr, [
           o[0] ||
-            (o[0] = pe(
+            (o[0] = Ce(
               "div",
               {
                 class:
                   "bg-$navbar-color p-t-10px p-b-15px w-$navbar-width flex justify-center items-center",
               },
               [
-                pe(
+                Ce(
                   "div",
                   {
                     class: "w-46px of-hidden flex justify-center items-center",
                   },
                   [
-                    pe("img", {
+                    Ce("img", {
                       src: "./images/nav-icon1.png",
                       alt: "",
                       class: "w-100% h-100%",
@@ -4401,28 +4497,174 @@ const Nr = {
               ],
               -1,
             )),
-          pe("div", Ir, [pe("div", Lr, en(we(t)), 1)]),
+          Ce("div", Or, [Ce("div", Br, nn(Se(t)), 1)]),
         ])
       );
     },
   }),
-  Pr = St(Er, [["__scopeId", "data-v-848c8d63"]]),
-  Dr = { class: "navbar flex w-100% h-100% flex-col of-hidden" },
-  zr = { class: "flex flex-1 w-100% of-hidden" },
-  Ar = { class: "bg-$navbar-color h-100% of-x-hidden hide-scrollbar" },
-  Br = ["onClick"],
-  $r = ["src"],
-  Or = { key: 0, class: "flex-1 h-100% of-x-hidden hide-scrollbar p-x-15px" },
-  Fr = re({
+  Fr = Rt($r, [["__scopeId", "data-v-848c8d63"]]),
+  Mr = (e, t, n) => {
+    const o = e[t];
+    return o
+      ? typeof o == "function"
+        ? o()
+        : Promise.resolve(o)
+      : new Promise((r, l) => {
+          (typeof queueMicrotask == "function" ? queueMicrotask : setTimeout)(
+            l.bind(
+              null,
+              new Error(
+                "Unknown variable dynamic import: " +
+                  t +
+                  (t.split("/").length !== n
+                    ? ". Note that variables only represent file names one level deep."
+                    : ""),
+              ),
+            ),
+          );
+        });
+  },
+  Yt = ne({
+    inheritAttrs: !1,
+    props: {
+      name: { type: String },
+      iconProps: { type: Object, default: () => ({}) },
+      notFill: { type: Boolean, default: !1 },
+    },
+    setup({ name: e, iconProps: t, notFill: n }, { attrs: o }) {
+      return () =>
+        v(
+          vo,
+          v(
+            ne({
+              async setup() {
+                try {
+                  const r = (
+                    await Mr(
+                      Object.assign({
+                        "../assets/icons/add.svg": () =>
+                          fe(
+                            () => import("./add-B6A_aQWy.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/aixin.svg": () =>
+                          fe(
+                            () => import("./aixin-CIRM0mDy.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/dc.svg": () =>
+                          fe(
+                            () => import("./dc-BHUMuwm4.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/diannao.svg": () =>
+                          fe(
+                            () => import("./diannao-D7bN_hAq.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/gwb.svg": () =>
+                          fe(
+                            () => import("./gwb-BjHKMc6q.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/home.svg": () =>
+                          fe(
+                            () => import("./home-D8aVp0ec.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/kehu.svg": () =>
+                          fe(
+                            () => import("./kehu-D2RF9Sk5.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/khgl.svg": () =>
+                          fe(
+                            () => import("./khgl-CWkfa5ZQ.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/pinyin1.svg": () =>
+                          fe(
+                            () => import("./pinyin1-2v1Mn6wV.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/qianyue.svg": () =>
+                          fe(
+                            () => import("./qianyue-BXeKGBzr.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/search.svg": () =>
+                          fe(
+                            () => import("./search-8Rbab2D2.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/upload.svg": () =>
+                          fe(
+                            () => import("./upload-Dha4UOif.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                        "../assets/icons/xiala.svg": () =>
+                          fe(
+                            () => import("./xiala-B7H3M3h6.js"),
+                            [],
+                            import.meta.url,
+                          ),
+                      }),
+                      "../assets/icons/".concat(e, ".svg"),
+                      4,
+                    )
+                  ).default;
+                  return () =>
+                    v(cr, {
+                      innerHTML: r,
+                      ...o,
+                      ...t,
+                      class: {
+                        flex: !0,
+                        "justify-center": !0,
+                        "items-center": !0,
+                        "svg-icon-fill": !n,
+                        ...(typeof o.class == "string"
+                          ? { [o.class]: !0 }
+                          : o.class),
+                      },
+                    });
+                } catch (r) {
+                  return () => {};
+                }
+              },
+            }),
+          ),
+        );
+    },
+  }),
+  jr = { class: "navbar flex w-100% h-100% flex-col of-hidden" },
+  Vr = { class: "flex flex-1 w-100% of-hidden" },
+  Hr = { class: "bg-$navbar-color h-100% of-x-hidden hide-scrollbar" },
+  Ur = ["onClick"],
+  Wr = ["src"],
+  Gr = { key: 0, class: "flex-1 h-100% of-x-hidden hide-scrollbar p-x-15px" },
+  qr = ne({
     __name: "navbar",
     setup(e) {
-      const t = uo(),
-        n = fo(),
+      const t = go(),
+        n = bo(),
         o = M([]),
         r = D(() =>
           $t.flat.objectDeep(t.options.routes, (h) => h.filePath || h.fileName),
         ),
-        i = (h) => {
+        l = (h) => {
           var k, w;
           const N = r.value[h.filename] || r.value[h.filePath] || {};
           return {
@@ -4439,7 +4681,7 @@ const Nr = {
             redirect: h.redirect || (N == null ? void 0 : N.redirect),
           };
         },
-        s = D(() => $store.nav.munes.map(i)),
+        s = D(() => $store.nav.munes.map(l)),
         f = D(() => s.value[$store.nav.menusActive] || {}),
         d = D(() => {
           var h;
@@ -4449,16 +4691,16 @@ const Nr = {
             null,
             !1,
             !0,
-            (N) => i(N),
+            (N) => l(N),
           );
         });
-      Oe(() => {
+      Fe(() => {
         $store.nav.setMenusActiveInfo(f.value);
       });
       const a = (h) => {
           $store.nav.setMenusActive(h),
             (o.value = []),
-            He(() => {
+            We(() => {
               d.value.length === 0 &&
                 (f.value.redirect || f.value.url) &&
                 t.push(f.value.redirect || f.value.url);
@@ -4476,7 +4718,7 @@ const Nr = {
             },
             [
               c(h.icon)
-                ? v(Ot, {
+                ? v(Yt, {
                     name: h.icon,
                     class: "navbarTreeItemIcon",
                     iconProps: { size: 18 },
@@ -4490,110 +4732,110 @@ const Nr = {
             ],
           );
       return (
-        Ct(async () => {
-          var w, m;
+        wt(async () => {
+          var w, y;
           const h =
             (w = n.path.match(/^\/*pages\/[^/]+/)) == null ? void 0 : w[0];
           a(
-            s.value.findIndex((y) => {
-              var L, P;
+            s.value.findIndex((m) => {
+              var K, P;
               return (
-                ((P = (L = y.url) == null ? void 0 : L.indexOf) == null
+                ((P = (K = m.url) == null ? void 0 : K.indexOf) == null
                   ? void 0
-                  : P.call(L, h)) > -1
+                  : P.call(K, h)) > -1
               );
             }),
           );
           const N =
-              (m = n.path.match(/^\/*pages\/[^/]+\/[^/]+/)) == null
+              (y = n.path.match(/^\/*pages\/[^/]+\/[^/]+/)) == null
                 ? void 0
-                : m[0],
-            k = d.value.find((y) => {
-              var L, P;
+                : y[0],
+            k = d.value.find((m) => {
+              var K, P;
               return (
-                ((P = (L = y.url) == null ? void 0 : L.indexOf) == null
+                ((P = (K = m.url) == null ? void 0 : K.indexOf) == null
                   ? void 0
-                  : P.call(L, N)) > -1
+                  : P.call(K, N)) > -1
               );
             });
           k && k.url && (o.value = [k.url]);
         }),
         (h, N) => {
-          const k = Pr,
-            w = _r;
+          const k = Fr,
+            w = Ar;
           return (
-            xe(),
-            Ne("div", Dr, [
+            pe(),
+            Ne("div", jr, [
               Te(k),
-              pe("div", zr, [
-                pe("div", Ar, [
-                  (xe(!0),
+              Ce("div", Vr, [
+                Ce("div", Hr, [
+                  (pe(!0),
                   Ne(
-                    ho,
+                    mo,
                     null,
-                    vo(
-                      we(s),
-                      (m, y) => (
-                        xe(),
+                    yo(
+                      Se(s),
+                      (y, m) => (
+                        pe(),
                         Ne(
                           "div",
                           {
-                            key: y,
-                            class: go([
-                              { active: h.$store.nav.menusActive === y },
+                            key: m,
+                            class: ko([
+                              { active: h.$store.nav.menusActive === m },
                               "navbarItem w-$navbar-width h-42px text-$white p-y-15px flex flex-col justify-center items-center",
                             ]),
-                            onClick: (L) => a(y),
+                            onClick: (K) => a(m),
                           },
                           [
-                            c(m.icon)
-                              ? (xe(),
-                                bo(
-                                  we(Ot),
+                            c(y.icon)
+                              ? (pe(),
+                                xo(
+                                  Se(Yt),
                                   {
                                     key: 0,
                                     "icon-props": { size: 28 },
-                                    name: m.icon,
+                                    name: y.icon,
                                     class: "w-28px h-28px m-b--4px",
                                   },
                                   null,
                                   8,
                                   ["name"],
                                 ))
-                              : (xe(),
+                              : (pe(),
                                 Ne(
                                   "img",
                                   {
                                     key: 1,
-                                    src: m.icon,
+                                    src: y.icon,
                                     alt: "",
                                     class: "w-22px h-22px m-b-4px",
                                   },
                                   null,
                                   8,
-                                  $r,
+                                  Wr,
                                 )),
-                            pe("div", null, en(m.title), 1),
+                            Ce("div", null, nn(y.title), 1),
                           ],
                           10,
-                          Br,
+                          Ur,
                         )
                       ),
                     ),
                     128,
                   )),
                 ]),
-                we(d) && we(d).length > 0
-                  ? (xe(),
-                    Ne("div", Or, [
+                Se(d) && Se(d).length > 0
+                  ? (pe(),
+                    Ne("div", Gr, [
                       Te(
                         w,
                         {
-                          data: we(d),
+                          data: Se(d),
                           "render-label": g,
                           class: "w-100% n-tree",
                           "label-field": "title",
-                          "default-selected-keys": we(o),
+                          "default-selected-keys": Se(o),
                           "key-field": "url",
                         },
                         null,
@@ -4601,7 +4843,7 @@ const Nr = {
                         ["data", "default-selected-keys"],
                       ),
                     ]))
-                  : yo("", !0),
+                  : po("", !0),
               ]),
             ])
           );
@@ -4609,38 +4851,38 @@ const Nr = {
       );
     },
   }),
-  Mr = St(Fr, [["__scopeId", "data-v-c44ff8c8"]]),
-  jr = {},
-  Hr = { class: "layout w-100% h-100% fixed" };
-function Ur(e, t) {
-  const n = Mr,
-    o = vr,
-    r = mo("router-view"),
-    i = dr,
-    s = sr;
+  Yr = Rt(qr, [["__scopeId", "data-v-c44ff8c8"]]),
+  Xr = {},
+  Zr = { class: "layout w-100% h-100% fixed" };
+function Qr(e, t) {
+  const n = Yr,
+    o = pr,
+    r = Co("router-view"),
+    l = br,
+    s = gr;
   return (
-    xe(),
-    Ne("div", Hr, [
+    pe(),
+    Ne("div", Zr, [
       Te(
         s,
         { class: "w-100% h-100%", "has-sider": "" },
         {
-          default: vt(() => [
+          default: gt(() => [
             Te(
               o,
               {
                 style: { "--n-color": "var(--navbar-background-color)" },
                 class: "h-100% n-layout-sider",
               },
-              { default: vt(() => [Te(n)]), _: 1 },
+              { default: gt(() => [Te(n)]), _: 1 },
             ),
             Te(
-              i,
+              l,
               {
                 style: { "--n-color": "var(--backgroundColor)" },
                 "content-style": "padding: 15px;",
               },
-              { default: vt(() => [Te(r)]), _: 1 },
+              { default: gt(() => [Te(r)]), _: 1 },
             ),
           ]),
           _: 1,
@@ -4649,8 +4891,8 @@ function Ur(e, t) {
     ])
   );
 }
-const Gr = St(jr, [
-  ["render", Ur],
+const el = Rt(Xr, [
+  ["render", Qr],
   ["__scopeId", "data-v-16b3f60e"],
 ]);
-export { Gr as default };
+export { el as default };

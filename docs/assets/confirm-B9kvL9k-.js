@@ -13,7 +13,7 @@ import {
   B as C,
   _ as v,
   a as y,
-} from "./index-D1df6D06.js";
+} from "./index-BqxKyRSO.js";
 const $ = { class: "alert-content flex flex-col w-100% h-100%" },
   k = { class: "alert-content-box flex-1 of-x-hidden hide-scrollbar" },
   B = { key: 0, class: "m-t-30px flex justify-center items-center gap-15px" },
