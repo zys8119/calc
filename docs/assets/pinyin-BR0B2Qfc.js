@@ -41363,12 +41363,10 @@ const Z = V(X),
             .join(" "),
         R = (n) =>
           ((A) =>
-            n
-              .split("")
-              .map((i) => ({
-                text: i,
-                pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? A.pop() : null,
-              })))(Z(n).reverse()),
+            n.split("").map((i) => ({
+              text: i,
+              pinyin: /^[\u2E80-\u9FFF]+$/.test(i) ? A.pop() : null,
+            })))(Z(n).reverse()),
         M = (n) => n.map((A) => A.map((i) => P(i)));
       function S(n) {
         let A = n.toString(),

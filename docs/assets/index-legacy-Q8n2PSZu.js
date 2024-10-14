@@ -37989,13 +37989,11 @@ System.register([], function (e, t) {
                 e({
                   code: 200,
                   data: {
-                    list: new Array(8)
-                      .fill(0)
-                      .map((e, t) => ({
-                        id: t,
-                        name: "asdas",
-                        title: "asdas",
-                      })),
+                    list: new Array(8).fill(0).map((e, t) => ({
+                      id: t,
+                      name: "asdas",
+                      title: "asdas",
+                    })),
                     total: 100,
                   },
                   messages: "success",

@@ -16,52 +16,62 @@
         >
       </div>
     </div>
-    <div class="p-15px">
-      <div v-for="(item, index) in list" :key="index" class="m-t-15px">
-        <h2 class="m-b-15px flex items-end gap-5px">
-          <span>{{ numToChinese(index + 1) }}、</span>
-          <span
-            class="text-14px text-#333 flex-center flex-col cursor-pointer underline-blue hover:underline"
-            v-for="(it, k) in item.title"
-            :key="k"
-            @click="playPinyin(it.pinyin)"
-          >
-            <span>{{ it.pinyin }}</span>
-            <span>{{ it.text }}</span>
-          </span>
-          <SvgIcon
-            name="pinyin1"
-            class="cursor-pointer"
-            @click="playTextPinyin(item.title)"
-          />
-        </h2>
-        <div class="flex flex-col gap-5px flex-wrap text-50px">
-          <div
-            class="flex-center-start gap-30px flex-wrap"
-            v-for="(it, k) in item.pinyin"
-            :key="k"
-          >
-            <div
-              class="flex-center-start gap-5px flex-wrap"
-              v-for="(it1, kk) in it"
-              :key="kk"
+    <div class="flex-center">
+      <div class="p-15px">
+        <div v-for="(item, index) in list" :key="index" class="m-t-15px">
+          <h2 class="m-b-15px flex items-end gap-5px">
+            <span>{{ numToChinese(index + 1) }}、</span>
+            <span
+              class="text-14px text-#333 flex-center flex-col cursor-pointer underline-blue hover:underline"
+              v-for="(it, k) in item.title"
+              :key="k"
+              @click="playPinyin(it.pinyin)"
             >
-              <div
-                class="flex-center flex-col cursor-pointer underline-blue hover:underline"
-                v-for="(it2, kkk) in it1
-                  .split(' ')
-                  .map((e) => e.trim())
-                  .filter((e) => e)"
-                :key="kkk"
-                @click="playPinyin(it2)"
-              >
-                <div>{{ it2 }}</div>
-              </div>
-            </div>
+              <span>{{ it.pinyin }}</span>
+              <span>{{ it.text }}</span>
+            </span>
             <SvgIcon
               name="pinyin1"
               class="cursor-pointer"
-              @click="playTextPinyin(it, true)"
+              @click="playPinyin(item.title.map((e: any) => e.text).join(''))"
+            />
+          </h2>
+          <div class="flex flex-col gap-5px flex-wrap text-50px">
+            <div
+              class="flex-center-start gap-30px flex-wrap"
+              v-for="(it, k) in item.pinyin"
+              :key="k"
+            >
+              <div
+                class="flex-center-start gap-5px flex-wrap"
+                v-for="(it1, kk) in it"
+                :key="kk"
+              >
+                <div
+                  class="flex-center flex-col cursor-pointer underline-blue hover:underline"
+                  v-for="(it2, kkk) in it1
+                    .split(' ')
+                    .map((e) => e.trim())
+                    .filter((e) => e)"
+                  :key="kkk"
+                  @click="playPinyin(it2)"
+                >
+                  <div>{{ it2 }}</div>
+                </div>
+              </div>
+              <SvgIcon
+                name="pinyin1"
+                class="cursor-pointer"
+                @click="playTextPinyin(it, true)"
+              />
+            </div>
+          </div>
+          <div class="text-18px flex-center-start gap-10px" v-if="item.des">
+            {{ item.des }}
+            <SvgIcon
+              name="pinyin1"
+              class="cursor-pointer"
+              @click="playPinyin(item.des)"
             />
           </div>
         </div>
@@ -93,14 +103,62 @@ const data = computed<any>(() => {
           pinyin: [
             "zu2 ji4 fu4 ze2 zi3 se4 zi4 mu3",
             "zu3 fu4 la1 sa4 su4 du4 ci2 qi4",
-            "tu3 si1 zi4 ji3 zi4 si1 zi3 nu3",
+            "tu3 si1 zi4 ji3 zi4 si1 zi3 nü3",
           ],
         },
         {
-          title: "都准句子。",
+          title: "读准句子。",
           pinyin: [
             "zu3 fu4 he2 zu3 mu3 ca1 bo1 li",
             "li4 li he2 na4 na du2 zi4 mu3",
+          ],
+        },
+      ],
+    },
+    8: {
+      title: "拼音练习8（声母）",
+      data: [
+        {
+          title: "熟读下列音节。（尽量直呼，不行就拼读）",
+          pinyin: [
+            "cè   zā   sì   sù   zì   cù",
+            "qǐ   zǔ   zū   cī   sū   zē",
+            "zhǎ  shú  chè  shǎ  zhù  zhě  chà",
+            "chī  zhì  shǐ  zhí  shī  chǐ  shí",
+          ],
+        },
+        {
+          title: "熟读下列音节词",
+          pinyin: [
+            "tǔ sī    zì jǐ     zì sī     zǐ nǚ  ",
+            "rè chá   zhí shù   shā chē   zhī shi",
+            "rì chū   zhí rì    zhé zhǐ   zhú zi",
+            "chū zū chē    shě bù dé    ná pí chǐ",
+          ],
+        },
+      ],
+    },
+    9: {
+      title: "拼音练习9（三拼音）",
+      data: [
+        {
+          title: "熟读下列三拼音节",
+          pinyin: [
+            "duǒ  ɡuó  nuó  luò  tuō  ɡuǎ",
+            "kuò  huā  luó  kuā  nuò  jiǎ ",
+            "tuó  duō  luō  kuà  huó  huà",
+            "qiā  jià  huǒ  huá  ɡuō  ɡuā",
+          ],
+        },
+        {
+          title: "熟读下列音节词",
+          pinyin: [
+            "zǔ ɡuó   luó bo   luò tuo   xī ɡuā",
+            "kǔ ɡuā   jú huā   xǔ duō    tuō lā",
+            "ɡuó jiā  bō luó   ɡuò qù    ɡuā pí",
+            "fā huǒ   nuò mǐ   luò xià   rú ɡuǒ",
+            "shū jià    zhuā zhù   shuō huà",
+            "kè zhuō    chuō pò    cā zhuō zi",
           ],
         },
       ],
@@ -157,6 +215,9 @@ const getYidiao = (s: any) => {
     .split(/\s+/)
     .filter((e: any) => e)
     .map((e: any) => {
+      if (toneYinDiaoMapKeysReg.test(e)) {
+        return e;
+      }
       const n = Number(e.match(/[0-9]$/i) || 1);
       let newe = e.replace(n, "");
       let k = newe.length;
@@ -209,7 +270,20 @@ function numToChinese(num: number) {
 }
 const audioSrc = ref("");
 const audio = $ref() as HTMLAudioElement;
-const playPinyin = (pinyin: string) => {
+let speechsynthesisutterance = $ref() as SpeechSynthesisUtterance;
+let speechsynthesisutteranceEnded = $ref(true) as boolean;
+const isPlayTextPinyin = ref(false);
+const playPinyin = (pinyin: string, bool: boolean = false) => {
+  // isPlayTextPinyin.value = bool;
+  // if (pinyin) {
+  //   speechSynthesis.cancel();
+  //   speechsynthesisutteranceEnded = false;
+  //   speechsynthesisutterance = new SpeechSynthesisUtterance(pinyin)
+  //   speechsynthesisutterance.onend = function () {
+  //     speechsynthesisutteranceEnded = true;
+  //   };
+  //   speechSynthesis.speak(speechsynthesisutterance)
+  // }
   if (pinyin) {
     audio.pause();
     const { index, name } = getPinyinYindiaoToNumber(pinyin);
@@ -223,11 +297,24 @@ const playPinyin = (pinyin: string) => {
   }
 };
 const playTextPinyin = async (data: any, isPy: boolean = false) => {
+  isPlayTextPinyin.value = false;
   let k = 0;
   while (k < data.length) {
     const { pinyin } = isPy ? { pinyin: data[k] } : data[k] || {};
     if (pinyin) {
-      playPinyin(pinyin);
+      playPinyin(pinyin, true);
+      // await new Promise((resolve) => {
+      //   (function isAudioEnded() {
+      //     if (!isPlayTextPinyin.value) {
+      //       throw new Error("取消播放");
+      //     }
+      //     if (speechsynthesisutteranceEnded) {
+      //       resolve(true);
+      //     } else {
+      //       setTimeout(isAudioEnded);
+      //     }
+      //   })();
+      // });
       await new Promise((resolve) => {
         (function isAudioEnded() {
           if (audio.ended) {
