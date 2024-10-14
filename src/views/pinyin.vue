@@ -30,11 +30,6 @@
               <span>{{ it.pinyin }}</span>
               <span>{{ it.text }}</span>
             </span>
-            <SvgIcon
-              name="pinyin1"
-              class="cursor-pointer"
-              @click="playPinyin(item.title.map((e: any) => e.text).join(''))"
-            />
           </h2>
           <div class="flex flex-col gap-5px flex-wrap text-50px">
             <div
@@ -59,20 +54,10 @@
                   <div>{{ it2 }}</div>
                 </div>
               </div>
-              <SvgIcon
-                name="pinyin1"
-                class="cursor-pointer"
-                @click="playTextPinyin(it, true)"
-              />
             </div>
           </div>
           <div class="text-18px flex-center-start gap-10px" v-if="item.des">
             {{ item.des }}
-            <SvgIcon
-              name="pinyin1"
-              class="cursor-pointer"
-              @click="playPinyin(item.des)"
-            />
           </div>
         </div>
       </div>
@@ -119,7 +104,7 @@ const data = computed<any>(() => {
       title: "拼音练习8（声母）",
       data: [
         {
-          title: "熟读下列音节。（尽量直呼，不行就拼读）",
+          title: "熟读下列音节,（尽量直呼，不行就拼读）",
           pinyin: [
             "cè   zā   sì   sù   zì   cù",
             "qǐ   zǔ   zū   cī   sū   zē",
@@ -144,21 +129,53 @@ const data = computed<any>(() => {
         {
           title: "熟读下列三拼音节",
           pinyin: [
-            "duǒ  ɡuó  nuó  luò  tuō  ɡuǎ",
+            "duǒ  guó  nuó  luò  tuō  guǎ",
             "kuò  huā  luó  kuā  nuò  jiǎ ",
             "tuó  duō  luō  kuà  huó  huà",
-            "qiā  jià  huǒ  huá  ɡuō  ɡuā",
+            "qiā  jià  huǒ  huá  guō  guā",
           ],
         },
         {
           title: "熟读下列音节词",
           pinyin: [
-            "zǔ ɡuó   luó bo   luò tuo   xī ɡuā",
-            "kǔ ɡuā   jú huā   xǔ duō    tuō lā",
-            "ɡuó jiā  bō luó   ɡuò qù    ɡuā pí",
-            "fā huǒ   nuò mǐ   luò xià   rú ɡuǒ",
+            "zǔ guó   luó bo   luò tuo   xī guā",
+            "kǔ guā   jú huā   xǔ duō    tuō lā",
+            "guó jiā  bō luó   guò qù    guā pí",
+            "fā huǒ   nuò mǐ   luò xià   rú guǒ",
             "shū jià    zhuā zhù   shuō huà",
             "kè zhuō    chuō pò    cā zhuō zi",
+          ],
+        },
+      ],
+    },
+    10: {
+      title: "拼音练习10（复习1）",
+      data: [
+        {
+          title: "熟练背诵单韵母、声母和整体认读音节。",
+          pinyin: [
+            "单韵母： a o e i u ü",
+            "声  母： b p m f d t n l g k h j q x zh ch sh r z c s y w",
+            "整体认读音节： zhi chi shi ri zi ci si yi wu yu",
+          ],
+        },
+        {
+          title: "熟读下列音节,前两行是整体认读音节，最后一行是三拼音。",
+          pinyin: [
+            "zǐ   zhì   sí   shí  cì  chí  rì",
+            "yí   yù    wǔ   yǔ   yì  yú   wù",
+            "jiǎ  guó  zhuā  xiá  shuō  kuā  nuò",
+          ],
+        },
+        {
+          title: "熟读下列音节词",
+          pinyin: [
+            "jú huā   shuā yá    wū yā   hé huā",
+            "dà huǒ   shuō huà   wà zi   xià yǔ",
+            "sī guā   huā duǒ    yā zi   zhú zi",
+            "ná pí chǐ           cā zhuō zi  ",
+            "zhuō dà xiā         dǎ huǒ jī",
+            "zuò huǒ chē         chī xī guā  ",
           ],
         },
       ],
@@ -273,8 +290,8 @@ const audio = $ref() as HTMLAudioElement;
 let speechsynthesisutterance = $ref() as SpeechSynthesisUtterance;
 let speechsynthesisutteranceEnded = $ref(true) as boolean;
 const isPlayTextPinyin = ref(false);
-const playPinyin = (pinyin: string, bool: boolean = false) => {
-  // isPlayTextPinyin.value = bool;
+const playPinyin = async (pinyin: string, bool: boolean = false) => {
+  isPlayTextPinyin.value = bool;
   // if (pinyin) {
   //   speechSynthesis.cancel();
   //   speechsynthesisutteranceEnded = false;
@@ -291,8 +308,13 @@ const playPinyin = (pinyin: string, bool: boolean = false) => {
       new RegExp(toneYinDiaoMapKeysReg, "img"),
       name,
     );
-    const pinyinYindiao = deleteYindiao + index;
-    audioSrc.value = `https://data.hanyuguoxue.com/voice/${pinyinYindiao}.mp3`;
+    const pinyinYindiao = deleteYindiao + (index || "");
+    const url = `https://data.hanyuguoxue.com/voice/${pinyinYindiao}.mp3`;
+    const status = await fetch(url).then((res) => res.status);
+    audioSrc.value =
+      status === 200
+        ? url
+        : `https://data.hanyuguoxue.com/pinyin_voice/${pinyinYindiao}.mp3`;
     audio.play();
   }
 };
@@ -318,7 +340,7 @@ const playTextPinyin = async (data: any, isPy: boolean = false) => {
       await new Promise((resolve) => {
         (function isAudioEnded() {
           if (audio.ended) {
-            resolve(true);
+            setTimeout(() => resolve(true));
           } else {
             setTimeout(isAudioEnded);
           }
